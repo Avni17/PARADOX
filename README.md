@@ -1,70 +1,97 @@
-# Getting Started with Create React App
+### PARADOX website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Paradox is a web-based project tracking application that will allow you to track the
+time that employees or colleagues spend working on projects and tasks.
 
-## Available Scripts
+• This application will keep track of projects in a company.
 
-In the project directory, you can run:
+• It lets employee track how much time and man hours are needed to be spent on projects and update the
+same through a GUI.
 
-### `npm start`
+• Project phases and milestones can be assigned to staff 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+• Project members can see progress in dashboard.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+• Manager or project lead can then add resources to compensate for time delay and increases bandwidth.
 
-### `npm test`
+• Non-critical tasks can be removed and forces can be shifted towards more crucial tasks.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+• Information displayed through dashboard will be according to user’s individual needs-(by
+worker,manager,teamLead).
 
-### `npm run build`
+### Project Info
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This project uses [React.Js](https://reactjs.org) and the contents are bundled using webpack.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The contents in this project follow the following structure.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+├───public
+│   └───images
+│
+└───src
+    ├──components
+    │   ├───login
+    │   ├───dashboard
+    │   ├───
+    │ 
+    │
+    │
+    └───shared_components
+        ├───button
+        └───sidebar
+```
 
-### `npm run eject`
+Each individual section and component, follows this structure
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```
+section
+  ├──components
+  └──styles
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Constants
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+This project uses 'Roboto' as it's primary font, with weights of 300, 400, 500 and 700. All the fonts have been pre-imported.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Moreover, here are a few constants which are used throughout the project, and have been added to the root of css, use them accordingly.
 
-## Learn More
+```
+font-size: 16px;
+--bg-primary: #ffffff;
+--bg-secondary: #f5f5f5;
+--text-primary: #000000;
+--text-secondary: #202124;
+--btn-primary: #0005df;
+--btn-secondary: #ffffff;
+--focused-state: #c2c3f7;
+--transition-speed: 250ms;
+--sidebar-width: 5rem;
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Setup
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+##### Clone the repository
 
-### Code Splitting
+```bash
+git clone https://github.com/Avni17/PARADOX.git
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+##### Move to the desired folder
 
-### Analyzing the Bundle Size
+```bash
+cd \PARADOX
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+##### To install the dependencies, simply write
 
-### Making a Progressive Web App
+```bash
+npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+##### To run the app, simply write
 
-### Advanced Configuration
+```bash
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
