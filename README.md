@@ -94,4 +94,15 @@ npm install
 ```bash
 npm start
 ```
+##### To run php files, simply 
+
+COPY Paradox foler in
+```bash
+htdocs (for XAMPP)
+
+www    (for WAMPP)
+
+START APACHE AND MYSQL SERVER
+```
+
 
