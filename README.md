@@ -96,8 +96,10 @@ npm start
 ```
 ##### To run php files, simply 
 
-COPY Paradox foler in
+
 ```bash
+COPY Paradox foler in
+
 htdocs (for XAMPP)
 
 www    (for WAMPP)
