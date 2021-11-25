@@ -1,9 +1,77 @@
 import React, { Component } from 'react'
 // import './login-helper'
 import './login.css'
+import axios from 'axios';
+import {Navigate} from 'react-router-dom';
+
+
+const API_PATH = 'http://localhost/paradox/login.php';
 
 export default class login extends Component 
 {
+  constructor(){
+    super();
+   
+    this.state = {
+     email: '',
+     password: '',
+     msg:''
+    };
+
+    this.login = this.login.bind(this);
+    this.onChange = this.onChange.bind(this);
+
+  }
+
+  
+
+  login() {
+    if(this.state.email && this.state.password)
+    {
+      console.log(this.state);
+      axios({
+        method: 'post',
+        url: `${API_PATH}`,
+        headers: { 'content-type': 'application/json' },
+        data: this.state
+        
+      })
+        .then(result => {
+          
+          
+          // alert(result.data[0].Message);
+          this.setState({
+            msg: result.data[0].Message
+          })
+          
+          
+           if(result.data[0].Message=='Success')
+           {
+            window.open("/dashboard","_self")
+          //   this.setState({
+          //     redirectToReferrer: true
+          //   })
+          //   console.log(this.state);
+          //   alert(result.data[0].Message);
+          //   console.log(this.state);
+          //   alert(result.data[0].Message);
+          //   console.log(this.state);
+          //   alert(result.data[0].Message);
+
+          }
+       
+        })
+        .catch(error => this.setState({ msg: error.data[0].Message }));
+        
+     
+    }
+    
+   }
+
+  onChange(e){
+    this.setState({[e.target.name]:e.target.value});
+    
+   }
   
   componentDidMount = () => {  
     this.myfunction();
@@ -46,19 +114,21 @@ export default class login extends Component
     
  }
   render() {
+   
     return (
       <div className="login">
       <div className="container">
         <div id="square">
           <div className="front">
             <h1>Login</h1>
-            <form action="#" method="post">
+            <form>
               <input
                 required
                 type="email"
                 name="email"
                 id="email"
                 placeholder="Email"
+                onChange={this.onChange}
               />
               <input
                 required
@@ -66,9 +136,15 @@ export default class login extends Component
                 name="password"
                 id="password"
                 placeholder="Password"
+                onChange={this.onChange}
               />
-              <button type="submit">Submit</button>
+              <button type="button" onClick={this.login}>Submit</button>
             </form>
+            <div>
+  {this.state.msg &&
+    <div>{this.state.msg}</div>
+  }
+</div>
           </div>
           <div className="right">
             <h1>Create a new account</h1>
@@ -95,6 +171,7 @@ export default class login extends Component
                 placeholder="Password"
               />
               <button type="submit">Submit</button>
+              
             </form>
           </div>
           <div className="left">
