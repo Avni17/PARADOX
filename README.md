@@ -98,7 +98,7 @@ npm start
 
 
 ```bash
-COPY Paradox foler in
+COPY paradox foler in
 
 htdocs (for XAMPP)
 
