@@ -233,9 +233,9 @@ export default class login extends Component {
                 GENDER:
                 Male
                 <input style={{
-                  float: "left",
-                  clear: "none",
-                  margin: "2px 0 0 2px"
+                  // float: "left",
+                  // clear: "none",
+                  // margin: "2px 0 0 2px"
                 }}
 
                   type="radio"
@@ -245,12 +245,13 @@ export default class login extends Component {
                   placeholder="gender"
                   onChange={this.onChange}
                 />
+              
                 Female
                 <input
                   style={{
-                    float: "left",
-                    clear: "none",
-                    margin: "2px 0 0 2px"
+                    // float: "left",
+                    // clear: "none",
+                    // margin: "0px"
                   }}
                   type="radio"
                   name="gender"
