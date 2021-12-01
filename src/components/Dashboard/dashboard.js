@@ -3,9 +3,32 @@ import './dashboard.scss';
 // import './dashboard-help.js';
 import avni from './images/avni.jpg'
 
-export default class login extends Component 
+export default class dashboard extends Component 
  {
-  componentDidMount = () => {  
+  constructor() {
+    super();
+
+    this.state = {
+      
+      currDate: Date().toLocaleString().split(' ').slice(0, 4).join(' '),
+      email:''
+    }
+    this.logout = this.logout.bind(this);
+
+  }
+  logout()
+  {
+
+    localStorage.setItem('email',JSON.stringify(''));
+    window.open("/","_self")
+  }
+  componentDidMount = () => { 
+    let email = localStorage.email
+    if(email != undefined){
+        this.setState({
+            email: JSON.parse(email)
+        });
+    } 
     this.myfunction();
  }
 
@@ -53,7 +76,9 @@ document.addEventListener('DOMContentLoaded', function () {
  }
    render()
    {
+     
   return (
+    
   
       <div class="app-container">
   <div class="app-header">
@@ -86,10 +111,20 @@ document.addEventListener('DOMContentLoaded', function () {
           <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
           <path d="M13.73 21a2 2 0 0 1-3.46 0" /></svg>
       </button>
-      <button class="profile-btn">
-        <img src={avni} />
-        <span>Avni Arora</span>
-      </button>
+      <div class="dropdown">
+  <button class="dropbtn profile-btn">
+  <img src={avni} />
+        <span>{this.state.email}</span>
+  </button>
+       <div class="dropdown-content">
+            <button type='button' onClick={this.logout}>Logout</button>
+            <svg id="cloud-upload" fill="#000000" height="60" viewBox="0 0 24 24" width="30" xmlns="http://www.w3.org/2000/svg">
+  <path d="M0 0h24v24H0z" fill="none" />
+  <path id="upcloud" d="M10.09 15.59l1.41 1.41 5-5-5-5-1.41 1.41 2.58 2.59h-9.67v2h9.67l-2.58 2.59zm8.91-12.59h-14c-1.11 0-2 .9-2 2v4h2v-4h14v14h-14v-4h-2v4c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-14c0-1.1-.9-2-2-2z" />
+</svg>
+        </div>
+      </div>
+    
     </div>
     <button class="messages-btn">
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-circle">
@@ -127,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="projects-section">
       <div class="projects-section-header">
         <p>Projects</p>
-        <p class="time">December, 12</p>
+        <p class="time">{ this.state.currDate }</p>
       </div>
       <div class="projects-section-line">
         <div class="projects-status">
