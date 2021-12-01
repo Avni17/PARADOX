@@ -8,7 +8,7 @@ $encodedData = file_get_contents('php://input');
 $decodedData = json_decode($encodedData, true);
 $UserEmail = $decodedData['email'];
 $UserPW = ($decodedData['password']);
-$UserFullName = ($decodedData['fulln']);
+$UserFullName = ($decodedData['fullName']);
 $UserGender = ($decodedData['gender']);
 $Username = ($decodedData['username']);
 //$radioVal = $_POST["gender];
@@ -17,7 +17,7 @@ $SQL = "SELECT username FROM employee WHERE email = '$UserEmail'";
 
 $exeSQL = mysqli_query($con, $SQL);
 $checkEmail =  mysqli_num_rows($exeSQL);
-echo "$checkEmail";
+
 
 if ($checkEmail == 0) {
   
@@ -27,7 +27,7 @@ if ($checkEmail == 0) {
                // $c = $row+2;
                // echo "$c";
                 $SQL = "INSERT INTO employee (name, username, password, email, gender) VALUES('$UserFullName','$Username','$UserPW','$UserEmail','$UserGender')";
-                $exeSQL = mysqli_query($con, $SQL);
+                // $exeSQL = mysqli_query($con, $SQL);
                 if(mysqli_query($con, $SQL)){
                     $Message = "ACCOUNT CREATED.";
                 } else{

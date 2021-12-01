@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Generation Time: Nov 07, 2021 at 03:56 PM
--- Server version: 5.7.31
--- PHP Version: 7.3.21
+-- Host: 127.0.0.1
+-- Generation Time: Dec 01, 2021 at 03:03 PM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 8.0.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -27,13 +27,10 @@ SET time_zone = "+00:00";
 -- Table structure for table `allocated`
 --
 
-DROP TABLE IF EXISTS `allocated`;
-CREATE TABLE IF NOT EXISTS `allocated` (
+CREATE TABLE `allocated` (
   `tid` int(11) NOT NULL,
   `eid` int(11) NOT NULL,
-  `bandwidth` int(11) NOT NULL,
-  PRIMARY KEY (`tid`,`eid`),
-  KEY `FK_eid` (`eid`)
+  `bandwidth` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
@@ -50,16 +47,13 @@ INSERT INTO `allocated` (`tid`, `eid`, `bandwidth`) VALUES
 -- Table structure for table `employee`
 --
 
-DROP TABLE IF EXISTS `employee`;
-CREATE TABLE IF NOT EXISTS `employee` (
+CREATE TABLE `employee` (
   `name` varchar(30) NOT NULL,
   `id` int(11) NOT NULL,
   `username` varchar(30) NOT NULL,
   `password` varchar(30) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `gender` varchar(10) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `username` (`username`)
+  `gender` varchar(10) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
@@ -76,14 +70,12 @@ INSERT INTO `employee` (`name`, `id`, `username`, `password`, `email`, `gender`)
 -- Table structure for table `project`
 --
 
-DROP TABLE IF EXISTS `project`;
-CREATE TABLE IF NOT EXISTS `project` (
+CREATE TABLE `project` (
   `pid` int(11) NOT NULL,
   `dependencies` int(11) NOT NULL,
   `startTime` date NOT NULL,
   `endTime` date NOT NULL,
-  `manager` int(30) NOT NULL,
-  PRIMARY KEY (`pid`)
+  `manager` int(30) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
@@ -100,14 +92,12 @@ INSERT INTO `project` (`pid`, `dependencies`, `startTime`, `endTime`, `manager`)
 -- Table structure for table `task`
 --
 
-DROP TABLE IF EXISTS `task`;
-CREATE TABLE IF NOT EXISTS `task` (
+CREATE TABLE `task` (
   `eid` int(11) NOT NULL,
   `pid` int(11) NOT NULL,
   `tid` int(11) NOT NULL,
   `manDays` int(11) NOT NULL,
-  `type` varchar(30) NOT NULL,
-  PRIMARY KEY (`tid`)
+  `type` varchar(30) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
@@ -124,12 +114,9 @@ INSERT INTO `task` (`eid`, `pid`, `tid`, `manDays`, `type`) VALUES
 -- Table structure for table `team`
 --
 
-DROP TABLE IF EXISTS `team`;
-CREATE TABLE IF NOT EXISTS `team` (
+CREATE TABLE `team` (
   `eid` int(11) NOT NULL,
-  `pid` int(11) NOT NULL,
-  PRIMARY KEY (`eid`,`pid`),
-  KEY `FK_pid` (`pid`)
+  `pid` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
@@ -141,6 +128,53 @@ INSERT INTO `team` (`eid`, `pid`) VALUES
 (1, 2),
 (2, 1),
 (2, 2);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `allocated`
+--
+ALTER TABLE `allocated`
+  ADD PRIMARY KEY (`tid`,`eid`),
+  ADD KEY `FK_eid` (`eid`);
+
+--
+-- Indexes for table `employee`
+--
+ALTER TABLE `employee`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `username` (`username`);
+
+--
+-- Indexes for table `project`
+--
+ALTER TABLE `project`
+  ADD PRIMARY KEY (`pid`);
+
+--
+-- Indexes for table `task`
+--
+ALTER TABLE `task`
+  ADD PRIMARY KEY (`tid`);
+
+--
+-- Indexes for table `team`
+--
+ALTER TABLE `team`
+  ADD PRIMARY KEY (`eid`,`pid`),
+  ADD KEY `FK_pid` (`pid`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `employee`
+--
+ALTER TABLE `employee`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
