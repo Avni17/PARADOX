@@ -10,12 +10,12 @@ $UserEmail = $decodedData['email'];
 $SQL = "SELECT id FROM employee WHERE email = '$UserEmail'";
 $exeSQL = mysqli_query($con, $SQL);
 $checkid =  mysqli_num_rows($exeSQL);
-
+$response[]=array();
 if ($checkid != 0) 
 {
     $arrayu = mysqli_fetch_array($exeSQL);
     $id=$arrayu['id'];
-    $SQL = "SELECT pid FROM task WHERE eid = '$id'";
+    $SQL = "SELECT pid,type FROM task WHERE eid = '$id'";
     $exeSQL = mysqli_query($con, $SQL);
     while($row = mysqli_fetch_array($exeSQL))
     {
@@ -23,7 +23,10 @@ if ($checkid != 0)
         $SQL = "SELECT startTime,endTime FROM project WHERE pid = '$ppid'";
         $result = mysqli_query($con, $SQL);
         $f=mysqli_fetch_array($result);
-        $response[]=array("starttime"=>$f['startime'],"endtime"=>$f['endtime']);
+        $SQL1 = "SELECT DATEDIFF(endTime,CURRENT_DATE()) as days FROM project WHERE pid = '$ppid'";
+        $result1 = mysqli_query($con, $SQL1);
+        $d=mysqli_fetch_array($result1);
+        $response[]=array("starttime"=>$f['startTime'],"days"=>$d['days'],"task"=>$row['type']);
     }
     
 } 
@@ -31,8 +34,8 @@ else {
     $Message = "No account yet";
     
 }
-
-$response[] = array("Message" => $Message);
+array_shift($response);
+// $response[] = array("Message" => $Message);
 
 echo json_encode($response);
 ?>
