@@ -396,3 +396,92 @@ export default class dashboard extends Component {
     );
   }
 }
+
+class App extends React.Component 
+{
+   state = { values: [{ value: null }] };
+
+  createUI() {
+    return this.state.values.map((el, i) => (
+      <div key={i}>
+        <input
+          type="text"
+          value={el.value || ""}
+          onChange={this.handleChange.bind(this, i)}
+        />
+        <input
+          type="button"
+          value="remove"
+          onClick={this.removeClick.bind(this, i)}
+        />
+      </div>
+    ));
+  }
+
+  handleChange(i, event) {
+    let values = [...this.state.values];
+    values[i].value = event.target.value;
+    this.setState({ values });
+  }
+
+  addClick() {
+    this.setState(prevState => ({
+      values: [...prevState.values, { value: null }]
+    }));
+  }
+
+  removeClick(i) {
+    let values = [...this.state.values];
+    values.splice(i, 1);
+    this.setState({ values });
+  }
+
+  handleSubmit(event) {
+    alert("A name was submitted: " + this.state.values.join(", "));
+    event.preventDefault();
+  }
+
+  render() {
+    return (
+
+     
+      <form onSubmit={this.handleSubmit}>
+         <input type="text" name="projectName" 
+       size="50" placeholder="Project Name"/><br/>
+    <input type="text" name="startD"  size="50" 
+    placeholder="Start Date"  onfocus="(this.type='date')" onblur="(this.type='text')"/>
+     <input type="text" name="endD" size="50" 
+     placeholder="End Date" onfocus="(this.type='date')" onblur="(this.type='text')"/>
+     <br/>
+   
+    
+        {this.state.values.map((el, i) => (
+          <div key={i}>
+            
+            <input
+              type="text"
+              value={el.value || ""}
+              onChange={e => this.handleChange(i, e)}
+              placeholder="Team Member Name"
+            />
+            <input
+              type="text"
+            
+              onChange={e => this.handleChange(i, e)}
+              placeholder="Task"
+            />
+            <input type="button"  class="button" value="add more" onClick={() => this.addClick()} />
+            <input
+              type="button" class="button"
+              value="remove"
+              onClick={() => this.removeClick(i)}
+            />
+          </div>
+        ))}
+
+       
+        <input  class="button" type="submit" value="Submit" />
+      </form>
+    );
+  }
+}
