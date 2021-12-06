@@ -94,7 +94,7 @@ export default class dashboard extends Component {
           this.setState({
             date: result.data
           })
-          console.log(this.state);
+          // console.log(this.state);
           // alert(result.data[2].endtime)
 
         })
@@ -403,34 +403,30 @@ export default class dashboard extends Component {
 
 class OverlayContent extends React.Component 
 {
-   state = { values: [{ value: null }] };
-
-  createUI() {
-    return this.state.values.map((el, i) => (
-      <div key={i}>
-        <input
-          type="text"
-          value={el.value || ""}
-          onChange={this.handleChange.bind(this, i)}
-        />
-        <input
-          type="button"
-          value="remove"
-          onClick={this.removeClick.bind(this, i)}
-        />
-      </div>
-    ));
+  constructor() {
+    super();
+   this.state = { 
+    projectName:'',
+    startD:'',
+     endD:'',
+     values: [{ member: null,task:null }] 
+    };
+    this.onChange = this.onChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(i, event) {
+    console.log(this.state);
     let values = [...this.state.values];
-    values[i].value = event.target.value;
+    values[i][event.target.name] = event.target.value;
     this.setState({ values });
+    console.log(this.state);
   }
 
   addClick() {
+    console.log(this.state.values);
     this.setState(prevState => ({
-      values: [...prevState.values, { value: null }]
+      values: [...prevState.values, { member: null,task:null }]
     }));
   }
 
@@ -441,22 +437,29 @@ class OverlayContent extends React.Component
   }
 
   handleSubmit(event) {
-    alert("A name was submitted: " + this.state.values.join(", "));
+    alert('hi');
+    // alert("A name was submitted: " + this.state);
+    console.log(this.state);
+    alert('hi');
     event.preventDefault();
   }
+  onChange(e) {
+    console.log(this.state);
+    this.setState({ [e.target.name]: e.target.value });
 
+  }
   render() {
     return (
       <div className="blur">
 
      
-      <form className="projectform" onSubmit={this.handleSubmit}>
+      <form className="projectform" >
          <input type="text" className="project_input" name="projectName" 
-       size="50" placeholder="Project Name"/><br/>
-    <input type="text"className="project_input" name="startD"  size="50" 
-    placeholder="Start Date"  onfocus="(this.type='date')" onblur="(this.type='text')"/>
-     <input type="text"className="project_input" name="endD" size="50" 
-     placeholder="End Date" onfocus="(this.type='date')" onblur="(this.type='text')"/>
+       size="50" placeholder="Project Name" onChange={this.onChange}/><br/>
+    <input type="date"className="project_input" name="startD"  size="50" 
+    placeholder="Start Date"  onfocus="(this.type='date')" onblur="(this.type='text')" onChange={this.onChange}/>
+     <input type="date"className="project_input" name="endD" size="50" 
+     placeholder="End Date" onfocus="(this.type='date')" onblur="(this.type='text')" onChange={this.onChange}/>
      <br/>
    
     
@@ -466,13 +469,14 @@ class OverlayContent extends React.Component
             <input
               type="text"
               className="project_input"
-              value={el.value || ""}
+              name="member"
               onChange={e => this.handleChange(i, e)}
               placeholder="Team Member Name"
             />
             <input
               type="text"
               className="project_input"
+              name="task"
               onChange={e => this.handleChange(i, e)}
               placeholder="Task"
             />
@@ -486,7 +490,7 @@ class OverlayContent extends React.Component
         ))}
 
        
-        <input  class="button" type="submit" value="Submit" />
+        <input  class="button" type="button" value="Submit" onClick={this.handleSubmit}/>
         <button className="button btn btn-default btn-wide palette-sun-flower" onClick={this.props.closeOverlay}>Close</button>
       </form>
       </div>
