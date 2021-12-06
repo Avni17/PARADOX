@@ -6,6 +6,7 @@ import axios from 'axios';
 import avni from './images/avni.jpg';
  import "./styles.css";
 const API_PATH = 'http://localhost/paradox/card_date_data.php';
+const API_PATH2 = 'http://localhost/paradox/addproject.php';
 // let date=[];
 function Card(props) {
 
@@ -406,21 +407,24 @@ class OverlayContent extends React.Component
   constructor() {
     super();
    this.state = { 
+     email:'',
     projectName:'',
     startD:'',
      endD:'',
+     msg:'',
      values: [{ member: null,task:null }] 
     };
     this.onChange = this.onChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.project = this.project.bind(this);
   }
 
   handleChange(i, event) {
-    console.log(this.state);
+    // console.log(this.state);
     let values = [...this.state.values];
     values[i][event.target.name] = event.target.value;
     this.setState({ values });
-    console.log(this.state);
+    // console.log(this.state);
   }
 
   addClick() {
@@ -444,8 +448,60 @@ class OverlayContent extends React.Component
     event.preventDefault();
   }
   onChange(e) {
-    console.log(this.state);
+    // console.log(this.state);
     this.setState({ [e.target.name]: e.target.value });
+
+  }
+  project() {
+    if (this.state.projectName && this.state.startD&&this.state.endD&&this.state.values) {
+      alert('hi1');
+      console.log(this.state);
+      axios({
+        method: 'post',
+        url: `${API_PATH2}`,
+        headers: { 'content-type': 'application/json' },
+        data: this.state
+
+      })
+        .then(result => {
+
+
+          // alert(result.data[0].Message);
+          this.setState({
+            msg: result.data[0].Message
+          })
+
+          if (result.data[0].Message == 'Data inserted') {
+            alert(result.data[0].Message);
+            // window.open("/dashboard", "_self")
+            //   this.setState({
+            //     redirectToReferrer: true
+            //   })
+            //   console.log(this.state);
+            //   alert(result.data[0].Message);
+            //   console.log(this.state);
+            //   alert(result.data[0].Message);
+            //   console.log(this.state);
+            //   alert(result.data[0].Message);
+
+          }
+
+        })
+        .catch(error => this.setState({}));
+
+
+    }
+  
+
+  }
+  componentDidMount = () => {
+
+    let email = localStorage.email
+    if (email != undefined) {
+      this.setState({
+        email: JSON.parse(email)
+      });
+    }
 
   }
   render() {
@@ -490,7 +546,7 @@ class OverlayContent extends React.Component
         ))}
 
        
-        <input  class="button" type="button" value="Submit" onClick={this.handleSubmit}/>
+        <input  class="button" type="button" value="Submit" onClick={this.project}/>
         <button className="button btn btn-default btn-wide palette-sun-flower" onClick={this.props.closeOverlay}>Close</button>
       </form>
       </div>
