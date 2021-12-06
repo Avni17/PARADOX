@@ -6,7 +6,9 @@ header('Access-Control-Allow-Origin: *');
     header("Content-type:application/json");
 $encodedData = file_get_contents('php://input'); 
 $decodedData = json_decode($encodedData, true);
-$UserEmail = $decodedData['email'];
+//$UserEmail = $decodedData['email'];
+$UserEmail = 'john32@gmail.com';
+
 $SQL = "SELECT id FROM employee WHERE email = '$UserEmail'";
 $exeSQL = mysqli_query($con, $SQL);
 $checkid =  mysqli_num_rows($exeSQL);
@@ -25,8 +27,20 @@ if ($checkid != 0)
         $f=mysqli_fetch_array($result);
         $SQL1 = "SELECT DATEDIFF(endTime,CURRENT_DATE()) as days FROM project WHERE pid = '$ppid'";
         $result1 = mysqli_query($con, $SQL1);
+        $SQL2="select count(*) from task where pid='$ppid' and status='yes'";
+        $result2 = mysqli_query($con, $SQL2);
+        
+        $f1=mysqli_fetch_array($result2);
+        $SQL3="select count(*) from task where pid='$ppid' ";
+        $result3 = mysqli_query($con, $SQL3);
+      
+        $f2=mysqli_fetch_array($result3);
+        
+        $p=floor(($f1['count(*)']* 100)/$f2['count(*)']);
+        
+        
         $d=mysqli_fetch_array($result1);
-        $response[]=array("starttime"=>$f['startTime'],"days"=>$d['days'],"task"=>$row['type']);
+        $response[]=array("starttime"=>$f['startTime'],"days"=>$d['days'],"task"=>$row['type'],"progress"=>$p);
     }
     
 } 

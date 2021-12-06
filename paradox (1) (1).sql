@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 01, 2021 at 03:03 PM
+-- Generation Time: Dec 05, 2021 at 01:47 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -62,7 +62,9 @@ CREATE TABLE `employee` (
 
 INSERT INTO `employee` (`name`, `id`, `username`, `password`, `email`, `gender`) VALUES
 ('John', 1, 'john32', 'johnnyyyhere', 'john32@gmail.com', 'm'),
-('Sara ali khan', 2, 'sara_22', 'sarame', 'sara_22@gmail.com', 'f');
+('Sara ali khan', 2, 'sara_22', 'sarame', 'sara_22@gmail.com', 'f'),
+('1', 36, '1', '1', 'akshat.gms@gmail.com', 'm'),
+('', 35, '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -106,7 +108,7 @@ CREATE TABLE `task` (
 
 INSERT INTO `task` (`eid`, `pid`, `tid`, `manDays`, `type`) VALUES
 (1, 1, 1, 15, 'frontend'),
-(2, 2, 2, 13, 'backend');
+(1, 2, 2, 13, 'backend');
 
 -- --------------------------------------------------------
 
@@ -174,7 +176,7 @@ ALTER TABLE `team`
 -- AUTO_INCREMENT for table `employee`
 --
 ALTER TABLE `employee`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
