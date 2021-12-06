@@ -4,7 +4,7 @@ import './dashboard.scss';
 // import './dashboard-help.js';
 import axios from 'axios';
 import avni from './images/avni.jpg';
- import "./styles.css";
+import "./styles.css";
 const API_PATH = 'http://localhost/paradox/card_date_data.php';
 // let date=[];
 function Card(props) {
@@ -401,15 +401,14 @@ export default class dashboard extends Component {
 }
 
 
-class OverlayContent extends React.Component 
-{
+class OverlayContent extends React.Component {
   constructor() {
     super();
-   this.state = { 
-    projectName:'',
-    startD:'',
-     endD:'',
-     values: [{ member: null,task:null }] 
+    this.state = {
+      projectName: '',
+      startD: '',
+      endD: '',
+      values: [{ member: null, task: null }]
     };
     this.onChange = this.onChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -426,7 +425,7 @@ class OverlayContent extends React.Component
   addClick() {
     console.log(this.state.values);
     this.setState(prevState => ({
-      values: [...prevState.values, { member: null,task:null }]
+      values: [...prevState.values, { member: null, task: null }]
     }));
   }
 
@@ -452,47 +451,47 @@ class OverlayContent extends React.Component
     return (
       <div className="blur">
 
-     
-      <form className="projectform" >
-         <input type="text" className="project_input" name="projectName" 
-       size="50" placeholder="Project Name" onChange={this.onChange}/><br/>
-    <input type="date"className="project_input" name="startD"  size="50" 
-    placeholder="Start Date"  onfocus="(this.type='date')" onblur="(this.type='text')" onChange={this.onChange}/>
-     <input type="date"className="project_input" name="endD" size="50" 
-     placeholder="End Date" onfocus="(this.type='date')" onblur="(this.type='text')" onChange={this.onChange}/>
-     <br/>
-   
-    
-        {this.state.values.map((el, i) => (
-          <div key={i}>
-            
-            <input
-              type="text"
-              className="project_input"
-              name="member"
-              onChange={e => this.handleChange(i, e)}
-              placeholder="Team Member Name"
-            />
-            <input
-              type="text"
-              className="project_input"
-              name="task"
-              onChange={e => this.handleChange(i, e)}
-              placeholder="Task"
-            />
-            <input type="button"  class="button" value="add more" onClick={() => this.addClick()} />
-            <input
-              type="button" class="button"
-              value="remove"
-              onClick={() => this.removeClick(i)}
-            />
-          </div>
-        ))}
 
-       
-        <input  class="button" type="button" value="Submit" onClick={this.handleSubmit}/>
-        <button className="button btn btn-default btn-wide palette-sun-flower" onClick={this.props.closeOverlay}>Close</button>
-      </form>
+        <form className="projectform" >
+          <input type="text" className="project_input" name="projectName"
+            size="50" placeholder="Project Name" onChange={this.onChange} /><br />
+          <input type="date" className="project_input" name="startD" size="50"
+            placeholder="Start Date" onfocus="(this.type='date')" onblur="(this.type='text')" onChange={this.onChange} />
+          <input type="date" className="project_input" name="endD" size="50"
+            placeholder="End Date" onfocus="(this.type='date')" onblur="(this.type='text')" onChange={this.onChange} />
+          <br />
+
+
+          {this.state.values.map((el, i) => (
+            <div key={i}>
+
+              <input
+                type="text"
+                className="project_input"
+                name="member"
+                onChange={e => this.handleChange(i, e)}
+                placeholder="Team Member Name"
+              />
+              <input
+                type="text"
+                className="project_input"
+                name="task"
+                onChange={e => this.handleChange(i, e)}
+                placeholder="Task"
+              />
+              <input type="button" class="button" style={{ background: "rgba(250,208,113,1)" }} value="add more" onClick={() => this.addClick()} />
+              <input
+                type="button" class="button"
+                value="remove" style={{ background: "rgba(101,153,226,1) " }}
+                onClick={() => this.removeClick(i)}
+              />
+            </div>
+          ))}
+
+
+          <input class="button" type="button" style={{ background: "rgba(196, 156, 223, 1)", margin: " 10px 2px 10px 300px" }} value="Submit" onClick={this.handleSubmit} />
+          <button style={{ background: " rgba(196,225,127,1) ", margin: " 10px 2px 10px 10px" }} className="button btn btn-default btn-wide palette-sun-flower" onClick={this.props.closeOverlay}>Close</button>
+        </form>
       </div>
     );
   }
@@ -504,25 +503,25 @@ class Overlay extends React.Component {
     this.openOverlay = this.openOverlay.bind(this)
     this.closeOverlay = this.closeOverlay.bind(this)
   }
-  
+
   openOverlay() {
-    this.setState({ overlay: true })   
+    this.setState({ overlay: true })
   }
-  
+
   closeOverlay() {
     this.setState({ overlay: false })
   }
-  
+
   render() {
     return (
       <div>
         <button class="add-btn" title="Add New Project" onClick={this.openOverlay}>
-              <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
-                <line x1="12" y1="5" x2="12" y2="19" />
-                <line x1="5" y1="12" x2="19" y2="12" /></svg>
-                
-            </button>
-        
+          <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
+            <line x1="12" y1="5" x2="12" y2="19" />
+            <line x1="5" y1="12" x2="19" y2="12" /></svg>
+
+        </button>
+
         {this.state.overlay &&
           <Portal>
             <OverlayContent closeOverlay={this.closeOverlay} />
@@ -539,11 +538,11 @@ class Portal extends React.Component {
     document.body.appendChild(this.portal)
     ReactDOM.render(this.props.children, this.portal)
   }
-  
+
   componentWillUnmount() {
     document.body.removeChild(this.portal)
   }
-  
+
   render() {
     return null
   }

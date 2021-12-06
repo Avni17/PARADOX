@@ -10,6 +10,7 @@
   height: 100vh;
 	width: 100%;
   overflow:scroll
+  
 }
 
 .wrapper {
@@ -32,19 +33,27 @@
 }
 .button
 {
-  background-color: #4CAF50;
-  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 10px 40px 0px rgba(47,47,47,.1);
+
   color: white;
   padding: 5px 15px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 30px;
+  margin: 5px 2px 10px 30px;
   cursor: pointer;
+  border-radius: 5px;
+  border: 3px solid black;
+  font-size: 10px;
+  border: 6px solid transparent;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px;
+  
   
 
 }
+
 .top-left {
   color: black;
   font-size: 150%;
@@ -62,10 +71,13 @@
   display: inline-block;
   border-radius: 5px;
   border: 3px solid black;
-  background: rgb(217, 245, 59);
+ 
   width: 200px;
   color: black;
   font-size: 10px;
+  border: 6px solid transparent;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
 }
 
 
@@ -99,10 +111,27 @@ a {
   padding: 20px;
   position: absolute;
   top:25vh;
-  left:25vw;
-  background-color:rgb(229, 229, 241);
- border-color:red;
+  left:20vw;
+  background-color:rgb(255, 255, 255);
+ width:60%;
  
  border-color: black;
- border-radius: 2px;
+ border-radius: 6px;
+    margin: 2em;
+    flex: 0 0 17.3vw;
+  
+    transition: all 300ms;
+    color: #555;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.projectform:after {
+  content: "";
+  position: absolute;
+  height: 10px;
+  top: 0;
+  width: 100%;
+  left: 0;
+  background: linear-gradient(to right, rgba(196,225,127,1) 0%, rgba(196,225,127,1) 12%, rgba(247,253,202,1) 12%, rgba(247,253,202,1) 25%, rgba(250,208,113,1) 25%, rgba(250,208,113,1) 39%, rgba(240,118,107,1) 39%, rgba(240,118,107,1) 52%, rgba(219,157,190,1) 52%, rgba(219,157,190,1) 65%, rgba(196,156,223,1) 65%, rgba(196,156,223,1) 78%, rgba(101,153,226,1) 78%, rgba(101,153,226,1) 89%, rgba(97,194,228,1) 89%, rgba(97,194,228,1) 100%);
+
+
 }
