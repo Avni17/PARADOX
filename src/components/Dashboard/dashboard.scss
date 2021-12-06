@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 
+
 :root {
   --app-container: #f3f6fd;
   --main-color: #1f1c2e;
@@ -403,7 +404,7 @@ button, a {
   .projects-section-header {
     position: sticky;
     top: 0;
-    z-index: 1;
+    // z-index: 1;
     padding: 32px 24px 0 24px;
     background-color:  var(--projects-section);
   }
@@ -952,4 +953,33 @@ display:block;
 {
   margin-left: 20px;
 }
+.white {
+  color: #FFFFFF;
+}
 
+.overlay {
+  // background-color: rgba(200, 50, 128, 0.95);
+  display: block;
+  height: 100%;
+  left: 0;
+  overflow: auto;
+  position: absolute;
+  
+  width: 100%;
+}
+
+@keyframes overlay-anim {
+  from {
+    opacity: 0;
+  }
+  to { 
+    opacity: 1;
+  }
+}
+
+.overlay-anim {
+  animation-duration: 0.25s;
+  animation-fill-mode: forwards;
+  animation-name: overlay-anim;
+  opacity: 0;
+}

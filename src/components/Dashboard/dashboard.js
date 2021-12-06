@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
+import ReactDOM from 'react-dom';
 import './dashboard.scss';
 // import './dashboard-help.js';
 import axios from 'axios';
-import avni from './images/avni.jpg'
+import avni from './images/avni.jpg';
+ import "./styles.css";
 const API_PATH = 'http://localhost/paradox/card_date_data.php';
 // let date=[];
 function Card(props) {
@@ -188,11 +190,12 @@ export default class dashboard extends Component {
                 <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
               </svg>
             </button>
-            <button class="add-btn" title="Add New Project">
+            {/* <button class="add-btn" title="Add New Project">
               <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
                 <line x1="12" y1="5" x2="12" y2="19" />
                 <line x1="5" y1="12" x2="19" y2="12" /></svg>
-            </button>
+            </button> */}
+            <Overlay />
             <button class="notification-btn">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell">
                 <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
@@ -394,5 +397,150 @@ export default class dashboard extends Component {
       </div>
 
     );
+  }
+}
+
+
+class OverlayContent extends React.Component 
+{
+   state = { values: [{ value: null }] };
+
+  createUI() {
+    return this.state.values.map((el, i) => (
+      <div key={i}>
+        <input
+          type="text"
+          value={el.value || ""}
+          onChange={this.handleChange.bind(this, i)}
+        />
+        <input
+          type="button"
+          value="remove"
+          onClick={this.removeClick.bind(this, i)}
+        />
+      </div>
+    ));
+  }
+
+  handleChange(i, event) {
+    let values = [...this.state.values];
+    values[i].value = event.target.value;
+    this.setState({ values });
+  }
+
+  addClick() {
+    this.setState(prevState => ({
+      values: [...prevState.values, { value: null }]
+    }));
+  }
+
+  removeClick(i) {
+    let values = [...this.state.values];
+    values.splice(i, 1);
+    this.setState({ values });
+  }
+
+  handleSubmit(event) {
+    alert("A name was submitted: " + this.state.values.join(", "));
+    event.preventDefault();
+  }
+
+  render() {
+    return (
+      <div className="blur">
+
+     
+      <form className="projectform" onSubmit={this.handleSubmit}>
+         <input type="text" className="project_input" name="projectName" 
+       size="50" placeholder="Project Name"/><br/>
+    <input type="text"className="project_input" name="startD"  size="50" 
+    placeholder="Start Date"  onfocus="(this.type='date')" onblur="(this.type='text')"/>
+     <input type="text"className="project_input" name="endD" size="50" 
+     placeholder="End Date" onfocus="(this.type='date')" onblur="(this.type='text')"/>
+     <br/>
+   
+    
+        {this.state.values.map((el, i) => (
+          <div key={i}>
+            
+            <input
+              type="text"
+              className="project_input"
+              value={el.value || ""}
+              onChange={e => this.handleChange(i, e)}
+              placeholder="Team Member Name"
+            />
+            <input
+              type="text"
+              className="project_input"
+              onChange={e => this.handleChange(i, e)}
+              placeholder="Task"
+            />
+            <input type="button"  class="button" value="add more" onClick={() => this.addClick()} />
+            <input
+              type="button" class="button"
+              value="remove"
+              onClick={() => this.removeClick(i)}
+            />
+          </div>
+        ))}
+
+       
+        <input  class="button" type="submit" value="Submit" />
+        <button className="button btn btn-default btn-wide palette-sun-flower" onClick={this.props.closeOverlay}>Close</button>
+      </form>
+      </div>
+    );
+  }
+}
+class Overlay extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = { overlay: false }
+    this.openOverlay = this.openOverlay.bind(this)
+    this.closeOverlay = this.closeOverlay.bind(this)
+  }
+  
+  openOverlay() {
+    this.setState({ overlay: true })   
+  }
+  
+  closeOverlay() {
+    this.setState({ overlay: false })
+  }
+  
+  render() {
+    return (
+      <div>
+        <button class="add-btn" title="Add New Project" onClick={this.openOverlay}>
+              <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" /></svg>
+                
+            </button>
+        
+        {this.state.overlay &&
+          <Portal>
+            <OverlayContent closeOverlay={this.closeOverlay} />
+          </Portal>
+        }
+      </div>
+    )
+  }
+}
+class Portal extends React.Component {
+  componentDidMount() {
+    this.portal = document.createElement('div')
+    this.portal.setAttribute('class', 'overlay overlay-anim')
+    document.body.appendChild(this.portal)
+    ReactDOM.render(this.props.children, this.portal)
+  }
+  
+  componentWillUnmount() {
+    document.body.removeChild(this.portal)
+  }
+  
+  render() {
+    return null
   }
 }
