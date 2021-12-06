@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 05, 2021 at 01:47 PM
+-- Generation Time: Dec 06, 2021 at 12:23 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -62,9 +62,7 @@ CREATE TABLE `employee` (
 
 INSERT INTO `employee` (`name`, `id`, `username`, `password`, `email`, `gender`) VALUES
 ('John', 1, 'john32', 'johnnyyyhere', 'john32@gmail.com', 'm'),
-('Sara ali khan', 2, 'sara_22', 'sarame', 'sara_22@gmail.com', 'f'),
-('1', 36, '1', '1', 'akshat.gms@gmail.com', 'm'),
-('', 35, '', '', '', '');
+('Sara ali khan', 2, 'sara_22', 'sarame', 'sara_22@gmail.com', 'f');
 
 -- --------------------------------------------------------
 
