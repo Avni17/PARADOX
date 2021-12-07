@@ -4,56 +4,63 @@ import './dashboard.scss';
 // import './dashboard-help.js';
 import axios from 'axios';
 import avni from './images/avni.jpg';
- import "./styles.css";
+import "./styles.css";
 const API_PATH = 'http://localhost/paradox/card_date_data.php';
 const API_PATH2 = 'http://localhost/paradox/addproject.php';
-// let date=[];
-function Card(props) {
+const API_PATH3 = 'http://localhost/paradox/addparticipant.php';
+const API_PATH4 = 'http://localhost/paradox/typeview.php';
+class Card extends React.Component {
+  render() {
 
-  return (
 
-    <div class="project-box-wrapper">
-      <div class="project-box" style={{ backgroundColor: "#fee4cb;" }}>
-        <div class="project-box-header">
-          <span>{props.dt}</span>
 
-          <div class="more-wrapper">
-            <button class="project-btn-more">
+    return (
+
+      <div class="project-box-wrapper">
+        <div class="project-box" style={{ backgroundColor: "#fee4cb;" }}>
+          <div class="project-box-header">
+            <span>{this.props.dt}</span>
+
+            <div class="more-wrapper">
+              {/* <button class="project-btn-more">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical">
                 <circle cx="12" cy="12" r="1" />
                 <circle cx="12" cy="5" r="1" />
                 <circle cx="12" cy="19" r="1" /></svg>
-            </button>
+            </button> */}
+              <Overlay3 p={this.props.pid} />
+            </div>
           </div>
-        </div>
-        <div class="project-box-content-header">
-          <p class="box-content-header">{props.task}</p>
-          <p class="box-content-subheader">Prototyping</p>
-        </div>
-        <div class="box-progress-wrapper">
-          <p class="box-progress-header">Progress</p>
-          <div class="box-progress-bar">
-            <span class="box-progress" style={{ width: "60%", backgroundColor: "#ff942e" }}></span>
+          <div class="project-box-content-header">
+            <p class="box-content-header">{this.props.name}</p>
+            {/* <p class="box-content-subheader">{this.props.task}</p> */}
           </div>
-          <p class="box-progress-percentage">{props.prog}%</p>
-        </div>
-        <div class="project-box-footer">
-          <div class="participants">
-            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80" alt="participant" />
-            <img src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60" alt="participant" />
-            <button class="add-participant" style={{ color: "#ff942e" }}>
+          <div class="box-progress-wrapper">
+            <p class="box-progress-header">Progress</p>
+            <div class="box-progress-bar">
+              <span class="box-progress" style={{ width: "60%", backgroundColor: "#ff942e" }}></span>
+            </div>
+            <p class="box-progress-percentage">{this.props.prog}%</p>
+          </div>
+          <div class="project-box-footer">
+            <div class="participants">
+              <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80" alt="participant" />
+              <img src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60" alt="participant" />
+              {/* <button class="add-participant" style={{ color: "#ff942e" }}>
               <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
                 <path d="M12 5v14M5 12h14" />
               </svg>
-            </button>
-          </div>
-          <div class="days-left" style={{ color: "#ff942e" }}>
-            {props.days} Days Left
+            </button> */}
+              <Overlay2 p={this.props.pid} />
+            </div>
+            <div class="days-left" style={{ color: "#ff942e" }}>
+              {this.props.days} Days Left
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  )
+    );
+  }
 }
 
 export default class dashboard extends Component {
@@ -291,7 +298,7 @@ export default class dashboard extends Component {
             </div>
             <div class="project-boxes jsGridView">
               {
-                this.state.date.map((item) => (<Card dt={item.starttime} days={item.days} task={item.task} prog={item.progress} />))
+                this.state.date.map((item) => (<Card dt={item.starttime} days={item.days} prog={item.progress} pid={item.pid} name={item.name} />))
 
               }
 
@@ -402,17 +409,16 @@ export default class dashboard extends Component {
 }
 
 
-class OverlayContent extends React.Component 
-{
+class OverlayContent extends React.Component {
   constructor() {
     super();
-   this.state = { 
-     email:'',
-    projectName:'',
-    startD:'',
-     endD:'',
-     msg:'',
-     values: [{ member: null,task:null }] 
+    this.state = {
+      email: '',
+      projectName: '',
+      startD: '',
+      endD: '',
+      msg: '',
+      values: [{ member: null, task: null }]
     };
     this.onChange = this.onChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -430,7 +436,7 @@ class OverlayContent extends React.Component
   addClick() {
     console.log(this.state.values);
     this.setState(prevState => ({
-      values: [...prevState.values, { member: null,task:null }]
+      values: [...prevState.values, { member: null, task: null }]
     }));
   }
 
@@ -453,7 +459,7 @@ class OverlayContent extends React.Component
 
   }
   project() {
-    if (this.state.projectName && this.state.startD&&this.state.endD&&this.state.values) {
+    if (this.state.projectName && this.state.startD && this.state.endD && this.state.values) {
       alert('hi1');
       console.log(this.state);
       axios({
@@ -491,7 +497,7 @@ class OverlayContent extends React.Component
 
 
     }
-  
+
 
   }
   componentDidMount = () => {
@@ -508,47 +514,49 @@ class OverlayContent extends React.Component
     return (
       <div className="blur">
 
-     
-      <form className="projectform" >
-         <input type="text" className="project_input" name="projectName" 
-       size="50" placeholder="Project Name" onChange={this.onChange}/><br/>
-    <input type="date"className="project_input" name="startD"  size="50" 
-    placeholder="Start Date"  onfocus="(this.type='date')" onblur="(this.type='text')" onChange={this.onChange}/>
-     <input type="date"className="project_input" name="endD" size="50" 
-     placeholder="End Date" onfocus="(this.type='date')" onblur="(this.type='text')" onChange={this.onChange}/>
-     <br/>
-   
-    
-        {this.state.values.map((el, i) => (
-          <div key={i}>
-            
-            <input
-              type="text"
-              className="project_input"
-              name="member"
-              onChange={e => this.handleChange(i, e)}
-              placeholder="Team Member Name"
-            />
-            <input
-              type="text"
-              className="project_input"
-              name="task"
-              onChange={e => this.handleChange(i, e)}
-              placeholder="Task"
-            />
-            <input type="button"  class="button" value="add more" onClick={() => this.addClick()} />
-            <input
-              type="button" class="button"
-              value="remove"
-              onClick={() => this.removeClick(i)}
-            />
-          </div>
-        ))}
 
-       
-        <input  class="button" type="button" value="Submit" onClick={this.project}/>
-        <button className="button btn btn-default btn-wide palette-sun-flower" onClick={this.props.closeOverlay}>Close</button>
-      </form>
+        <form className="projectform" >
+          <input type="text" className="project_input" name="projectName"
+            size="50" placeholder="Project Name" onChange={this.onChange} /><br />
+          <input type="date" className="project_input" name="startD" size="50"
+            placeholder="Start Date" onfocus="(this.type='date')" onblur="(this.type='text')" onChange={this.onChange} />
+          <input type="date" className="project_input" name="endD" size="50"
+            placeholder="End Date" onfocus="(this.type='date')" onblur="(this.type='text')" onChange={this.onChange} />
+          <br />
+
+
+          {this.state.values.map((el, i) => (
+            <div key={i}>
+
+              <input
+                type="text"
+                className="project_input"
+                name="member"
+                onChange={e => this.handleChange(i, e)}
+                placeholder="Team Member Name"
+              />
+              <input
+                type="text"
+                className="project_input"
+                name="task"
+                onChange={e => this.handleChange(i, e)}
+                placeholder="Task"
+              />
+              <input type="button" class="button" value="add more" onClick={() => this.addClick()} />
+              <input
+                type="button" class="button"
+                value="remove"
+                onClick={() => this.removeClick(i)}
+              />
+
+            </div>
+
+          ))}
+
+
+          <input class="button" type="button" value="Submit" onClick={this.project} />
+          <button className="button btn btn-default btn-wide palette-sun-flower" onClick={this.props.closeOverlay}>Close</button>
+        </form>
       </div>
     );
   }
@@ -560,25 +568,25 @@ class Overlay extends React.Component {
     this.openOverlay = this.openOverlay.bind(this)
     this.closeOverlay = this.closeOverlay.bind(this)
   }
-  
+
   openOverlay() {
-    this.setState({ overlay: true })   
+    this.setState({ overlay: true })
   }
-  
+
   closeOverlay() {
     this.setState({ overlay: false })
   }
-  
+
   render() {
     return (
       <div>
         <button class="add-btn" title="Add New Project" onClick={this.openOverlay}>
-              <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
-                <line x1="12" y1="5" x2="12" y2="19" />
-                <line x1="5" y1="12" x2="19" y2="12" /></svg>
-                
-            </button>
-        
+          <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
+            <line x1="12" y1="5" x2="12" y2="19" />
+            <line x1="5" y1="12" x2="19" y2="12" /></svg>
+
+        </button>
+
         {this.state.overlay &&
           <Portal>
             <OverlayContent closeOverlay={this.closeOverlay} />
@@ -595,13 +603,380 @@ class Portal extends React.Component {
     document.body.appendChild(this.portal)
     ReactDOM.render(this.props.children, this.portal)
   }
-  
+
   componentWillUnmount() {
     document.body.removeChild(this.portal)
   }
-  
+
   render() {
     return null
   }
 }
 
+class OverlayContent2 extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      pid: props.pid,
+      msg: '',
+      values: [{ member: null, task: null }]
+    };
+
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.project = this.project.bind(this);
+  }
+
+  handleChange(i, event) {
+    console.log(this.state);
+    let values = [...this.state.values];
+    values[i][event.target.name] = event.target.value;
+    this.setState({ values });
+    // console.log(this.state);
+  }
+
+  addClick() {
+    console.log(this.state.values);
+    this.setState(prevState => ({
+      values: [...prevState.values, { member: null, task: null }]
+    }));
+  }
+
+  removeClick(i) {
+    let values = [...this.state.values];
+    values.splice(i, 1);
+    this.setState({ values });
+  }
+
+  handleSubmit(event) {
+    alert('hi');
+    // alert("A name was submitted: " + this.state);
+    console.log(this.state);
+    alert('hi');
+    event.preventDefault();
+  }
+
+  project() {
+    if (this.state.values) {
+      alert('hi1');
+      console.log(this.state);
+      axios({
+        method: 'post',
+        url: `${API_PATH3}`,
+        headers: { 'content-type': 'application/json' },
+        data: this.state
+
+      })
+        .then(result => {
+
+
+          //  alert(result.data[0].Message);
+          this.setState({
+            msg: result.data[0].Message
+          })
+
+          if (result.data[0].Message == 'Data inserted') {
+            // alert(result.data[0].Message);
+            // window.open("/dashboard", "_self")
+            //   this.setState({
+            //     redirectToReferrer: true
+            //   })
+            //   console.log(this.state);
+            //   alert(result.data[0].Message);
+            //   console.log(this.state);
+            //   alert(result.data[0].Message);
+            //   console.log(this.state);
+            //   alert(result.data[0].Message);
+
+          }
+
+        })
+        .catch(error => this.setState({}));
+
+
+    }
+
+
+  }
+
+  render() {
+    return (
+      <div className="blur">
+
+
+        <form className="projectform" >
+
+
+
+          {this.state.values.map((el, i) => (
+            <div key={i}>
+
+              <input
+                type="text"
+                className="project_input"
+                name="member"
+                onChange={e => this.handleChange(i, e)}
+                placeholder="Team Member Name"
+              />
+              <input
+                type="text"
+                className="project_input"
+                name="task"
+                onChange={e => this.handleChange(i, e)}
+                placeholder="Task"
+              />
+              <input type="button" class="button" value="add more" onClick={() => this.addClick()} />
+              <input
+                type="button" class="button"
+                value="remove"
+                onClick={() => this.removeClick(i)}
+              />
+
+            </div>
+          ))}
+
+
+          <input class="button" type="button" value="Submit" onClick={this.project} />
+          <button className="button btn btn-default btn-wide palette-sun-flower" onClick={this.props.closeOverlay}>Close</button>
+        </form>
+      </div>
+    );
+  }
+}
+class Overlay2 extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      overlay: false,
+      pid: props.p
+    }
+    this.openOverlay = this.openOverlay.bind(this)
+    this.closeOverlay = this.closeOverlay.bind(this)
+  }
+
+  openOverlay() {
+    // console.log(this.state)
+    this.setState({ overlay: true })
+
+  }
+
+  closeOverlay() {
+    this.setState({ overlay: false })
+  }
+
+  render() {
+    return (
+      <div>
+
+        <button class="add-participant" style={{ color: "#ff942e" }} onClick={this.openOverlay}>
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
+            <path d="M12 5v14M5 12h14" />
+          </svg>
+        </button>
+
+        {this.state.overlay &&
+          <Portal>
+            <OverlayContent2 closeOverlay={this.closeOverlay} pid={this.state.pid} />
+          </Portal>
+        }
+      </div>
+    )
+  }
+}
+
+class OverlayContent3 extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      email:'',
+      pid: props.pid,
+      values: [],
+      status: []
+    };
+
+    this.project = this.project.bind(this);
+  
+  }
+ type_data()
+ {
+  
+  if (this.state.email&&this.state.pid) {
+    
+    
+    axios({
+      method: 'post',
+      url: `${API_PATH4}`,
+      headers: { 'content-type': 'application/json' },
+      data: this.state
+
+    })
+      .then(result => {
+
+
+       
+        this.setState({
+          values: result.data
+        })
+
+        // if (result.data[0].Message == 'Data inserted') {
+        //   // alert(result.data[0].Message);
+
+
+        // }
+
+      })
+      .catch(error => this.setState({}));
+
+
+  }
+
+
+ }
+//  addClick() {
+//   console.log(this.state.status);
+//   this.setState(prevState => ({
+//     status: [...prevState.status, { st:null }]
+//   }));
+// }
+  project() {
+    console.log(this.state.values)
+    if (this.state.values) {
+      alert('hi1');
+      console.log(this.state);
+      axios({
+        method: 'post',
+        url: `${API_PATH4}`,
+        headers: { 'content-type': 'application/json' },
+        data: this.state
+
+      })
+        .then(result => {
+
+
+          //  alert(result.data[0].Message);
+          this.setState({
+            msg: result.data[0].Message
+          })
+
+          if (result.data[0].Message == 'Data inserted') {
+            // alert(result.data[0].Message);
+
+
+          }
+
+        })
+        .catch(error => this.setState({}));
+
+
+    }
+
+
+  }
+
+  handleChange(i, event) {
+    console.log(this.state);
+    // let status = [...this.state.status];
+    // status[i].st = event.target.value;
+    var status = this.state.status
+        status.push(new Array)
+        status[i].push(event.target.value)
+    this.setState({
+      status: status
+     });
+    console.log(this.state);
+  }
+  componentDidMount = () => {
+
+    let email = localStorage.email
+    if (email != undefined) {
+      this.setState({
+        email: JSON.parse(email)
+      });
+    }
+ 
+    this.type_data();
+
+  }
+
+  componentDidUpdate = () => {
+    
+    this.type_data();
+
+  }
+  render() {
+    return (
+      <div className="blur">
+
+
+        <form className="projectform" >
+          {this.state.values.map((el, i) => (
+            <div key={i}>
+
+              <div class="project-box-wrapper">
+                <div class="project-box" style={{ backgroundColor: "#fee4cb;" }}>
+                  <div class="project-box-content-header">
+                    <span class="box-content-subheader">Task: {el.type} </span>
+                    <div class="btn_check">
+                      <input type="checkbox" className="check" name="status" value="yes" onChange={e => this.handleChange(i, e)} />
+                       Mark as Done
+                      
+                    </div>
+
+                  </div>
+
+
+                </div>
+                
+              </div>
+              
+            </div>
+            
+          ))}
+
+          <input class="button" type="button" value="Submit" onClick={this.project} />
+          <button className="button btn btn-default btn-wide palette-sun-flower" onClick={this.props.closeOverlay}>Close</button>
+        </form>
+
+      </div>
+    );
+  }
+}
+class Overlay3 extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      overlay: false,
+      pid: props.p,
+      type: props.type
+    }
+    this.openOverlay = this.openOverlay.bind(this)
+    this.closeOverlay = this.closeOverlay.bind(this)
+  }
+
+  openOverlay() {
+    // console.log(this.state)
+    this.setState({ overlay: true })
+
+  }
+
+  closeOverlay() {
+    this.setState({ overlay: false })
+  }
+
+  render() {
+    return (
+      <div>
+        <button class="project-btn-more" onClick={this.openOverlay}>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical">
+            <circle cx="12" cy="12" r="1" />
+            <circle cx="12" cy="5" r="1" />
+            <circle cx="12" cy="19" r="1" /></svg>
+        </button>
+        {this.state.overlay &&
+          <Portal>
+            <OverlayContent3 closeOverlay={this.closeOverlay} pid={this.state.pid} />
+          </Portal>
+        }
+      </div>
+    )
+  }
+}

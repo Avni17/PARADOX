@@ -7,27 +7,30 @@ header('Access-Control-Allow-Origin: *');
 $encodedData = file_get_contents('php://input'); 
 $decodedData = json_decode($encodedData, true);
 $UserEmail = $decodedData['email'];
-$UserPW = ($decodedData['password']);
-$SQL = "SELECT password FROM employee WHERE email = '$UserEmail'";
-$exeSQL = mysqli_query($con, $SQL);
-$checkEmail =  mysqli_num_rows($exeSQL);
+$p=$decodedData['pid'];
 
-if ($checkEmail != 0) {
+$SQL = "SELECT id FROM employee WHERE email = '$UserEmail'";
+$exeSQL = mysqli_query($con, $SQL);
+$checkid =  mysqli_num_rows($exeSQL);
+$response[]=array();
+if ($checkid != 0) 
+{
     $arrayu = mysqli_fetch_array($exeSQL);
-    if ($arrayu['password'] != $UserPW) {
-        $Message = "WRONG PASSWORD";
-        
-    } else {
-        $Message = "Success";
-      
+    $eid=$arrayu['id'];
+    $SQL = "SELECT type FROM task WHERE pid='$p' and eid = '$eid' and status='no'";
+    $exeSQL = mysqli_query($con, $SQL);
+    while($row = mysqli_fetch_array($exeSQL))
+    {
+        $response[]=array("type"=>$row['type']);
     }
-} else {
+    
+} 
+else {
     $Message = "No account yet";
     
 }
-
-$response[] = array("Message" => $Message);
+array_shift($response);
+// $response[] = array("Message" => $Message);
 
 echo json_encode($response);
-
 ?>

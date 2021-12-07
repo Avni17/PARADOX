@@ -6,8 +6,8 @@ header('Access-Control-Allow-Origin: *');
     header("Content-type:application/json");
 $encodedData = file_get_contents('php://input'); 
 $decodedData = json_decode($encodedData, true);
-//$UserEmail = $decodedData['email'];
-$UserEmail = 'john32@gmail.com';
+$UserEmail = $decodedData['email'];
+
 
 $SQL = "SELECT id FROM employee WHERE email = '$UserEmail'";
 $exeSQL = mysqli_query($con, $SQL);
@@ -17,7 +17,7 @@ if ($checkid != 0)
 {
     $arrayu = mysqli_fetch_array($exeSQL);
     $id=$arrayu['id'];
-    $SQL = "SELECT pid,type FROM task WHERE eid = '$id'";
+    $SQL = "SELECT DISTINCT t.pid as pid  FROM task t,project p WHERE t.pid=p.pid and eid = '$id'";
     $exeSQL = mysqli_query($con, $SQL);
     while($row = mysqli_fetch_array($exeSQL))
     {
@@ -25,7 +25,7 @@ if ($checkid != 0)
         $SQL = "SELECT startTime,endTime FROM project WHERE pid = '$ppid'";
         $result = mysqli_query($con, $SQL);
         $f=mysqli_fetch_array($result);
-        $SQL1 = "SELECT DATEDIFF(endTime,CURRENT_DATE()) as days FROM project WHERE pid = '$ppid'";
+        $SQL1 = "SELECT DATEDIFF(endTime,CURRENT_DATE()) as days,name FROM project WHERE pid = '$ppid'";
         $result1 = mysqli_query($con, $SQL1);
         $SQL2="select count(*) from task where pid='$ppid' and status='yes'";
         $result2 = mysqli_query($con, $SQL2);
@@ -40,7 +40,7 @@ if ($checkid != 0)
         
         
         $d=mysqli_fetch_array($result1);
-        $response[]=array("starttime"=>$f['startTime'],"days"=>$d['days'],"task"=>$row['type'],"progress"=>$p);
+        $response[]=array("starttime"=>$f['startTime'],"days"=>$d['days'],"progress"=>$p,"pid"=>$ppid,"name"=>$d['name']);
     }
     
 } 
