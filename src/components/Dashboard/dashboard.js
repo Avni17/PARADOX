@@ -9,6 +9,7 @@ const API_PATH = 'http://localhost/paradox/card_date_data.php';
 const API_PATH2 = 'http://localhost/paradox/addproject.php';
 const API_PATH3 = 'http://localhost/paradox/addparticipant.php';
 const API_PATH4 = 'http://localhost/paradox/typeview.php';
+const API_PATH5 = 'http://localhost/paradox/statusupdate.php';
 class Card extends React.Component {
   render() {
 
@@ -838,13 +839,12 @@ class OverlayContent3 extends React.Component {
 //   }));
 // }
   project() {
-    console.log(this.state.values)
-    if (this.state.values) {
+    if (this.state.status) {
       alert('hi1');
       console.log(this.state);
       axios({
         method: 'post',
-        url: `${API_PATH4}`,
+        url: `${API_PATH5}`,
         headers: { 'content-type': 'application/json' },
         data: this.state
 
@@ -852,7 +852,7 @@ class OverlayContent3 extends React.Component {
         .then(result => {
 
 
-          //  alert(result.data[0].Message);
+          alert(result.data[0].Message);
           this.setState({
             msg: result.data[0].Message
           })
@@ -864,7 +864,9 @@ class OverlayContent3 extends React.Component {
           }
 
         })
-        .catch(error => this.setState({}));
+        .catch(error => {
+          alert(error.data);
+          this.setState({})});
 
 
     }
@@ -872,13 +874,30 @@ class OverlayContent3 extends React.Component {
 
   }
 
-  handleChange(i, event) {
+  handleChange(i,el, event) {
+    event.preventDefault();
     console.log(this.state);
     // let status = [...this.state.status];
     // status[i].st = event.target.value;
     var status = this.state.status
+    if(el.status=='no')
+    {
+      if(!status[el.tid])
+      {
         status.push(new Array)
-        status[i].push(event.target.value)
+        status[el.tid]=event.target.value
+      }
+      else
+      {
+        if(status[el.tid]=='yes')
+        status[el.tid]='no'
+        else
+        status[el.tid]=event.target.value
+      }
+
+    }
+   
+        
     this.setState({
       status: status
      });
@@ -903,6 +922,7 @@ class OverlayContent3 extends React.Component {
 
   }
   render() {
+    
     return (
       <div className="blur">
 
@@ -915,11 +935,16 @@ class OverlayContent3 extends React.Component {
                 <div class="project-box" style={{ backgroundColor: "#fee4cb;" }}>
                   <div class="project-box-content-header">
                     <span class="box-content-subheader">Task: {el.type} </span>
-                    <div class="btn_check">
-                      <input type="checkbox" className="check" name="status" value="yes" onChange={e => this.handleChange(i, e)} />
-                       Mark as Done
-                      
+                    
+                      <div class="btn_check">
+                      {/* <input type="checkbox"  className="check" name="status" value="yes" onClick={e => this.handleChange(i,el, e)} 
+                     /> */}
+                      <button className="button1" value='yes' onClick={ e => this.handleChange(i,el, e) }>{ this.state.status[el.tid]=='yes'||el.status=='yes' ? 'Mark a undone' : 'Mark as done'}</button>
+                       {/* Mark as Done
+                       checked={el.status=='yes' ? 'checked':''} */}
                     </div>
+
+                    
 
                   </div>
 

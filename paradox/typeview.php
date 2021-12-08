@@ -17,11 +17,11 @@ if ($checkid != 0)
 {
     $arrayu = mysqli_fetch_array($exeSQL);
     $eid=$arrayu['id'];
-    $SQL = "SELECT type FROM task WHERE pid='$p' and eid = '$eid' and status='no'";
+    $SQL = "SELECT type,status,tid FROM task WHERE pid='$p' and eid = '$eid'";
     $exeSQL = mysqli_query($con, $SQL);
     while($row = mysqli_fetch_array($exeSQL))
     {
-        $response[]=array("type"=>$row['type']);
+        $response[]=array("type"=>$row['type'] ,"status"=>$row['status'],"tid"=>$row['tid']);
     }
     
 } 
@@ -33,4 +33,5 @@ array_shift($response);
 // $response[] = array("Message" => $Message);
 
 echo json_encode($response);
+mysqli_close($con);
 ?>

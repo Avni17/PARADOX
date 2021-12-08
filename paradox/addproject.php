@@ -56,4 +56,5 @@ else
 $response[] = array("Message" => $Message);
 
 echo json_encode($response);
+mysqli_close($con);
 ?>
