@@ -24,7 +24,9 @@ $total = "select * from project";
 $result3 = $con -> query($total);
 $rowcount3=mysqli_num_rows($result3);
 
-$response[]=array("inprogress"=>$rowcount1,"upcoming"=>$rowcount2,"totalprojects"=>$rowcount3);
+$response[]=array("inprogress"=>$rowcount1);
+$response[]=array("upcoming"=>$rowcount2);
+$response[]=array("totalprojects"=>$rowcount3);
 array_shift($response);
 
 echo json_encode($response);

@@ -73,18 +73,25 @@ export default class dashboard extends Component {
 
     this.state = {
     update:0,
+    update1:0,
       currDate: Date().toLocaleString().split(' ').slice(0, 4).join(' '),
       email: '',
-      date: []
+      date: [],
+      inprogress:'',
+      upcoming:'',
+      total:''
     }
     this.logout = this.logout.bind(this);
     this.data_cards = this.data_cards.bind(this);
-    this.handler = this.handler.bind(this)
+    this.handler = this.handler.bind(this);
+    this.projinfo = this.projinfo.bind(this);
+    
 
   }
   handler() {
     this.setState({
-      update:0
+      update:0,
+      update1:0
     })
   }
   logout() {
@@ -142,14 +149,21 @@ export default class dashboard extends Component {
       })
         .then(result => {
 
-          // alert(result.data[2].endtime)
+        // alert(result.data[2].totalprojects);
 
           // date=result.data;
-
-          this.setState({
-            date: result.data
-          })
           // console.log(this.state);
+          if(this.state.update1==0)
+          {
+            this.setState({
+              inprogress:result.data[0].inprogress,
+              upcoming:result.data[1].upcoming,
+              total:result.data[2].totalprojects,
+              update1:1
+            })
+          }
+         
+          
           // alert(result.data[2].endtime)
 
         })
@@ -169,7 +183,7 @@ export default class dashboard extends Component {
     }
     this.myfunction();
     this.data_cards();
-    //this.projinfo();
+    this.projinfo();
 
   }
 
@@ -177,6 +191,7 @@ export default class dashboard extends Component {
     this.myfunction();
     this.data_cards();
     console.log('hi');
+     this.projinfo();
 
   }
   // componentDidUpdate(prevProps, prevState) {
@@ -318,18 +333,19 @@ export default class dashboard extends Component {
               <p>Projects</p>
               <p class="time">{this.state.currDate}</p>
             </div>
+            
             <div class="projects-section-line">
               <div class="projects-status">
                 <div class="item-status">
-                  <span class="status-number">{this.props.inprogress}</span>
+                  <span class="status-number">{this.state.inprogress}</span>
                   <span class="status-type">In Progress</span>
                 </div>
                 <div class="item-status">
-                  <span class="status-number">{this.upcoming}</span>
+                  <span class="status-number">{this.state.upcoming}</span>
                   <span class="status-type">Upcoming</span>
                 </div>
                 <div class="item-status">
-                  <span class="status-number">{this.props.totalprojects}</span>
+                  <span class="status-number">{this.state.total}</span>
                   <span class="status-type">Total Projects</span>
                 </div>
               </div>

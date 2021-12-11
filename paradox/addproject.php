@@ -17,8 +17,13 @@ $result1=mysqli_query($con,$sql1);
 $f1=mysqli_fetch_array($result1);
 $eid=$f1['id'];
 $flag=1;
-$sql2="INSERT INTO project (name,dependencies,startTime,endTime,manager) VALUES ('$p',0,'$sd','$ed','$eid')";
-$result2=mysqli_query($con,$sql2);
+if($p)
+{
+    $sql2="INSERT INTO project (name,dependencies,startTime,endTime,manager) VALUES ('$p',0,'$sd','$ed','$eid')";
+    $result2=mysqli_query($con,$sql2);
+}
+
+
 foreach ( $decodedData['values'] as $var ) 
 {
     $m=$var['member'];
