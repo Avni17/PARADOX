@@ -10,6 +10,8 @@ const API_PATH2 = 'http://localhost/paradox/addproject.php';
 const API_PATH3 = 'http://localhost/paradox/addparticipant.php';
 const API_PATH4 = 'http://localhost/paradox/typeview.php';
 const API_PATH5 = 'http://localhost/paradox/statusupdate.php';
+const API_PATH8 = 'http://localhost/paradox/phpqueries.php';
+
 class Card extends React.Component {
   render() {
 
@@ -77,6 +79,8 @@ export default class dashboard extends Component {
     }
     this.logout = this.logout.bind(this);
     this.data_cards = this.data_cards.bind(this);
+    this.projinfo = this.projinfo.bind(this);
+
 
   }
   logout() {
@@ -113,6 +117,35 @@ export default class dashboard extends Component {
     }
 
   }
+  projinfo() {
+    if (this.state.email) {
+
+      axios({
+        method: 'post',
+        url: `${API_PATH8}`,
+        headers: { 'content-type': 'application/json' },
+        data: this.state
+
+      })
+        .then(result => {
+
+          // alert(result.data[2].endtime)
+
+          // date=result.data;
+
+          this.setState({
+            date: result.data
+          })
+          // console.log(this.state);
+          // alert(result.data[2].endtime)
+
+        })
+        .catch(error => this.setState());
+
+
+    }
+
+  }
   componentDidMount = () => {
 
     let email = localStorage.email
@@ -123,12 +156,15 @@ export default class dashboard extends Component {
     }
     this.myfunction();
     this.data_cards();
+    //this.projinfo();
 
   }
 
   componentDidUpdate = () => {
     this.myfunction();
     this.data_cards();
+    //this.projinfo();
+
 
   }
 
@@ -266,15 +302,15 @@ export default class dashboard extends Component {
             <div class="projects-section-line">
               <div class="projects-status">
                 <div class="item-status">
-                  <span class="status-number">45</span>
+                  <span class="status-number">{this.props.inprogress}</span>
                   <span class="status-type">In Progress</span>
                 </div>
                 <div class="item-status">
-                  <span class="status-number">24</span>
+                  <span class="status-number">{this.upcoming}</span>
                   <span class="status-type">Upcoming</span>
                 </div>
                 <div class="item-status">
-                  <span class="status-number">62</span>
+                  <span class="status-number">{this.props.totalprojects}</span>
                   <span class="status-type">Total Projects</span>
                 </div>
               </div>
@@ -518,9 +554,11 @@ class OverlayContent extends React.Component {
 
         <form className="projectform" >
           <input type="text" className="project_input" name="projectName"
-            size="50" placeholder="Project Name" onChange={this.onChange} /><br />
+            size="50" placeholder="Project Name" onChange={this.onChange} /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          Start date:
           <input type="date" className="project_input" name="startD" size="50"
             placeholder="Start Date" onfocus="(this.type='date')" onblur="(this.type='text')" onChange={this.onChange} />
+          End date:
           <input type="date" className="project_input" name="endD" size="50"
             placeholder="End Date" onfocus="(this.type='date')" onblur="(this.type='text')" onChange={this.onChange} />
           <br />
@@ -542,7 +580,7 @@ class OverlayContent extends React.Component {
                 name="task"
                 onChange={e => this.handleChange(i, e)}
                 placeholder="Task"
-              />
+              />&nbsp;&nbsp;&nbsp;&nbsp;
               <input type="button" class="button" value="add more" onClick={() => this.addClick()} />
               <input
                 type="button" class="button"
@@ -554,9 +592,9 @@ class OverlayContent extends React.Component {
 
           ))}
 
-
-          <input class="button" type="button" value="Submit" onClick={this.project} />
-          <button className="button btn btn-default btn-wide palette-sun-flower" onClick={this.props.closeOverlay}>Close</button>
+          <br></br>
+          <input class="button" style={{ marginLeft: "300px" }} type="button" value="Submit" onClick={this.project} />
+          <button class="button" onClick={this.props.closeOverlay}>Close</button>
         </form>
       </div>
     );
@@ -658,7 +696,7 @@ class OverlayContent2 extends React.Component {
 
   project() {
     if (this.state.values) {
-      alert('hi1');
+      // alert('hi1');
       console.log(this.state);
       axios({
         method: 'post',
@@ -736,8 +774,8 @@ class OverlayContent2 extends React.Component {
           ))}
 
 
-          <input class="button" type="button" value="Submit" onClick={this.project} />
-          <button className="button btn btn-default btn-wide palette-sun-flower" onClick={this.props.closeOverlay}>Close</button>
+          <input class="button" type="button" style={{ marginLeft: "300px" }} value="Submit" onClick={this.project} />
+          <button className="button" onClick={this.props.closeOverlay}>Close</button>
         </form>
       </div>
     );
@@ -788,56 +826,55 @@ class OverlayContent3 extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      email:'',
+      email: '',
       pid: props.pid,
       values: [],
       status: []
     };
 
     this.project = this.project.bind(this);
-  
+
   }
- type_data()
- {
-  
-  if (this.state.email&&this.state.pid) {
-    
-    
-    axios({
-      method: 'post',
-      url: `${API_PATH4}`,
-      headers: { 'content-type': 'application/json' },
-      data: this.state
+  type_data() {
 
-    })
-      .then(result => {
+    if (this.state.email && this.state.pid) {
 
 
-       
-        this.setState({
-          values: result.data
-        })
-
-        // if (result.data[0].Message == 'Data inserted') {
-        //   // alert(result.data[0].Message);
-
-
-        // }
+      axios({
+        method: 'post',
+        url: `${API_PATH4}`,
+        headers: { 'content-type': 'application/json' },
+        data: this.state
 
       })
-      .catch(error => this.setState({}));
+        .then(result => {
+
+
+
+          this.setState({
+            values: result.data
+          })
+
+          // if (result.data[0].Message == 'Data inserted') {
+          //   // alert(result.data[0].Message);
+
+
+          // }
+
+        })
+        .catch(error => this.setState({}));
+
+
+    }
 
 
   }
-
-
- }
-//  addClick() {
-//   console.log(this.state.status);
-//   this.setState(prevState => ({
-//     status: [...prevState.status, { st:null }]
-//   }));
-// }
+  //  addClick() {
+  //   console.log(this.state.status);
+  //   this.setState(prevState => ({
+  //     status: [...prevState.status, { st:null }]
+  //   }));
+  // }
   project() {
     if (this.state.status) {
       alert('hi1');
@@ -866,7 +903,8 @@ class OverlayContent3 extends React.Component {
         })
         .catch(error => {
           alert(error.data);
-          this.setState({})});
+          this.setState({})
+        });
 
 
     }
@@ -874,33 +912,30 @@ class OverlayContent3 extends React.Component {
 
   }
 
-  handleChange(i,el, event) {
+  handleChange(i, el, event) {
     event.preventDefault();
     console.log(this.state);
     // let status = [...this.state.status];
     // status[i].st = event.target.value;
     var status = this.state.status
-    if(el.status=='no')
-    {
-      if(!status[el.tid])
-      {
+    if (el.status == 'no') {
+      if (!status[el.tid]) {
         status.push(new Array)
-        status[el.tid]=event.target.value
+        status[el.tid] = event.target.value
       }
-      else
-      {
-        if(status[el.tid]=='yes')
-        status[el.tid]='no'
+      else {
+        if (status[el.tid] == 'yes')
+          status[el.tid] = 'no'
         else
-        status[el.tid]=event.target.value
+          status[el.tid] = event.target.value
       }
 
     }
-   
-        
+
+
     this.setState({
       status: status
-     });
+    });
     console.log(this.state);
   }
   componentDidMount = () => {
@@ -911,18 +946,18 @@ class OverlayContent3 extends React.Component {
         email: JSON.parse(email)
       });
     }
- 
+
     this.type_data();
 
   }
 
   componentDidUpdate = () => {
-    
+
     this.type_data();
 
   }
   render() {
-    
+
     return (
       <div className="blur">
 
@@ -934,31 +969,31 @@ class OverlayContent3 extends React.Component {
               <div class="project-box-wrapper">
                 <div class="project-box" style={{ backgroundColor: "#fee4cb;" }}>
                   <div class="project-box-content-header">
-                    <span class="box-content-subheader">Task: {el.type} </span>
-                    
-                      <div class="btn_check">
+                    <span class="box-content-subheader">Task: {el.type}&nbsp;&nbsp;&nbsp; </span>
+
+                    <div class="btn_check">
                       {/* <input type="checkbox"  className="check" name="status" value="yes" onClick={e => this.handleChange(i,el, e)} 
                      /> */}
-                      <button className="button1" value='yes' onClick={ e => this.handleChange(i,el, e) }>{ this.state.status[el.tid]=='yes'||el.status=='yes' ? 'Mark a undone' : 'Mark as done'}</button>
-                       {/* Mark as Done
+                      <button className="button1" value='yes' onClick={e => this.handleChange(i, el, e)}>{this.state.status[el.tid] == 'yes' || el.status == 'yes' ? 'Mark a undone' : 'Mark as done'}</button>
+                      {/* Mark as Done
                        checked={el.status=='yes' ? 'checked':''} */}
                     </div>
 
-                    
+
 
                   </div>
 
 
                 </div>
-                
+
               </div>
-              
+
             </div>
-            
+
           ))}
 
-          <input class="button" type="button" value="Submit" onClick={this.project} />
-          <button className="button btn btn-default btn-wide palette-sun-flower" onClick={this.props.closeOverlay}>Close</button>
+          <input class="button" type="button" style={{ marginLeft: "300px" }} value="Submit" onClick={this.project} />
+          <button className="button" onClick={this.props.closeOverlay}>Close</button>
         </form>
 
       </div>
