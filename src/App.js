@@ -3,7 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Dashboard from "./components/Dashboard/dashboard";
 import Login from "./components/login/login";
-
+import Calender from "./components/Calender/calender";
 
 export default class App extends Component {
   constructor() {
@@ -34,6 +34,7 @@ export default class App extends Component {
           { this.state.email && 
           <Route exact path="/dashboard" element={<Dashboard/>} />
           } 
+          <Route exact path='/calender' element={<Calender/>} />
           
         </Routes>
       </Router>

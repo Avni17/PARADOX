@@ -70,14 +70,20 @@ export default class dashboard extends Component {
     super();
 
     this.state = {
-
+    update:0,
       currDate: Date().toLocaleString().split(' ').slice(0, 4).join(' '),
       email: '',
       date: []
     }
     this.logout = this.logout.bind(this);
     this.data_cards = this.data_cards.bind(this);
+    this.handler = this.handler.bind(this)
 
+  }
+  handler() {
+    this.setState({
+      update:0
+    })
   }
   logout() {
 
@@ -96,13 +102,22 @@ export default class dashboard extends Component {
       })
         .then(result => {
 
-          // alert(result.data[2].endtime)
-
+          // alert('prev'+this.state.date.length);
+          // alert('new'+result.data.length);
           // date=result.data;
+          if(this.state.update==0)
+          {
+            this.setState({
+              date: result.data,
+              update:1
+            })
+          }
+          // this.setState({
+          //   date: result.data,
+          //   update:1
+          // })
 
-          this.setState({
-            date: result.data
-          })
+          
           // console.log(this.state);
           // alert(result.data[2].endtime)
 
@@ -129,8 +144,16 @@ export default class dashboard extends Component {
   componentDidUpdate = () => {
     this.myfunction();
     this.data_cards();
+    console.log('hi');
 
   }
+  // componentDidUpdate(prevProps, prevState) {
+  //   this.myfunction();
+  
+  //    this.data_cards();
+  //     console.log('hi');
+    
+  // }
 
 
   myfunction = () => {
@@ -204,7 +227,7 @@ export default class dashboard extends Component {
                 <line x1="12" y1="5" x2="12" y2="19" />
                 <line x1="5" y1="12" x2="19" y2="12" /></svg>
             </button> */}
-            <Overlay />
+            <Overlay handler = {this.handler}/>
             <button class="notification-btn">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell">
                 <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
@@ -411,8 +434,8 @@ export default class dashboard extends Component {
 
 
 class OverlayContent extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       email: '',
       projectName: '',
@@ -480,6 +503,8 @@ class OverlayContent extends React.Component {
 
           if (result.data[0].Message == 'Data inserted') {
             alert(result.data[0].Message);
+            {this.props.handle()}
+           
             // window.open("/dashboard", "_self")
             //   this.setState({
             //     redirectToReferrer: true
@@ -590,7 +615,7 @@ class Overlay extends React.Component {
 
         {this.state.overlay &&
           <Portal>
-            <OverlayContent closeOverlay={this.closeOverlay} />
+            <OverlayContent closeOverlay={this.closeOverlay} handle={this.props.handler} />
           </Portal>
         }
       </div>
@@ -788,6 +813,7 @@ class OverlayContent3 extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      update:0,
       email:'',
       pid: props.pid,
       values: [],
@@ -813,10 +839,14 @@ class OverlayContent3 extends React.Component {
       .then(result => {
 
 
-       
-        this.setState({
-          values: result.data
-        })
+        if(this.state.update==0)
+        {
+          this.setState({
+            values: result.data,
+            update:1
+          })
+        }
+        
 
         // if (result.data[0].Message == 'Data inserted') {
         //   // alert(result.data[0].Message);
@@ -853,8 +883,10 @@ class OverlayContent3 extends React.Component {
 
 
           alert(result.data[0].Message);
+        
           this.setState({
-            msg: result.data[0].Message
+            msg: result.data[0].Message,
+            update:0
           })
 
           if (result.data[0].Message == 'Data inserted') {
