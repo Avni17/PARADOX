@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 06, 2021 at 01:42 PM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.10
+-- Generation Time: Dec 12, 2021 at 07:27 PM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 8.0.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -44,6 +44,30 @@ INSERT INTO `allocated` (`tid`, `eid`, `bandwidth`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `calendar`
+--
+
+CREATE TABLE `calendar` (
+  `ttid` int(11) NOT NULL,
+  `eid` int(11) NOT NULL,
+  `task` varchar(100) NOT NULL,
+  `startDate` datetime NOT NULL,
+  `endDate` datetime NOT NULL,
+  `Project_Name` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `calendar`
+--
+
+INSERT INTO `calendar` (`ttid`, `eid`, `task`, `startDate`, `endDate`, `Project_Name`) VALUES
+(114, 1, 'frontend', '2021-12-12 16:02:24', '2021-12-12 20:02:24', 'proj1'),
+(115, 1, 'frontend', '2021-12-13 16:02:49', '2021-12-13 20:03:47', 'proj2'),
+(116, 1, 'frontend1', '2021-12-12 12:03:03', '2021-12-12 14:03:25', 'proj1');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `employee`
 --
 
@@ -72,6 +96,7 @@ INSERT INTO `employee` (`name`, `id`, `username`, `password`, `email`, `gender`)
 
 CREATE TABLE `project` (
   `pid` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
   `dependencies` int(11) NOT NULL,
   `startTime` date NOT NULL,
   `endTime` date NOT NULL,
@@ -82,9 +107,9 @@ CREATE TABLE `project` (
 -- Dumping data for table `project`
 --
 
-INSERT INTO `project` (`pid`, `dependencies`, `startTime`, `endTime`, `manager`) VALUES
-(1, 2, '2021-10-05', '2021-11-11', 1),
-(2, 0, '2021-10-18', '2021-11-02', 2);
+INSERT INTO `project` (`pid`, `name`, `dependencies`, `startTime`, `endTime`, `manager`) VALUES
+(1, 'proj1', 2, '2021-10-05', '2021-11-11', 1),
+(2, 'proj2', 0, '2021-10-18', '2021-11-02', 2);
 
 -- --------------------------------------------------------
 
@@ -96,7 +121,7 @@ CREATE TABLE `task` (
   `eid` int(11) NOT NULL,
   `pid` int(11) NOT NULL,
   `tid` int(11) NOT NULL,
-  `manDays` int(11) NOT NULL,
+  `status` varchar(11) NOT NULL,
   `type` varchar(30) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
@@ -104,9 +129,10 @@ CREATE TABLE `task` (
 -- Dumping data for table `task`
 --
 
-INSERT INTO `task` (`eid`, `pid`, `tid`, `manDays`, `type`) VALUES
-(1, 1, 1, 15, 'frontend'),
-(1, 2, 2, 13, 'backend');
+INSERT INTO `task` (`eid`, `pid`, `tid`, `status`, `type`) VALUES
+(1, 1, 1, 'no', 'frontend'),
+(1, 2, 2, 'no', 'backend'),
+(1, 1, 3, 'no', 'frontend1');
 
 -- --------------------------------------------------------
 
@@ -141,6 +167,12 @@ ALTER TABLE `allocated`
   ADD KEY `FK_eid` (`eid`);
 
 --
+-- Indexes for table `calendar`
+--
+ALTER TABLE `calendar`
+  ADD PRIMARY KEY (`ttid`);
+
+--
 -- Indexes for table `employee`
 --
 ALTER TABLE `employee`
@@ -171,10 +203,28 @@ ALTER TABLE `team`
 --
 
 --
+-- AUTO_INCREMENT for table `calendar`
+--
+ALTER TABLE `calendar`
+  MODIFY `ttid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=117;
+
+--
 -- AUTO_INCREMENT for table `employee`
 --
 ALTER TABLE `employee`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+
+--
+-- AUTO_INCREMENT for table `project`
+--
+ALTER TABLE `project`
+  MODIFY `pid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+
+--
+-- AUTO_INCREMENT for table `task`
+--
+ALTER TABLE `task`
+  MODIFY `tid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
