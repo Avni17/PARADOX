@@ -1,0 +1,16 @@
+div#root {
+    width: 100%;
+    overflow: scroll;
+}
+.pie
+{
+    width:50%;
+    float: left;
+    
+}
+.bar
+{
+    width:50%;
+    float: left;
+    
+}

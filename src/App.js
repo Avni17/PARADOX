@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Dashboard from "./components/Dashboard/dashboard";
 import Login from "./components/login/login";
 import Calender from "./components/Calender/calender";
-
+import Chart from "./components/chart/chart";
 export default class App extends Component {
   constructor() {
     super();
@@ -35,7 +35,7 @@ export default class App extends Component {
           <Route exact path="/dashboard" element={<Dashboard/>} />
           } 
           <Route exact path='/calender' element={<Calender/>} />
-          
+          <Route exact path='/chart' element={<Chart/>} />
         </Routes>
       </Router>
     </>
