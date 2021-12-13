@@ -8,8 +8,7 @@ $encodedData = file_get_contents('php://input');
 $decodedData = json_decode($encodedData, true);
 $UserEmail = $decodedData['email'];
 // $UserEmail = 'john32@gmail.com';
-date_default_timezone_set('Asia/Kolkata');
-$d=date('Y-m-d H:m:s');
+
 $SQL = "SELECT id FROM employee WHERE email = '$UserEmail'";
 $exeSQL = mysqli_query($con, $SQL);
 $checkid =  mysqli_num_rows($exeSQL);
@@ -19,20 +18,19 @@ if ($checkid != 0)
 {
     $arrayu = mysqli_fetch_array($exeSQL);
     $id=$arrayu['id'];
-    $SQL = "SELECT SUM(TIMESTAMPDIFF(SECOND, startDate, endDate)) AS time FROM calendar WHERE eid ='$id'and DATEDIFF('$d',startDate)<=7 group by project_name,task";
+    $SQL = "SELECT SUM(TIMESTAMPDIFF(SECOND, startDate, endDate)) AS time FROM calendar WHERE eid ='$id' group by project_name";
     $exeSQL = mysqli_query($con, $SQL);
     while($row = mysqli_fetch_array($exeSQL))
     {
         
         $sum=$sum+$row['time'];
     }
-    $SQL = "SELECT SUM(TIMESTAMPDIFF(SECOND, startDate, endDate)) AS time,task,project_name FROM calendar WHERE eid ='$id' and DATEDIFF('$d',startDate)<=7 group by project_name,task";
+    $SQL = "SELECT SUM(TIMESTAMPDIFF(SECOND, startDate, endDate)) AS time,project_name FROM calendar WHERE eid ='$id' group by project_name";
     $exeSQL = mysqli_query($con, $SQL);
     while($row = mysqli_fetch_array($exeSQL))
     {
-        $p=floor(($row['time']*100)/$sum);
-        $i = (string)$p;
-        $response[]=array($i);
+        $p=(($row['time']*100)/$sum);
+        $response[]=array("time"=>$p,"task"=>($row['project_name']));
     }
     
 } 

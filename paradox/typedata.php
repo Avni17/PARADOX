@@ -26,13 +26,12 @@ if ($checkid != 0)
         
         $sum=$sum+$row['time'];
     }
-    $SQL = "SELECT SUM(TIMESTAMPDIFF(SECOND, startDate, endDate)) AS time,task,project_name FROM calendar WHERE eid ='$id' and DATEDIFF('$d',startDate)<=7 group by project_name,task";
+    $SQL = "SELECT SUM(TIMESTAMPDIFF(SECOND, startDate, endDate)) AS time,task,project_name FROM calendar WHERE eid ='$id'and DATEDIFF('$d',startDate)<=7 group by project_name,task";
     $exeSQL = mysqli_query($con, $SQL);
     while($row = mysqli_fetch_array($exeSQL))
     {
-        $p=floor(($row['time']*100)/$sum);
-        $i = (string)$p;
-        $response[]=array($i);
+        $p=(($row['time']*100)/$sum);
+        $response[]=array(($row['task'].' in '.$row['project_name']));
     }
     
 } 
