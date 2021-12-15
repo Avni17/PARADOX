@@ -131,12 +131,13 @@ export default class login extends Component {
     const frontSide = document.getElementById("frontSide");
     const rightSide = document.getElementById("rightSide");
     const leftSide = document.getElementById("leftSide");
-
+    
     frontSide.addEventListener("click", () => {
       frontSide.style.display = "none";
       rightSide.style.display = "block";
       leftSide.style.display = "block";
       square.style.transform = "rotate3d(0, 0, 0, 90deg)";
+      square.style.height = "300px";
       document.title = "PARADOX Login";
     });
 
@@ -146,6 +147,8 @@ export default class login extends Component {
       leftSide.style.display = "block";
       square.style.transform = "rotate3d(0, -1, 0, 90deg)";
       document.title = "PARADOX Sign up";
+      square.style.height = "600px";
+      square.style.marginTop = "30px";
     });
 
     leftSide.addEventListener("click", () => {
@@ -154,6 +157,7 @@ export default class login extends Component {
       rightSide.style.display = "none";
       square.style.transform = "rotate3d(0, 1, 0, 90deg)";
       document.title = "PARADOX Forgot password";
+      square.style.height = "275px";
     });
 
 
