@@ -205,12 +205,12 @@ export default class dashboard extends Component {
   myfunction = () => {
 
     document.addEventListener('DOMContentLoaded', function () {
-      var modeSwitch = document.querySelector('.mode-switch');
+      // var modeSwitch = document.querySelector('.mode-switch');
 
-      modeSwitch.addEventListener('click', function () {
-        document.documentElement.classList.toggle('dark');
-        modeSwitch.classList.toggle('active');
-      });
+      // modeSwitch.addEventListener('click', function () {
+      //   document.documentElement.classList.toggle('dark');
+      //   modeSwitch.classList.toggle('active');
+      // });
 
       var listView = document.querySelector('.list-view');
       var gridView = document.querySelector('.grid-view');
@@ -234,9 +234,9 @@ export default class dashboard extends Component {
         document.querySelector('.messages-section').classList.add('show');
       });
 
-      document.querySelector('.messages-close').addEventListener('click', function () {
-        document.querySelector('.messages-section').classList.remove('show');
-      });
+      // document.querySelector('.messages-close').addEventListener('click', function () {
+      //   document.querySelector('.messages-section').classList.remove('show');
+      // });
     });
 
 
@@ -252,22 +252,22 @@ export default class dashboard extends Component {
           <div class="app-header-left">
             <span class="app-icon"></span>
             <p class="app-name">Paradox</p>
-            <div class="search-wrapper">
+            {/* <div class="search-wrapper">
               <input class="search-input" type="text" placeholder="Search" />
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-search" viewBox="0 0 24 24">
                 <defs></defs>
                 <circle cx="11" cy="11" r="8"></circle>
                 <path d="M21 21l-4.35-4.35"></path>
               </svg>
-            </div>
+            </div> */}
           </div>
           <div class="app-header-right">
-            <button class="mode-switch" title="Switch Theme">
+            {/* <button class="mode-switch" title="Switch Theme">
               <svg class="moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="24" height="24" viewBox="0 0 24 24">
                 <defs></defs>
                 <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
               </svg>
-            </button>
+            </button> */}
             {/* <button class="add-btn" title="Add New Project">
               <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
                 <line x1="12" y1="5" x2="12" y2="19" />
@@ -320,13 +320,13 @@ export default class dashboard extends Component {
                 <line x1="8" y1="2" x2="8" y2="6" />
                 <line x1="3" y1="10" x2="21" y2="10" /></svg>
             </a>
-            <a href="" class="app-sidebar-link">
+            {/* <a href="" class="app-sidebar-link">
               <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-settings" viewBox="0 0 24 24">
                 <defs />
                 <circle cx="12" cy="12" r="3" />
                 <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z" />
               </svg>
-            </a>
+            </a> */}
           </div>
           <div class="projects-section">
             <div class="projects-section-header">
@@ -376,14 +376,14 @@ export default class dashboard extends Component {
 
             </div>
           </div>
-          <div class="messages-section">
-            <button class="messages-close">
+          <div class="messages-section" style= {{display:'none'}}>
+            {/* <button class="messages-close">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x-circle">
                 <circle cx="12" cy="12" r="10" />
                 <line x1="15" y1="9" x2="9" y2="15" />
                 <line x1="9" y1="9" x2="15" y2="15" /></svg>
-            </button>
-            <div class="projects-section-header">
+            </button> */}
+            {/* <div class="projects-section-header">
               <p>Client Messages</p>
             </div>
             <div class="messages">
@@ -471,7 +471,7 @@ export default class dashboard extends Component {
                   </p>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
