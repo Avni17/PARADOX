@@ -25,6 +25,7 @@ if ($checkid != 0)
         $SQL1 = "SELECT DATEDIFF(endTime,CURRENT_DATE()) as days,name FROM project WHERE pid = '$ppid'";
         $result1 = mysqli_query($con, $SQL1);
         $d=mysqli_fetch_array($result1);
+        if($d['days']>0)
         $response[]=array("name"=>$d['name'],"task"=>$row['type'],"days"=>$d['days']);
     }
     
