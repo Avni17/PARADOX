@@ -1214,13 +1214,14 @@ class OverlayContent4 extends React.Component {
 
     return (
       <div className="blur" class="notifications" id="box">
+        <h2>Notifications</h2>
+
         {this.state.notification.map((el, i) => (
 
 
           <div key={i}>
-            <h2>Notifications</h2>
             <div class="notifications-item">
-              <div class="text">
+              <div class="text1">
                 <h4>Project Name: {el.name}</h4>
                 <h4>Task: {el.task}</h4>
                 <p>Days left:{el.days}</p>

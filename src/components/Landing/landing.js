@@ -129,7 +129,7 @@ export default class landing extends Component {
                 </div>
                 <div id="showcase">
                     <div class="contain">
-                        <h1>THE MOST POPULAR PROJECT TRACKER FOR TEAMS</h1>
+                        <h1 class="h12">THE MOST POPULAR PROJECT TRACKER FOR TEAMS</h1>
                         <marquee width="100%" direction="left" height="100px" class="glow"><h2>HECTIC SCHEDULES? WE ARE HERE TO HELP YOU!!!!SIGN UP NOW BY CLICKING ON LETS TRACK</h2></marquee>
                         <p style={{ color: "white" }}>Project tracking software used by millions.<br />
                             Pardox is a project tracker that lets you work hours across projects.<br />
@@ -157,12 +157,13 @@ export default class landing extends Component {
                                 </div>
                                 <center><h2>About Us</h2></center>
                                 <p>DASHBOARD--<br />
-                                    SHOWS THE PROGRESS OF YOUR PROJECT THROUGH GRAPHICAL REPRESENTATION
-                                    ALSO LETS YOU KEEP TRACK OF EACH TASK SO YOU DONT HAVE TO WORRY ABOUT DEADLINES.<br />
-                                    CALENDAR--<br />
-                                    GIVES YOU DETAILED VERSIONS OF PROJECTS AND TASKS WITHIN THEM WEEKLY AND MONTHLY<br />
-                                    ADD PROEJCT--<br />
-                                    ADD PROJECT AND INFORMATION ABOUT MEMBERS INSTANTANEOUSLY<br />.</p>
+                                    Shows The Progress Of Your Project Through Graphical Representation
+                                    Also Lets You Keep Track Of Each Task So You Dont Have To Worry About Deadlines.<br />
+                                    Calendar--<br />
+                                    Gives You Detailed Versions Of Projects And Tasks Within Them Weekly And Monthly<br />
+                                    Add Proejct--<br />
+                                    Add Project And Information About Members Instantaneously.
+                                </p>
                             </div>
                             <div className='con'>
                                 <div className='imageContainer'>
