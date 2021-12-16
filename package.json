@@ -26,21 +26,7 @@
     "react-dom": "^17.0.2",
     "react-router-dom": "^6.0.2",
     "react-scripts": "4.0.3",
-<<<<<<< HEAD
-    "web-vitals": "^1.1.2",
-    "@material-ui/icons": "^4.11.2",
-    "@material-ui/core": "^4.11.4",
-    "@devexpress/dx-react-scheduler-material-ui": "2.7.6",
-    "@devexpress/dx-react-scheduler": "2.7.6",
-    "@devexpress/dx-react-core": "2.7.6",
-    "clsx": "^1.0.4",
-    "@devexpress/dx-react-chart-material-ui": "2.7.6",
-    "@devexpress/dx-react-chart": "2.7.6",
-    "chart.js": "2.9.4",
-    "react-chartjs-2": "2.11.1"
-=======
     "web-vitals": "^1.1.2"
->>>>>>> 31e6c2070e5e3dfac17feed3aee466a7dbe21c06
   },
   "scripts": {
     "start": "react-scripts start",

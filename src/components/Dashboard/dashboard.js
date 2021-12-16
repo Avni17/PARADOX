@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './dashboard.scss';
 // import './dashboard-help.js';
 import axios from 'axios';
-import avni from './images/avni.jpg';
+import avni from './images/avni.png';
 import "./styles.css";
 const API_PATH = 'http://localhost/paradox/card_date_data.php';
 const API_PATH2 = 'http://localhost/paradox/addproject.php';
@@ -19,29 +19,29 @@ class Card extends React.Component {
     super(props);
 
     this.state = {
-     
-     i:props.k,
-     width:props.prog,
+
+      i: props.k,
+      width: props.prog,
     }
     this.myfunction = this.myfunction.bind(this);
-    };
+  };
   myfunction = () => {
     var progress = document.getElementsByClassName('box-progress');
     console.log(this.state);
-      progress[this.state.i].style.width = this.state.width + "%";
-    
-  
-}
+    progress[this.state.i].style.width = this.state.width + "%";
+
+
+  }
 
   componentDidMount = () => {
     this.myfunction();
-    
+
   }
-  
+
   componentDidUpdate = () => {
     this.myfunction();
     console.log(this.state);
-    
+
   }
   render() {
 
@@ -104,8 +104,8 @@ export default class dashboard extends Component {
     this.state = {
       update: 0,
       update1: 0,
-      update2:0,
-      username:'',
+      update2: 0,
+      username: '',
       currDate: Date().toLocaleString().split(' ').slice(0, 4).join(' '),
       email: '',
       date: [],
@@ -188,7 +188,7 @@ export default class dashboard extends Component {
           if (this.state.update2 == 0) {
             this.setState({
               update2: 1,
-              username:result.data[0].Message
+              username: result.data[0].Message
             })
           }
 
@@ -437,13 +437,13 @@ export default class dashboard extends Component {
             </div>
             <div class="project-boxes jsGridView">
               {
-                this.state.date.map((item,i) => (<Card k={i} handler={this.handler} dt={item.starttime} days={item.days} prog={item.progress} pid={item.pid} name={item.name} />))
+                this.state.date.map((item, i) => (<Card k={i} handler={this.handler} dt={item.starttime} days={item.days} prog={item.progress} pid={item.pid} name={item.name} />))
 
               }
 
             </div>
           </div>
-          <div class="messages-section" style= {{display:'none'}}>
+          <div class="messages-section" style={{ display: 'none' }}>
             {/* <button class="messages-close">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x-circle">
                 <circle cx="12" cy="12" r="10" />
@@ -619,7 +619,7 @@ class OverlayContent extends React.Component {
           if (result.data[0].Message == 'Data inserted') {
             alert(result.data[0].Message);
             { this.props.handle() }
-            {this.props.closeOverlay()}
+            { this.props.closeOverlay() }
 
             // window.open("/dashboard", "_self")
             //   this.setState({
@@ -819,7 +819,7 @@ class OverlayContent2 extends React.Component {
           })
 
           if (result.data[0].Message == 'Data inserted') {
-            {this.props.closeOverlay()}
+            { this.props.closeOverlay() }
             alert(result.data[0].Message);
             // window.open("/dashboard", "_self")
             //   this.setState({
@@ -1008,7 +1008,7 @@ class OverlayContent3 extends React.Component {
 
           if (result.data[0].Message == 'Data updated') {
             // alert(result.data[0].Message);
-            {this.props.hand()}
+            { this.props.hand() }
             window.open("/dashboard", "_self")
 
           }
@@ -1159,9 +1159,9 @@ class OverlayContent4 extends React.Component {
     this.state = {
       update: 0,
       email: '',
-      notification:[]
+      notification: []
     };
-    this.notification_data= this.notification_data.bind(this);
+    this.notification_data = this.notification_data.bind(this);
 
 
   }
@@ -1179,7 +1179,7 @@ class OverlayContent4 extends React.Component {
       })
         .then(result => {
 
-          
+
           if (this.state.update == 0) {
             this.setState({
               notification: result.data,
@@ -1225,24 +1225,24 @@ class OverlayContent4 extends React.Component {
     return (
       <div className="blur" class="notifications" id="box">
         {this.state.notification.map((el, i) => (
-          
 
-            <div  key={i}>
-              <h2>Notifications</h2>
-              <div class="notifications-item">
-                <div class="text">
-                  <h4>Project Name: {el.name}</h4>
-                  <h4>Task: {el.task}</h4>
-                  <p>Days left:{el.days}</p>
-                </div>
+
+          <div key={i}>
+            <h2>Notifications</h2>
+            <div class="notifications-item">
+              <div class="text">
+                <h4>Project Name: {el.name}</h4>
+                <h4>Task: {el.task}</h4>
+                <p>Days left:{el.days}</p>
               </div>
-              
             </div>
 
-         
+          </div>
+
+
         ))}
 
-<button className="button" onClick={this.props.closeOverlay}>Close</button>
+        <button className="button" onClick={this.props.closeOverlay}>Close</button>
       </div>
     );
   }
