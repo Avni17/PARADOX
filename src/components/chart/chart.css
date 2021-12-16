@@ -2,6 +2,50 @@ div#root {
     width: 100%;
     overflow: scroll;
 }
+.chart {
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+}
+.text {
+    position: absolute;
+    top: 10%; 
+    right: 50%;
+    transform: translate(50%,-50%);
+    text-transform: uppercase;
+    font-family: verdana;
+    font-size: 100px;
+    font-weight: 700;
+    color: #f5f5f5;
+    text-shadow: 1px 1px 1px #919191,
+        1px 2px 1px #919191,
+        1px 3px 1px #919191,
+        1px 4px 1px #919191,
+        1px 5px 1px #919191,
+        1px 6px 1px #919191,
+        1px 7px 1px #919191,
+        1px 8px 1px #919191,
+        1px 9px 1px #919191,
+        1px 10px 1px #919191,
+    1px 18px 6px rgba(16,16,16,0.4),
+    1px 22px 10px rgba(16,16,16,0.2),
+    1px 25px 35px rgba(16,16,16,0.2),
+    1px 30px 60px rgba(16,16,16,0.4);
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
 .pie
 {
     width:50%;
@@ -13,4 +57,50 @@ div#root {
     width:50%;
     float: left;
     
+}
+.line-1{
+    position: absolute;
+    top:90%;
+    left:10px;
+    width: 24em;
+    margin: 0 auto;
+    border-right: 2px solid rgba(255,255,255,.75);
+    font-size: 180%;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-top: 40px;
+    transform: translateY(-50%);    
+    color: white;
+}
+.line-2{
+    position: absolute;
+    top:95%;
+    margin-top: 40px;
+    width: 24em;
+    margin: 0 auto;
+    border-right: 2px solid rgba(255,255,255,.75);
+    font-size: 180%;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(-50%);    
+    color: white;
+}
+/* Animation */
+.anim-typewriter{
+  animation: typewriter 4s steps(50) 1s 1 normal both,
+             blinkTextCursor 500ms steps(50) infinite normal;
+}
+@keyframes typewriter{
+  from{width: 0;}
+  to{width: 26em;}
+}
+@keyframes blinkTextCursor{
+  from{border-right-color: rgba(255,255,255,.75);}
+  to{border-right-color: transparent;}
+}
+.Component-root-3
+{
+    fill: white !important;;
 }

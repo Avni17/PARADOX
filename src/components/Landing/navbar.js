@@ -1,6 +1,6 @@
 import React from "react";
 import icon from './images/icon.png';
-import './style.css';
+import './style.scss';
 function Navbar() {
     return (
         <nav className="header">

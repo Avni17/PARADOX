@@ -186,13 +186,22 @@ export default class Demo extends React.Component {
         let datasets = [
             {
                 data: this.state.time,
-                backgroundColor: ["#003f5c", "#58508d", "#bc5090", "#ff6361", "#ffa600"]
+                backgroundColor: ["#CC2200", " #FF8D00", "#FFE24F", "#A7E739", "#ffa600"]
             }
         ]
         return (
-            <div>
+            <div className='chart'>
+                
                 <div className='pie'>
-                    <Paper style={{ height: "100vh" }}>
+                <span class="text">Analysis</span>
+               <br/>
+               <br/>
+               <br/>
+               <br/>
+               <br/>
+               <br/>
+                    {/* <Paper style={{ height: "100vh" }}> */}
+                   
                         {/* <Chart
                             data={this.state.data}
                         >
@@ -218,11 +227,18 @@ export default class Demo extends React.Component {
                                 datasets: datasets
                             }}
                         />
-                    </Paper>
+                         <p class="line-1 anim-typewriter">Time % spent on various activities in past 7 days </p>
+                    {/* </Paper> */}
 
                 </div>
                 <div className='bar'>
-                    <Paper style={{ height: "100vh" }}>
+                    {/* <Paper style={{ height: "100vh" }}> */}
+                    <br/>
+               <br/>
+               <br/>
+               <br/>
+               <br/>
+               <br/>
                         <Chart
                             data={this.state.data}
                         >
@@ -233,10 +249,11 @@ export default class Demo extends React.Component {
                                 valueField="time"
                                 argumentField="task"
                             />
-                            <Title text="Bar graph represntation" />
+                            
                             <Animation />
                             
                         </Chart>
+                        <p class="line-2 anim-typewriter">Time% spent in activities in various project </p>
                         {/* <Bar
                             data={{
                                 labels: labels,
@@ -244,7 +261,7 @@ export default class Demo extends React.Component {
                                 label: "something"
                             }}
                         /> */}
-                    </Paper>
+                    {/* </Paper> */}
 
                 </div>
 

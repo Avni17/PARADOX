@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import './style.css';
+import './style.scss';
 import addproject from './images/addproject.jpeg'
 import calendar from './images/calendar.jpeg';
 import dashboard from './images/dashboard.jpeg';
 import graph from './images/graph.jpeg';
+import project from './images/project.png';
 import Navbar from "./navbar";
 import Footer from "./footer";
 // import signup from './images/signup.jpeg';
@@ -70,8 +71,19 @@ export default class landing extends Component {
     }
     render() {
         return (
-            <div className='landing'>
+            <div className='landing app'>
                 <Navbar />
+
+                <div class="boxes">
+                    <ul>
+                        <li className='li'></li>
+                        <li className='li'></li>
+                        <li className='li'></li>
+                        <li className='li'></li>
+                    </ul>
+                </div>
+
+
                 <div id="boxes">
                     <div class="img-slider">
                         <div class="slide active">
@@ -119,52 +131,61 @@ export default class landing extends Component {
                     <div class="contain">
                         <h1>THE MOST POPULAR PROJECT TRACKER FOR TEAMS</h1>
                         <marquee width="100%" direction="left" height="100px" class="glow"><h2>HECTIC SCHEDULES? WE ARE HERE TO HELP YOU!!!!SIGN UP NOW BY CLICKING ON LETS TRACK</h2></marquee>
-                        <p>Project tracking software used by millions.<br/>
-                            Pardox is a project tracker that lets you work hours across projects.<br/>
-                                Unlimted users,free forever.<br/>
-                                    you can keep track of daily work at you company by the exclusive feautures offered by paradox.<br/>
-                                        from days to months to adding information about your employees and pending tasks
-                                        search records in blink of an eye.
-                                    </p>
+                        <p>Project tracking software used by millions.<br />
+                            Pardox is a project tracker that lets you work hours across projects.<br />
+                            Unlimted users,free forever.<br />
+                            you can keep track of daily work at you company by the exclusive feautures offered by paradox.<br />
+                            from days to months to adding information about your employees and pending tasks
+                            search records in blink of an eye.
+                        </p>
+                    </div>
+                </div>
+
+                <div id="sec-2">
+                    <div class="contain">
+                        <a href="#main" aria-label="Read more about Seminole tax hike">
+                            <div class="scroll-down"></div>
+
+                        </a>
+                    </div>
+                </div>
+                <div id="main">
+                    <div class="contain">
+                        <article id="main-col">
+                            <div className='con'>
+                                <div className='imageContainer'>
                                 </div>
+                                <center><h2>About Us</h2></center>
+                                <p>DASHBOARD--<br />
+                                    SHOWS THE PROGRESS OF YOUR PROJECT THROUGH GRAPHICAL REPRESENTATION
+                                    ALSO LETS YOU KEEP TRACK OF EACH TASK SO YOU DONT HAVE TO WORRY ABOUT DEADLINES.<br />
+                                    CALENDAR--<br />
+                                    GIVES YOU DETAILED VERSIONS OF PROJECTS AND TASKS WITHIN THEM WEEKLY AND MONTHLY<br />
+                                    ADD PROEJCT--<br />
+                                    ADD PROJECT AND INFORMATION ABOUT MEMBERS INSTANTANEOUSLY<br />.</p>
                             </div>
-
-                            <div id="sec-2">
-                                <div class="contain">
-                                    <a href="#main" aria-label="Read more about Seminole tax hike">
-                                        <div class="scroll-down"></div>
-
-                                    </a>
+                            <div className='con'>
+                                <div className='imageContainer'>
                                 </div>
+                                <center><h2>Other Perks</h2></center>
+                                <p >
+                                From increased chances of project success to creating a united team.keeping up to date on the progress of the project and awareness of project status
+                                From increased chances of project success to creating a united team.
+                                keeping up to date on the progress of the project and awareness of project status
+                                From increased chances of project success to creating a united team.
+                                keeping up to date on the progress of the project and awareness of project status
+
+                            </p>
                             </div>
-                            <div id="main">
-                                <div class="contain">
-                                    <article id="main-col">
-                                        <h1 class="page-title">About Us</h1>
-                                        <p class="bright">
-                                            DASHBOARD--<br />
-                                            SHOWS THE PROGRESS OF YOUR PROJECT THROUGH GRAPHICAL REPRESENTATION
-                                            ALSO LETS YOU KEEP TRACK OF EACH TASK SO YOU DONT HAVE TO WORRY ABOUT DEADLINES.<br/>
-                                                CALENDAR--<br/>
-                                                GIVES YOU DETAILED VERSIONS OF PROJECTS AND TASKS WITHIN THEM WEEKLY AND MONTHLY<br/>
-                                                    ADD PROEJCT--<br />
-                                                    ADD PROJECT AND INFORMATION ABOUT MEMBERS INSTANTANEOUSLY<br/>
-                                                    </p>
-                                                    <p class="bright" >
-                                                        From increased chances of project success to creating a united team.keeping up to date on the progress of the project and awareness of project status
-                                                        From increased chances of project success to creating a united team.
-                                                        keeping up to date on the progress of the project and awareness of project status
-                                                        From increased chances of project success to creating a united team.
-                                                        keeping up to date on the progress of the project and awareness of project status
+                         
+                            <br />
+                            <br />
 
-                                                    </p>
-                                                    <br/>
-                                                        <br/>
+                        </article>
+                        {/* <img src={project} /> */}
 
-                                                        </article>
-
-                                                    </div>
-                                                </div>
+                    </div>
+                </div>
 
 
                 <Footer />
