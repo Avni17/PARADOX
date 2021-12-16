@@ -131,7 +131,7 @@ export default class landing extends Component {
                     <div class="contain">
                         <h1>THE MOST POPULAR PROJECT TRACKER FOR TEAMS</h1>
                         <marquee width="100%" direction="left" height="100px" class="glow"><h2>HECTIC SCHEDULES? WE ARE HERE TO HELP YOU!!!!SIGN UP NOW BY CLICKING ON LETS TRACK</h2></marquee>
-                        <p>Project tracking software used by millions.<br />
+                        <p style={{ color: "white" }}>Project tracking software used by millions.<br />
                             Pardox is a project tracker that lets you work hours across projects.<br />
                             Unlimted users,free forever.<br />
                             you can keep track of daily work at you company by the exclusive feautures offered by paradox.<br />
@@ -169,15 +169,15 @@ export default class landing extends Component {
                                 </div>
                                 <center><h2>Other Perks</h2></center>
                                 <p >
-                                From increased chances of project success to creating a united team.keeping up to date on the progress of the project and awareness of project status
-                                From increased chances of project success to creating a united team.
-                                keeping up to date on the progress of the project and awareness of project status
-                                From increased chances of project success to creating a united team.
-                                keeping up to date on the progress of the project and awareness of project status
+                                    From increased chances of project success to creating a united team.keeping up to date on the progress of the project and awareness of project status
+                                    From increased chances of project success to creating a united team.
+                                    keeping up to date on the progress of the project and awareness of project status
+                                    From increased chances of project success to creating a united team.
+                                    keeping up to date on the progress of the project and awareness of project status
 
-                            </p>
+                                </p>
                             </div>
-                         
+
                             <br />
                             <br />
 

@@ -586,10 +586,8 @@ class OverlayContent extends React.Component {
   }
 
   handleSubmit(event) {
-    alert('hi');
     // alert("A name was submitted: " + this.state);
     console.log(this.state);
-    alert('hi');
     event.preventDefault();
   }
   onChange(e) {
@@ -599,7 +597,6 @@ class OverlayContent extends React.Component {
   }
   project() {
     if (this.state.projectName && this.state.startD && this.state.endD && this.state.values) {
-      alert('hi1');
       console.log(this.state);
       axios({
         method: 'post',
@@ -617,7 +614,6 @@ class OverlayContent extends React.Component {
           })
 
           if (result.data[0].Message == 'Data inserted') {
-            alert(result.data[0].Message);
             { this.props.handle() }
             { this.props.closeOverlay() }
 
@@ -792,10 +788,8 @@ class OverlayContent2 extends React.Component {
   }
 
   handleSubmit(event) {
-    alert('hi');
     // alert("A name was submitted: " + this.state);
     console.log(this.state);
-    alert('hi');
     event.preventDefault();
   }
 
@@ -820,7 +814,6 @@ class OverlayContent2 extends React.Component {
 
           if (result.data[0].Message == 'Data inserted') {
             { this.props.closeOverlay() }
-            alert(result.data[0].Message);
             // window.open("/dashboard", "_self")
             //   this.setState({
             //     redirectToReferrer: true
@@ -987,7 +980,6 @@ class OverlayContent3 extends React.Component {
   // }
   project() {
     if (this.state.status) {
-      alert('hi1');
       console.log(this.state);
       axios({
         method: 'post',
@@ -999,7 +991,6 @@ class OverlayContent3 extends React.Component {
         .then(result => {
 
 
-          alert(result.data[0].Message);
 
           this.setState({
             msg: result.data[0].Message,
@@ -1015,7 +1006,6 @@ class OverlayContent3 extends React.Component {
 
         })
         .catch(error => {
-          alert(error.data);
           this.setState({})
         });
 
