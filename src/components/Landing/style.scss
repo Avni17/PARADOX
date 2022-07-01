@@ -50,9 +50,11 @@ div#root {
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
@@ -109,9 +111,11 @@ div#root {
   margin: 0;
   padding: 0;
 }
+
 .webtitle {
   font-family: "Permanent Marker", cursive;
 }
+
 .header nav {
   float: right;
   margin-top: 5px;
@@ -623,12 +627,15 @@ body{
     /* top:20%; */
     opacity: 0;
   }
+
   30% {
     opacity: 1;
   }
+
   60% {
     opacity: 1;
   }
+
   100% {
     top: 90%;
     opacity: 0;
@@ -636,9 +643,10 @@ body{
 }
 
 .blink-soft {
-  color:white !important;
+  color: white !important;
   animation: blinker 5s linear infinite;
 }
+
 @keyframes blinker {
   50% {
     opacity: 0;
@@ -655,18 +663,20 @@ body{
   -webkit-text-fill-color: transparent;
   background-position: calc(var(--bgg-size) * -1) bottom;
   text-rendering: optimizeLegibility;
-  transition:linear 2s;
+  transition: linear 2s;
 }
+
 @import url('https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&display=swap');
-.info
-{
+
+.info {
   font-size: 20px !important;
   font-family: 'Oleo Script Swash Caps', cursive;
   color: #F77683 !important;
   //text-shadow : 0px 1px 0px white, 0px 2px 0px #888, 0px 3px 0px #777, 0px 4px 0px #666, 0px 5px 0px #555, 0px 6px 0px #444, 0px 7px 0px #333, 0px 8px 0px #001135;
 }
+
 .info {
-  text-shadow: -.030em .030em #FFF6E6,   -.08em .08em #E7DCD7; 
+  text-shadow: -.030em .030em #FFF6E6, -.08em .08em #E7DCD7;
   margin: 0 60px;
   position: relative;
   text-transform: uppercase;
@@ -685,30 +695,50 @@ body{
   -ms-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
-  background-image: linear-gradient(45deg, 
-                    #7794ff, 
-                    #44107A,
-                    #FF1361,
-                    #FFF800);
+  background-image: linear-gradient(45deg,
+      #7794ff,
+      #44107A,
+      #FF1361,
+      #FFF800);
   animation: 3s shake infinite alternate;
 }
 
 @keyframes shake {
-  0% { transform: skewX(-15deg); }
-  5% { transform: skewX(15deg); }
-  10% { transform: skewX(-15deg); }
-  15% { transform: skewX(15deg); }
-  20% { transform: skewX(0deg); }
-  100% { transform: skewX(0deg); }  
+  0% {
+    transform: skewX(-15deg);
+  }
+
+  5% {
+    transform: skewX(15deg);
+  }
+
+  10% {
+    transform: skewX(-15deg);
+  }
+
+  15% {
+    transform: skewX(15deg);
+  }
+
+  20% {
+    transform: skewX(0deg);
+  }
+
+  100% {
+    transform: skewX(0deg);
+  }
 }
+
 .Background {
   -webkit-background-clip: text;
   -webkit-text-fill-color: red;
   position: absolute;
-  -webkit-filter: drop-shadow(0 0 30px #753200)!important;
+  -webkit-filter: drop-shadow(0 0 30px #753200) !important;
 }
+
 .app {
-  background: -webkit-linear-gradient(to left, #1f34a8, #1f34a8, #1f34a8); /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to left, #1f34a8, #1f34a8, #1f34a8);
+  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to left, #9fa6cf, #4b5cbb, #1f34a8);
   height: 100vh;
   width: 100%;
@@ -718,9 +748,11 @@ ul {
   width: 100%;
   height: inherit;
 }
+
 ul {
   list-style-type: none;
 }
+
 .li:nth-child(1) {
   position: absolute;
   left: 10%;
@@ -807,8 +839,10 @@ ul {
   padding: 0 22px;
   text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
 }
+
 .about {
   position: relative;
+
   &::before,
   &::after {
     content: "";
@@ -888,7 +922,7 @@ main {
   font-weight: 700;
   letter-spacing: 0px;
   //text-transform: uppercase;
-  width:40%;
+  width: 40%;
   text-align: center;
   margin: auto;
   white-space: nowrap;
@@ -907,26 +941,27 @@ main {
   border-radius: 50%;
   bottom: 20px;
 }
+
 .thirteen h1:before {
   left: -30px;
 }
+
 .thirteen h1:after {
   right: -30px;
 }
+
 @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
-.animate-charcter
-{
-  width:90%;
+
+.animate-charcter {
+  width: 90%;
   margin: 50px;
-   text-transform: uppercase;
-   font-family: 'Russo One', sans-serif;
-  background-image: linear-gradient(
-    -225deg,
-    #231557 0%,
-    #44107a 29%,
-    #ff1361 67%,
-    #fff800 100%
-  );
+  text-transform: uppercase;
+  font-family: 'Russo One', sans-serif;
+  background-image: linear-gradient(-225deg,
+      #231557 0%,
+      #44107a 29%,
+      #ff1361 67%,
+      #fff800 100%);
   background-size: auto auto;
   background-clip: border-box;
   background-size: 200% auto;
@@ -937,7 +972,7 @@ main {
   -webkit-text-fill-color: transparent;
   animation: textclip 3s linear infinite;
   display: inline-block;
-      font-size: 190px;
+  font-size: 190px;
 }
 
 @keyframes textclip {
@@ -945,11 +980,12 @@ main {
     background-position: 200% center;
   }
 }
+
 .box {
   position: relative;
   display: flex;
-  left:25%;
-  right:25%;
+  left: 25%;
+  right: 25%;
   width: 800px;
   height: 380px;
   justify-content: center;
@@ -981,6 +1017,7 @@ main {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
