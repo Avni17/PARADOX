@@ -76,25 +76,25 @@ export default class landing extends Component {
 
 
 
-                <div  className='box' id="boxes" >
+                <div className='box' id="boxes" >
                     <div class="img-slider">
                         <div class="slide active">
-                            <img height="360 px" src={dashboard} alt="" />
+                            <img height="380 px" src={dashboard} alt="" />
                             <div class="info">
                             </div>
                         </div>
                         <div class="slide">
-                            <img height="360 px" src={addproject} alt="" />
+                            <img height="380 px" src={addproject} alt="" />
                             <div class="info">
                             </div>
                         </div>
                         <div class="slide">
-                            <img height="360 px" src={calendar} alt="" />
+                            <img height="400 px" src={calendar} alt="" />
                             <div class="info">
                             </div>
                         </div>
                         <div class="slide">
-                            <img height="360 px" src={graph} alt="" />
+                            <img height="380 px" src={graph} alt="" />
                             <div class="info">
                             </div>
                         </div>
@@ -123,7 +123,7 @@ export default class landing extends Component {
                     <div class="contain">
                         <h1 class="h12 blink-soft animate-charcter">THE MOST POPULAR PROJECT TRACKER FOR TEAMS</h1>
                         <marquee width="100%" direction="left" height="80px" loop="infinite" >
-                        <span class="Title Background">HECTIC SCHEDULES? WE ARE HERE TO HELP YOU!!!!SIGN UP NOW BY CLICKING ON LETS TRACK</span>
+                            <span class="Title Background">HECTIC SCHEDULES? WE ARE HERE TO HELP YOU!!!!SIGN UP NOW BY CLICKING ON LETS TRACK</span>
                             <h2 id="text" class="Title">HECTIC SCHEDULES? WE ARE HERE TO HELP YOU!!!!SIGN UP NOW BY CLICKING ON LETS TRACK</h2></marquee>
                         <p class="info" >Project tracking software used by millions.<br />
                             Pardox is a project tracker that lets you work hours across projects.<br />
