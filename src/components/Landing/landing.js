@@ -104,7 +104,7 @@ export default class landing extends Component {
                     <div class="btn"></div>
                     <div class="btn"></div>
                     <div class="btn"></div>
-                    <div class="btn"></div>
+                    {/* <div class="btn"></div> */}
 
 
 
@@ -144,28 +144,32 @@ export default class landing extends Component {
                     </div>
                 </div> */}
                 <main>
-                    <article>
-                        <center class="thirteen"><h1>About Us</h1></center>
-                        <p>DASHBOARD--<br />
-                            Shows The Progress Of Your Project Through Graphical Representation
-                            Also Lets You Keep Track Of Each Task So You Dont Have To Worry About Deadlines.<br />
-                            Calendar--<br />
-                            Gives You Detailed Versions Of Projects And Tasks Within Them Weekly And Monthly<br />
-                            Add Proejct--<br />
-                            Add Project And Information About Members Instantaneously.
-                        </p>
-                    </article>
-                    <article>
-                        <center class="thirteen"><h1>Other Perks</h1></center>
-                        <p >
-                            From increased chances of project success to creating a united team.keeping up to date on the progress of the project and awareness of project status
-                            From increased chances of project success to creating a united team.
-                            keeping up to date on the progress of the project and awareness of project status
-                            From increased chances of project success to creating a united team.
-                            keeping up to date on the progress of the project and awareness of project status
+                    <div class="fix">
+                        <article>
+                            <center class="thirteen"><h1>About Us</h1></center>
+                            <p>DASHBOARD--<br />
+                                Shows The Progress Of Your Project Through Graphical Representation
+                                Also Lets You Keep Track Of Each Task So You Dont Have To Worry About Deadlines.<br />
+                                Calendar--<br />
+                                Gives You Detailed Versions Of Projects And Tasks Within Them Weekly And Monthly<br />
+                                Add Proejct--<br />
+                                Add Project And Information About Members Instantaneously.
+                            </p>
+                        </article>
+                    </div>
+                    <div class="fix">
+                        <article>
+                            <center class="thirteen"><h1>Other Perks</h1></center>
+                            <p >
+                                From increased chances of project success to creating a united team.keeping up to date on the progress of the project and awareness of project status
+                                From increased chances of project success to creating a united team.
+                                keeping up to date on the progress of the project and awareness of project status
+                                From increased chances of project success to creating a united team.
+                                keeping up to date on the progress of the project and awareness of project status
 
-                        </p>
-                    </article>
+                            </p>
+                        </article>
+                    </div>
                 </main>
 
 
