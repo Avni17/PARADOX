@@ -1,12 +1,6 @@
 import React, { Component } from 'react';
 import './style.scss';
-import addproject from './images/addproject.jpeg'
-import calendar from './images/calendar.jpeg';
-import dashboard from './images/dashboard.jpeg';
-import graph from './images/graph.jpeg';
-import project from './images/project.png';
-import Navbar from "./navbar";
-import Footer from "./footer";
+
 // import signup from './images/signup.jpeg';
 
 export default class landing extends Component {
@@ -72,109 +66,148 @@ export default class landing extends Component {
     render() {
         return (
             <div className='landing app'>
-                <Navbar />
-
-
-
-                {/* <div className='box' id="boxes" >
-                    <div class="img-slider"> */}
-                {/* <div class="slide active">
-                            <img height="380 px" src={dashboard} alt="" />
-                            <div class="info">
-                            </div>
+                <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+                    <div class="container">
+                        <a class="navbar-brand" href="#page-top">Company Name</a>
+                        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarResponsive">
+                            <ul class="navbar-nav ml-auto my-2 my-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#about">About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#services">Services</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#partners">Partners</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#contact">Contact</a>
+                                </li>
+                            </ul>
                         </div>
-                        <div class="slide">
-                            <img height="380 px" src={addproject} alt="" />
-                            <div class="info">
-                            </div>
-                        </div>
-                        <div class="slide">
-                            <img height="400 px" src={calendar} alt="" />
-                            <div class="info">
-                            </div>
-                        </div>
-                        <div class="slide">
-                            <img height="380 px" src={graph} alt="" />
-                            <div class="info">
-                            </div>
-                        </div> */}
-
-                <div class="navigation">
-                    <div class="btn active"></div>
-                    <div class="btn"></div>
-                    <div class="btn"></div>
-                    <div class="btn"></div>
-                    {/* <div class="btn"></div> */}
-
-
-
-                </div>
-                {/* </div>
-                </div> */}
-
-                {/* <div id="sec-1">
-                    <div class="contain">
-                        <a href="#showcase" aria-label="Read more about Seminole tax hike">
-                            <div class="scroll-down"></div>
-                        </a>
                     </div>
-                </div> */}
-                <div id="showcase">
-                    <div class="contain">
-                        <h1 class="h12 blink-soft animate-charcter">THE MOST POPULAR PROJECT TRACKER FOR TEAMS</h1>
-                        <marquee width="100%" direction="left" height="80px" loop="infinite" >
-                            <span class="Title Background">HECTIC SCHEDULES? WE ARE HERE TO HELP YOU!!!!SIGN UP NOW BY CLICKING ON LETS TRACK</span>
-                            <h2 id="text" class="Title">HECTIC SCHEDULES? WE ARE HERE TO HELP YOU!!!!SIGN UP NOW BY CLICKING ON LETS TRACK</h2></marquee>
-                        <p class="info" >Project tracking software used by millions.<br />
-                            Pardox is a project tracker that lets you work hours across projects.<br />
-                            Unlimted users,free forever.<br />
-                            you can keep track of daily work at you company by the exclusive feautures offered by paradox.<br />
-                            from days to months to adding information about your employees and pending tasks
-                            search records in blink of an eye.
-                        </p>
+                </nav>
+
+                <div class="parallax1" id="page-top">
+                    <div class="heading">
+                        Company Profile
                     </div>
                 </div>
 
-                {/* <div id="sec-2">
-                    <div class="contain">
-                        <a href="#main" aria-label="Read more about Seminole tax hike">
-                            <div class="scroll-down"></div>
+                <section class="section1" id="about">
+                    <h1>About Us</h1>
+                    <br/>
+                        <div class="col-md-12 row">
+                            <div class="col-md-6">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, voluptatem illum molestiae quisquam nulla aspernatur delectus voluptatum quo, doloribus et porro consectetur possimus architecto nesciunt, magnam ipsam! Molestias ipsum explicabo quod,
+                                culpa doloremque eos delectus voluptate cum expedita. Nihil at qui animi illum impedit deleniti fuga, aspernatur error accusantium fugit ad, sed deserunt vitae? Amet nam quaerat, veritatis enim et itaque velit architecto earum, saepe voluptate debitis
+                                iure, ab aliquam doloribus. Cum exercitationem eveniet laborum voluptates ipsa eius, soluta commodi. Eos eveniet corporis repellendus, quis ad debitis perferendis veniam sunt molestiae omnis, officia suscipit nesciunt ducimus! Temporibus quis nobis
+                                asperiores.
+                            </div>
+                            <div class="col-md-6">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, voluptatem illum molestiae quisquam nulla aspernatur delectus voluptatum quo, doloribus et porro consectetur possimus architecto nesciunt, magnam ipsam! Molestias ipsum explicabo quod,
+                                culpa doloremque eos delectus voluptate cum expedita. Nihil at qui animi illum impedit deleniti fuga, aspernatur error accusantium fugit ad, sed deserunt vitae? Amet nam quaerat, veritatis enim et itaque velit architecto earum, saepe voluptate debitis
+                                iure, ab aliquam doloribus. Cum exercitationem eveniet laborum voluptates ipsa eius, soluta commodi. Eos eveniet corporis repellendus, quis ad debitis perferendis veniam sunt molestiae omnis, officia suscipit nesciunt ducimus! Temporibus quis nobis
+                                asperiores.
+                            </div>
+                        </div>
+                </section>
 
-                        </a>
+                <div class="parallax2" id="services">
+                    <div class="heading-sm">
+                        <span class="border">
+                            Description
+                        </span>
                     </div>
-                </div> */}
-                <main>
-                    <div class="fix">
-                        <article>
-                            <center class="thirteen"><h1>About Us</h1></center>
-                            <p>DASHBOARD--<br />
-                                Shows The Progress Of Your Project Through Graphical Representation
-                                Also Lets You Keep Track Of Each Task So You Dont Have To Worry About Deadlines.<br />
-                                Calendar--<br />
-                                Gives You Detailed Versions Of Projects And Tasks Within Them Weekly And Monthly<br />
-                                Add Proejct--<br />
-                                Add Project And Information About Members Instantaneously.
-                            </p>
-                        </article>
-                    </div>
-                    <div class="fix">
-                        <article>
-                            <center class="thirteen"><h1>Other Perks</h1></center>
-                            <p >
-                                From increased chances of project success to creating a united team.keeping up to date on the progress of the project and awareness of project status
-                                From increased chances of project success to creating a united team.
-                                keeping up to date on the progress of the project and awareness of project status
-                                From increased chances of project success to creating a united team.
-                                keeping up to date on the progress of the project and awareness of project status
+                </div>
 
-                            </p>
-                        </article>
-                    </div>
-                </main>
+                <section class="dark">
+                    <h2>Description</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae repellat debitis cupiditate. Cupiditate aspernatur rerum voluptas doloribus ut? Odit minima fuga earum temporibus assumenda. Saepe libero, adipisci hic consequatur nisi illo eius neque rem
+                        ratione! Saepe nisi eos, corporis provident, recusandae delectus, officia vero eius quaerat voluptas error molestiae rem rerum! Odit facilis quos est tempora, aspernatur
+                    </p>
+                </section>
 
+                <div class="parallax3" id="partners"></div>
 
+                <div class="dark">
+                    <h3 class="text-center">Description here</h3>
+                    <br/>
+                        <div class="col-md-12 row">
+                            <div class="col-md-6">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur consequuntur omnis repudiandae magnam animi architecto excepturi exercitationem soluta. Cupiditate, omnis similique, magnam veritatis vitae molestias temporibus esse doloribus asperiores
+                                exercitationem, iste corrupti earum. Hic saepe non eius amet temporibus at autem officiis suscipit doloribus. Dignissimos odit possimus ex, voluptatum debitis nostrum iusto maxime obcaecati corporis, aut nihil odio mollitia facere dolore voluptas
+                                natus consectetur porro hic ut est tempora in doloribus, aspernatur accusantium. Perspiciatis ab nemo iusto eveniet distinctio odit voluptatum necessitatibus et neque quidem natus, enim officiis optio voluptate alias inventore dolores sint provident
+                                sunt nihil, doloribus voluptas dolorum.
+                            </div>
+                            <div class="col-md-6">
+                                quisquam molestias sequi ipsa magnam quasi ad reiciendis libero expedita nemo asperiores nobis ducimus ab aliquid accusantium fugit unde quis cum consequatur? Libero, inventore, perspiciatis explicabo ipsam repellat at quod, iure ullam temporibus autem
+                                tempore ad odio eveniet debitis amet necessitatibus accusantium earum.
+                            </div>
+                        </div>
 
-                <Footer />
+                </div>
+
+                <div class="parallax4"></div>
+
+                <section class="section1" id="contact-header">
+                    <h1>Contact Us</h1>
+                </section>
+                <div class="parallax5">
+                    <section id="contact">
+                        <div class="container">
+                            <div id="form-content" class="col-lg-8 mx-auto bg-light form">
+                                <h3>Got Questions?</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At voluptatibus esse voluptate ullam ab consequatur, ex illo sed harum ut labore doloremque ipsum voluptatum tempore? Incidunt magni reiciendis totam? Ducimus?</p>
+                                <hr/>
+                                    <form style={{padding: "30px"}}>
+                                        <div class="control-group">
+                                            <div class="group">
+                                                <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                                                    <input class="col-md-12" type="text" required/>
+                                                        <span class="highlight"></span>
+                                                        <span class="bar"></span>
+                                                        <label>Name</label>
+                                                        <p class="help-block text-danger"></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+                                            <div class="group">
+                                                <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                                                    <input class="col-md-12" type="text" required/>
+                                                        <span class="highlight"></span>
+                                                        <span class="bar"></span>
+                                                        <label>Email</label>
+                                                        <p class="help-block text-danger"></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+                                            <div class="group">
+                                                <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                                                    <textarea class="col-md-12" type="textarea" rows="5" required="required"></textarea>
+                                                    <span class="highlight"></span>
+                                                    <span class="bar"></span>
+                                                    <label>Message</label>
+                                                    <p class="help-block text-danger"></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br/>
+                                            <div id="success"></div>
+                                            <div class="form-group">
+                                                <button type="submit" class="btn btn-primary col-md-12 btn-xl" id="sendMessageButton">Send
+                                                    Message</button>
+                                            </div>
+                                    </form>
+                            </div>
+                        </div>
+                    </section>
+                </div>
             </div>
         );
 
