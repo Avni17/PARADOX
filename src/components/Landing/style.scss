@@ -5,16 +5,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital@1&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@600&display=swap');
+
 :root {
   --fontt-size: 2rem;
   --bgg-size: 9rem;
   --shadoww-color: #ff1c64;
 }
+
 .landing {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Merriweather Sans', sans-serif;
   font-size: 15px;
   line-height: 1.5;
-  font: 15px/1.5 Arial, Helvetica, sans-serif;
   padding: 0;
   margin: 0;
   align-items: center;
@@ -24,6 +26,7 @@
   margin: 0 !important;
   padding: 0 !important;
 }
+
 div#root {
   margin: 0 !important;
   padding: 0 !important;
@@ -38,6 +41,7 @@ div#root {
   top: 0px;
   // height: 100vh;
 }
+
 @keyframes gradient {
   0% {
     background-position: 0% 50%;
@@ -53,8 +57,8 @@ div#root {
 }
 
 .contain {
-  margin: auto 20px;
-  overflow: hidden;
+
+  /* overflow: hidden;*/
 }
 
 .dark {
@@ -72,15 +76,18 @@ div#root {
   margin-bottom: 5px;
   color: darkblue;
   font-size: 20px;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-family: 'Merriweather Sans', sans-serif;
 }
+
 .header {
-  background: black;
-  color: #ffffff;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  min-height: 70px;
-  border-bottom: darkblue 3px solid;
+  background: #f1f0ed;
+  /*color: #ffffff;*/
+  box-shadow: 0px 5px 10px 0px #aaa;
+  position: fixed;
+  height: 60px;
+  z-index: 10;
+  width: 100%;
+  /* border-bottom: darkblue 3px solid;*/
 }
 
 .header a {
@@ -93,35 +100,37 @@ div#root {
 .header li {
   float: left;
   display: inline;
-  padding: 0 20px 0 20px;
 }
 
 .header #branding {
   float: left;
 }
+
 .header #branding h1 {
   margin: 0;
   padding: 0;
 }
 
 .webtitle {
-  font-family: "Permanent Marker", cursive;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .header nav {
   float: right;
   margin-top: 5px;
 }
+
 .header .highlight,
 .header .current a {
   color: rgb(255, 0, 170);
   font-weight: bold;
 }
+
 .highlight {
-  font-family: "Smooch", cursive;
-  font-size: 60px;
-  margin: 15px;
+
+  font-size: 40px;
 }
+
 body {
   margin-top: 0;
   padding: 0;
@@ -134,7 +143,6 @@ body {
 
 .navul {
   margin: 0;
-  margin-top: 8px;
   display: flex;
 }
 
@@ -143,13 +151,13 @@ body {
   margin: 0 20px;
   transition: 0.5s;
 }
+
 .navul li a {
   display: block;
   position: relative;
   text-decoration: none;
-  padding: 5px;
-  font-size: 30px;
-  font-family: "Courgette", cursive;
+  font-size: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #fff;
   text-transform: uppercase;
   transition: 0.5s;
@@ -188,6 +196,7 @@ body {
   transform-origin: left;
   transform: scaleX(1);
 }
+
 .rotate {
   animation: rotation 8s infinite linear;
 }
@@ -196,10 +205,12 @@ body {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(359deg);
   }
 }
+
 /* header .rotate .h1 img{
   position:absolute;
   top:50%;
@@ -226,6 +237,7 @@ body {
   font-size: 100px;
   text-align: center;
 }
+
 #showcase h1 {
   margin-top: 50px;
   font-size: 50px;
@@ -233,26 +245,31 @@ body {
   text-align: center;
   color: rgb(3, 3, 110);
 }
+
 #showcase p {
   font-size: 20px;
   color: black;
   font-weight: bold;
 }
+
 #showcase h2 {
   font-size: 40px;
   color: darkblue;
   font-weight: bold;
 }
+
 .glow {
   -webkit-animation: glow 1s ease-in-out infinite alternate;
   -moz-animation: glow 1s ease-in-out infinite alternate;
   animation: glow 1s ease-in-out infinite alternate;
 }
+
 @keyframes glow {
   from {
     text-shadow: 0 0 10px #eeeeee, 0 0 20px #ee69c2, 0 0 30px #f1cece, 0 0 40px #f37f7f, 0 0 50px #cbafd8,
       0 0 60px #f1e2f8, 0 0 70px #e2d7e7;
   }
+
   to {
     text-shadow: 0 0 20px #eeeeee, 0 0 30px #f1d7e4, 0 0 40px #dfc8d3, 0 0 50px #f7e5ee, 0 0 60px #e7c1d4,
       0 0 70px #f1bed8, 0 0 80px #e9e2e6;
@@ -260,11 +277,12 @@ body {
 }
 
 #boxes {
-  margin-top: 20px;
+  margin-top: 110px;
   align-items: center;
   display: flex;
   justify-content: center;
 }
+
 /*
 #boxes .box{
     float:left;
@@ -281,10 +299,12 @@ article#main-col {
   float: center;
   width: 70%;
 }
+
 article#main-col h1 {
   font-size: 50px;
   color: darkblue;
 }
+
 .footer {
   padding: 5px;
   margin-top: 5px;
@@ -342,6 +362,7 @@ article#main-col h1 {
 }
 
 @keyframes shake {
+
   5%,
   15%,
   25%,
@@ -384,6 +405,7 @@ article#main-col h1 {
 }
 
 @keyframes crack1 {
+
   0%,
   95% {
     transform: translate(-50%, -50%);
@@ -395,6 +417,7 @@ article#main-col h1 {
 }
 
 @keyframes crack2 {
+
   0%,
   95% {
     transform: translate(-50%, -50%);
@@ -481,7 +504,7 @@ body{
   display: flex;
   bottom: 10px;
   left: 50%;
-  top:100%;
+  top: 100%;
   transform: translateX(-50%);
 }
 
@@ -596,6 +619,7 @@ body{
   border-radius: 50px;
   cursor: pointer;
 }
+
 .scroll-down::before,
 .scroll-down::after {
   content: "";
@@ -610,6 +634,7 @@ body{
   border-left: transparent;
   animation: scroll-down 1s ease-in-out infinite;
 }
+
 .scroll-down::before {
   top: 30%;
   animation-delay: 0.7s;
@@ -646,6 +671,7 @@ body{
     opacity: 0;
   }
 }
+
 .Title {
   z-index: 1;
   font-size: var(--fontt-size);
@@ -735,6 +761,7 @@ body{
   height: 100vh;
   width: 100%;
 }
+
 ul {
   display: block;
   width: 100%;
@@ -752,6 +779,7 @@ ul {
   width: 30px;
   background: rgba(255, 255, 255, 0.2);
 }
+
 .li:nth-child(2) {
   position: absolute;
   left: 30%;
@@ -759,6 +787,7 @@ ul {
   width: 45px;
   background: rgba(255, 255, 255, 0.2);
 }
+
 .li:nth-child(3) {
   position: absolute;
   left: 50%;
@@ -766,6 +795,7 @@ ul {
   width: 70px;
   background: rgba(255, 255, 255, 0.2);
 }
+
 .li:nth-child(4) {
   position: absolute;
   left: 80%;
@@ -773,6 +803,7 @@ ul {
   width: 20px;
   background: rgba(255, 255, 255, 0.2);
 }
+
 .li {
   animation: animate 15s linear 1s infinite;
 }
@@ -781,10 +812,12 @@ ul {
   from {
     transform: translateY(+1500%) rotate(180deg);
   }
+
   to {
     transform: translateY(-150%) rotate(360deg);
   }
 }
+
 .con {
   width: auto;
   height: auto;
@@ -821,11 +854,13 @@ ul {
   float: right;
   margin: 15px;
 }
+
 .con h2 {
   color: #ddd;
   line-height: 85px;
   text-shadow: -2px -1px rgba(0, 0, 0, 0.4);
 }
+
 .con p {
   color: #ddd;
   padding: 0 22px;
@@ -845,48 +880,56 @@ ul {
     border: 2px solid yellow;
     transition: all 0.25s ease-out;
   }
+
   &::before {
     background-color: yellow;
     top: -15px;
     left: -15px;
   }
+
   &::after {
     bottom: -15px;
     right: -15px;
   }
+
   &:hover {
     &::before {
       top: 15px;
       left: 15px;
     }
+
     &::after {
       bottom: 15px;
       right: 15px;
     }
   }
 }
+
 main {
 
   font: 18px/1.25 "Nunito", sans-serif;
   margin: 0 auto;
   max-width: 60em;
   padding: 0 1em;
-  .fix
-  {
-    background-color:black;
-    border-radius:10px;
+
+  .fix {
+    background-color: black;
+    border-radius: 10px;
   }
+
   article {
-   
+
     background: rgba(0, 255, 0, 1);
     margin: 3em 1em;
     padding: 2em 3em;
     position: relative;
+
     &,
     &:before,
     &:after {
       mix-blend-mode: screen;
     }
+
     &:before,
     &:after {
       content: "";
@@ -895,16 +938,19 @@ main {
       width: 100%;
       z-index: -1;
     }
+
     &:before {
       background: rgba(255, 0, 0, 1);
       left: -1em;
       top: -1em;
     }
+
     &:after {
       background: rgba(0, 0, 255, 1);
       bottom: -1em;
       right: -1em;
     }
+
     p {
       padding-top: 30px;
       font-family: 'Merriweather', serif;
@@ -929,6 +975,7 @@ main {
   padding: 5px 11px 3px 11px;
   font-family: 'Kaushan Script', cursive;
 }
+
 .thirteen h1:before,
 .thirteen h1:after {
   background-color: #e81d83;
