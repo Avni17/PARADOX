@@ -74,14 +74,6 @@ export default class landing extends Component {
             <div className='landing app'>
                 <Navbar />
 
-                <div class="boxes">
-                    <ul>
-                        <li className='li'></li>
-                        <li className='li'></li>
-                        <li className='li'></li>
-                        <li className='li'></li>
-                    </ul>
-                </div>
 
 
                 <div id="boxes">
