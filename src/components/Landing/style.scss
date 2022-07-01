@@ -20,7 +20,7 @@
   align-items: center;
   background: url('./images/rm124-adj-03-leavesbackground.jpg');
   background-size: cover;
-  height: 100vh;
+  height: 10vh;
   margin: 0 !important;
   padding: 0 !important;
 }
@@ -34,9 +34,9 @@ div#root {
 
 .landing {
   overflow-y: scroll;
-  position: relative;
+  //position: relative;
   top: 0px;
-  height: 100vh;
+  // height: 100vh;
 }
 @keyframes gradient {
   0% {
@@ -481,6 +481,7 @@ body{
   display: flex;
   bottom: 10px;
   left: 50%;
+  top:100%;
   transform: translateX(-50%);
 }
 
@@ -864,11 +865,18 @@ ul {
   }
 }
 main {
+
   font: 18px/1.25 "Nunito", sans-serif;
   margin: 0 auto;
   max-width: 60em;
   padding: 0 1em;
+  .fix
+  {
+    background-color:black;
+    border-radius:10px;
+  }
   article {
+   
     background: rgba(0, 255, 0, 1);
     margin: 3em 1em;
     padding: 2em 3em;
@@ -977,7 +985,8 @@ main {
   left: 25%;
   right: 25%;
   width: 800px;
-  height: 380px;
+  height: 410px;
+  padding-bottom: 30px;
   justify-content: center;
   align-items: center;
   border-radius: 10px;
@@ -988,8 +997,8 @@ main {
 .box::before {
   content: "";
   position: absolute;
-  width: 150px;
-  height: 130%;
+  width: 800px;
+  height: 135%;
   background: linear-gradient(#00f59b, #7014f2);
   animation: animate 4s linear infinite;
 }
@@ -999,7 +1008,7 @@ main {
   position: absolute;
   inset: 6px;
   background: #03071e;
-  border-radius: 10px;
+  border-radius: 15px;
 }
 
 

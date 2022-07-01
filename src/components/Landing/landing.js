@@ -104,7 +104,7 @@ export default class landing extends Component {
                             <div class="btn"></div>
                             <div class="btn"></div>
                             <div class="btn"></div>
-                            <div class="btn"></div>
+                            {/* <div class="btn"></div> */}
 
 
 
@@ -144,6 +144,7 @@ export default class landing extends Component {
                     </div>
                 </div> */}
                 <main>
+                    <div class="fix">
                     <article>
                         <center class="thirteen"><h1>About Us</h1></center>
                         <p>DASHBOARD--<br />
@@ -155,6 +156,8 @@ export default class landing extends Component {
                             Add Project And Information About Members Instantaneously.
                         </p>
                     </article>
+                    </div>
+                    <div class="fix">
                     <article>
                         <center class="thirteen"><h1>Other Perks</h1></center>
                         <p >
@@ -166,6 +169,7 @@ export default class landing extends Component {
 
                         </p>
                     </article>
+                    </div>
                 </main>
 
 
