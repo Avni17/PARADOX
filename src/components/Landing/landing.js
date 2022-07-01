@@ -84,25 +84,25 @@ export default class landing extends Component {
                 </div>
 
 
-                <div id="boxes">
+                <div  className='box' id="boxes" >
                     <div class="img-slider">
                         <div class="slide active">
-                            <img src={dashboard} alt="" />
+                            <img height="360 px" src={dashboard} alt="" />
                             <div class="info">
                             </div>
                         </div>
                         <div class="slide">
-                            <img src={addproject} alt="" />
+                            <img height="360 px" src={addproject} alt="" />
                             <div class="info">
                             </div>
                         </div>
                         <div class="slide">
-                            <img src={calendar} alt="" />
+                            <img height="360 px" src={calendar} alt="" />
                             <div class="info">
                             </div>
                         </div>
                         <div class="slide">
-                            <img src={graph} alt="" />
+                            <img height="360 px" src={graph} alt="" />
                             <div class="info">
                             </div>
                         </div>
@@ -120,18 +120,20 @@ export default class landing extends Component {
                     </div>
                 </div>
 
-                <div id="sec-1">
+                {/* <div id="sec-1">
                     <div class="contain">
                         <a href="#showcase" aria-label="Read more about Seminole tax hike">
                             <div class="scroll-down"></div>
                         </a>
                     </div>
-                </div>
+                </div> */}
                 <div id="showcase">
                     <div class="contain">
-                        <h1 class="h12">THE MOST POPULAR PROJECT TRACKER FOR TEAMS</h1>
-                        <marquee width="100%" direction="left" height="100px" class="glow"><h2>HECTIC SCHEDULES? WE ARE HERE TO HELP YOU!!!!SIGN UP NOW BY CLICKING ON LETS TRACK</h2></marquee>
-                        <p style={{ color: "white" }}>Project tracking software used by millions.<br />
+                        <h1 class="h12 blink-soft animate-charcter">THE MOST POPULAR PROJECT TRACKER FOR TEAMS</h1>
+                        <marquee width="100%" direction="left" height="80px" loop="infinite" >
+                        <span class="Title Background">HECTIC SCHEDULES? WE ARE HERE TO HELP YOU!!!!SIGN UP NOW BY CLICKING ON LETS TRACK</span>
+                            <h2 id="text" class="Title">HECTIC SCHEDULES? WE ARE HERE TO HELP YOU!!!!SIGN UP NOW BY CLICKING ON LETS TRACK</h2></marquee>
+                        <p class="info" >Project tracking software used by millions.<br />
                             Pardox is a project tracker that lets you work hours across projects.<br />
                             Unlimted users,free forever.<br />
                             you can keep track of daily work at you company by the exclusive feautures offered by paradox.<br />
@@ -141,52 +143,39 @@ export default class landing extends Component {
                     </div>
                 </div>
 
-                <div id="sec-2">
+                {/* <div id="sec-2">
                     <div class="contain">
                         <a href="#main" aria-label="Read more about Seminole tax hike">
                             <div class="scroll-down"></div>
 
                         </a>
                     </div>
-                </div>
-                <div id="main">
-                    <div class="contain">
-                        <article id="main-col">
-                            <div className='con'>
-                                <div className='imageContainer'>
-                                </div>
-                                <center><h2>About Us</h2></center>
-                                <p>DASHBOARD--<br />
-                                    Shows The Progress Of Your Project Through Graphical Representation
-                                    Also Lets You Keep Track Of Each Task So You Dont Have To Worry About Deadlines.<br />
-                                    Calendar--<br />
-                                    Gives You Detailed Versions Of Projects And Tasks Within Them Weekly And Monthly<br />
-                                    Add Proejct--<br />
-                                    Add Project And Information About Members Instantaneously.
-                                </p>
-                            </div>
-                            <div className='con'>
-                                <div className='imageContainer'>
-                                </div>
-                                <center><h2>Other Perks</h2></center>
-                                <p >
-                                    From increased chances of project success to creating a united team.keeping up to date on the progress of the project and awareness of project status
-                                    From increased chances of project success to creating a united team.
-                                    keeping up to date on the progress of the project and awareness of project status
-                                    From increased chances of project success to creating a united team.
-                                    keeping up to date on the progress of the project and awareness of project status
+                </div> */}
+                <main>
+                    <article>
+                        <center class="thirteen"><h1>About Us</h1></center>
+                        <p>DASHBOARD--<br />
+                            Shows The Progress Of Your Project Through Graphical Representation
+                            Also Lets You Keep Track Of Each Task So You Dont Have To Worry About Deadlines.<br />
+                            Calendar--<br />
+                            Gives You Detailed Versions Of Projects And Tasks Within Them Weekly And Monthly<br />
+                            Add Proejct--<br />
+                            Add Project And Information About Members Instantaneously.
+                        </p>
+                    </article>
+                    <article>
+                        <center class="thirteen"><h1>Other Perks</h1></center>
+                        <p >
+                            From increased chances of project success to creating a united team.keeping up to date on the progress of the project and awareness of project status
+                            From increased chances of project success to creating a united team.
+                            keeping up to date on the progress of the project and awareness of project status
+                            From increased chances of project success to creating a united team.
+                            keeping up to date on the progress of the project and awareness of project status
 
-                                </p>
-                            </div>
+                        </p>
+                    </article>
+                </main>
 
-                            <br />
-                            <br />
-
-                        </article>
-                        {/* <img src={project} /> */}
-
-                    </div>
-                </div>
 
 
                 <Footer />
