@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './style.scss';
+import './animCharacter.css';
 import $ from 'jquery';
 import s1 from './images/dashboard.jpeg'
 
@@ -65,7 +66,7 @@ export default class landing extends Component {
             <div className='landing app'>
                 <nav class="navbar navbar-expand-lg navbar-light fixed-top">
                     <div class="container">
-                        <a class="navbar-brand" href="#page-top">Company Name</a>
+                        <a class="navbar-brand" href="#page-top">Paradox</a>
                         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
@@ -90,7 +91,50 @@ export default class landing extends Component {
 
                 <div class="parallax1" id="page-top">
                     <div class="heading">
-                        Company Profile
+                        <h3 class="animate-charcter"> Paradox</h3>
+                    </div>
+                    <div class="wrapp">
+                        <div class="border-circle" id="one"></div>
+                        <div class="border-circle" id="two"></div>
+                        <div class="background-circle">
+                            <div class="triangle-light"></div>
+                            <div class="body"></div>
+                            <span class="shirt-text">P</span>
+                            <span class="shirt-text">A</span>
+                            <span class="shirt-text">R</span>
+                            <span class="shirt-text">A</span>
+                            <span class="shirt-text">D</span>
+                            <span class="shirt-text">O</span>
+                            <span class="shirt-text">X</span>
+                            <div class="triangle-dark"></div>
+                        </div>
+                        <div class="head">
+                            <div class="ear" id="left"></div>
+                            <div class="ear" id="right"></div>
+                            <div class="hair-main">
+                                <div class="sideburn" id="left"></div>
+                                <div class="sideburn" id="right"></div>
+                                <div class="hair-top"></div>
+                            </div>
+                            <div class="face">
+                                <div class="hair-bottom"></div>
+                                <div class="nose"></div>
+                                <div class="eye-shadow" id="left">
+                                    <div class="eyebrow"></div>
+                                    <div class="eye"></div>
+                                </div>
+                                <div class="eye-shadow" id="right">
+                                    <div class="eyebrow"></div>
+                                    <div class="eye"></div>
+                                </div>
+                                <div class="mouth"></div>
+                                <div class="shadow-wrapper">
+                                    <div class="shadow"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="music-note" id="one">&#9835;</span>
+                        <span class="music-note" id="two">&#9834;</span>
                     </div>
                 </div>
 
