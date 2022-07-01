@@ -18,17 +18,9 @@
   padding: 0;
   margin: 0;
   align-items: center;
-  background-color: white;
-  /* background-image:url('bb.jpg');
-    background-repeat: repeat;
-    background-size: 810px 810px;
-    height: 100vh; */
-  background: linear-gradient(-45deg, #e7b3a3, #e597b5, #7dbdd4, #85dac6);
-  background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
+  background: url('./images/rm124-adj-03-leavesbackground.jpg');
+  background-size: cover;
   height: 100vh;
-  justify-content: center;
-
   margin: 0 !important;
   padding: 0 !important;
 }
@@ -737,9 +729,7 @@ body{
 }
 
 .app {
-  background: -webkit-linear-gradient(to left, #1f34a8, #1f34a8, #1f34a8);
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to left, #9fa6cf, #4b5cbb, #1f34a8);
+
   height: 100vh;
   width: 100%;
 }
