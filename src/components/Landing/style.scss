@@ -25,22 +25,18 @@
     background-repeat: repeat;
     background-size: 810px 810px;
     height: 100vh; */
-  <<<<<<< HEAD background-size: cover;
-  =======background: linear-gradient(-45deg, #e7b3a3, #e597b5, #7dbdd4, #85dac6);
+  background-size: cover;
+  background: linear-gradient(-45deg, #e7b3a3, #e597b5, #7dbdd4, #85dac6);
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
-  >>>>>>>0c8a24a2ece35e4da7c3d1f4e82dc139dfff2e2e height: 100vh;
+  height: 100vh;
   justify-content: center;
-
   margin: 0 !important;
   padding: 0 !important;
-  <<<<<<< HEAD
 }
 
-=======
-}
 
->>>>>>>0c8a24a2ece35e4da7c3d1f4e82dc139dfff2e2e div#root {
+div#root {
   margin: 0 !important;
   padding: 0 !important;
   position: absolute;
@@ -60,27 +56,24 @@
     background-position: 0% 50%;
   }
 
-  <<<<<<< HEAD 50% {
+  50% {
     background-position: 100% 50%;
   }
 
-  =======50% {
-    background-position: 100% 50%;
-  }
 
-  >>>>>>>0c8a24a2ece35e4da7c3d1f4e82dc139dfff2e2e 100% {
+  100% {
     background-position: 0% 50%;
   }
 }
 
 .contain {
-  <<<<<<< HEAD width: 80%;
+  width: 80%;
   margin: auto;
   overflow: hidden;
 
-  =======margin: auto 20px;
+  margin: auto 20px;
   overflow: hidden;
-  >>>>>>>0c8a24a2ece35e4da7c3d1f4e82dc139dfff2e2e
+
 }
 
 .dark {
@@ -89,7 +82,7 @@
   margin-top: 10px;
   margin-bottom: 10px;
   color: #ffffff;
-  <<<<<<< HEAD=======>>>>>>>0c8a24a2ece35e4da7c3d1f4e82dc139dfff2e2e
+
 }
 
 .bright {
@@ -99,8 +92,8 @@
   margin-bottom: 5px;
   color: darkblue;
   font-size: 20px;
-  <<<<<<< HEAD font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  =======font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 .header {
@@ -112,14 +105,14 @@
   border-bottom: darkblue 3px solid;
 }
 
->>>>>>>0c8a24a2ece35e4da7c3d1f4e82dc139dfff2e2e .header a {
+.header a {
   color: white;
   text-decoration: none;
   text-transform: uppercase;
   font-size: 16px;
 }
 
-<<<<<<< HEAD .header {
+.header {
   background: #35424a;
   color: #ffffff;
   padding-top: 30px;
@@ -165,7 +158,7 @@
   color: rgb(255, 0, 170);
   font-weight: bold;
 
-  =======.header li {
+  .header li {
     float: left;
     display: inline;
     padding: 0 20px 0 20px;
@@ -247,7 +240,6 @@
     filter: blur(0);
     text-decoration: none;
     color: #fff;
-    >>>>>>>0c8a24a2ece35e4da7c3d1f4e82dc139dfff2e2e
   }
 
   .navul li a:before {
@@ -311,57 +303,57 @@
     text-align: center;
   }
 
-  <<<<<<< HEAD #showcase h1 {
+  #showcase h1 {
     margin-top: 150px;
 
-    =======#showcase h1 {
+    #showcase h1 {
       margin-top: 50px;
-      >>>>>>>0c8a24a2ece35e4da7c3d1f4e82dc139dfff2e2e font-size: 50px;
+      font-size: 50px;
       margin-bottom: 10px;
       text-align: center;
       color: rgb(3, 3, 110);
     }
 
-    <<<<<<< HEAD=======>>>>>>>0c8a24a2ece35e4da7c3d1f4e82dc139dfff2e2e #showcase p {
+    #showcase p {
       font-size: 20px;
       color: black;
       font-weight: bold;
     }
 
-    <<<<<<< HEAD=======>>>>>>>0c8a24a2ece35e4da7c3d1f4e82dc139dfff2e2e #showcase h2 {
+    #showcase h2 {
       font-size: 40px;
       color: darkblue;
       font-weight: bold;
-      <<<<<<< HEAD
+
     }
 
-    =======
+
   }
 
-  >>>>>>>0c8a24a2ece35e4da7c3d1f4e82dc139dfff2e2e .glow {
+  .glow {
     -webkit-animation: glow 1s ease-in-out infinite alternate;
     -moz-animation: glow 1s ease-in-out infinite alternate;
     animation: glow 1s ease-in-out infinite alternate;
   }
 
-  <<<<<<< HEAD @keyframes glow {
+  @keyframes glow {
     from {
       text-shadow: 0 0 10px #eeeeee, 0 0 20px #ee69c2, 0 0 30px #f1cece, 0 0 40px #f37f7f,
         0 0 50px #cbafd8, 0 0 60px #f1e2f8, 0 0 70px #e2d7e7;
 
-      =======@keyframes glow {
+      @keyframes glow {
         from {
           text-shadow: 0 0 10px #eeeeee, 0 0 20px #ee69c2, 0 0 30px #f1cece, 0 0 40px #f37f7f, 0 0 50px #cbafd8,
             0 0 60px #f1e2f8, 0 0 70px #e2d7e7;
-          >>>>>>>0c8a24a2ece35e4da7c3d1f4e82dc139dfff2e2e
+
         }
 
         to {
-          <<<<<<< HEAD text-shadow: 0 0 20px #eeeeee, 0 0 30px #f1d7e4, 0 0 40px #dfc8d3, 0 0 50px #f7e5ee,
+          text-shadow: 0 0 20px #eeeeee, 0 0 30px #f1d7e4, 0 0 40px #dfc8d3, 0 0 50px #f7e5ee,
             0 0 60px #e7c1d4, 0 0 70px #f1bed8, 0 0 80px #e9e2e6;
-          =======text-shadow: 0 0 20px #eeeeee, 0 0 30px #f1d7e4, 0 0 40px #dfc8d3, 0 0 50px #f7e5ee, 0 0 60px #e7c1d4,
+          text-shadow: 0 0 20px #eeeeee, 0 0 30px #f1d7e4, 0 0 40px #dfc8d3, 0 0 50px #f7e5ee, 0 0 60px #e7c1d4,
             0 0 70px #f1bed8, 0 0 80px #e9e2e6;
-          >>>>>>>0c8a24a2ece35e4da7c3d1f4e82dc139dfff2e2e
+
         }
       }
 
@@ -384,7 +376,7 @@
     width:350px;
 } */
 
-      <<<<<<< HEAD article#main-col {
+      article#main-col {
         float: center;
         width: 70%;
 
@@ -398,7 +390,7 @@
 
       }
 
-      =======article#main-col {
+      article#main-col {
         float: center;
         width: 70%;
       }
@@ -408,7 +400,7 @@
         color: darkblue;
       }
 
-      >>>>>>>0c8a24a2ece35e4da7c3d1f4e82dc139dfff2e2e .footer {
+      .footer {
         padding: 5px;
         margin-top: 5px;
         color: white;
@@ -466,7 +458,7 @@
 
       @keyframes shake {
 
-        <<<<<<< HEAD=======>>>>>>>0c8a24a2ece35e4da7c3d1f4e82dc139dfff2e2e 5%,
+        5%,
         15%,
         25%,
         35%,
@@ -509,7 +501,7 @@
 
       @keyframes crack1 {
 
-        <<<<<<< HEAD=======>>>>>>>0c8a24a2ece35e4da7c3d1f4e82dc139dfff2e2e 0%,
+        0%,
         95% {
           transform: translate(-50%, -50%);
         }
@@ -521,7 +513,7 @@
 
       @keyframes crack2 {
 
-        <<<<<<< HEAD=======>>>>>>>0c8a24a2ece35e4da7c3d1f4e82dc139dfff2e2e 0%,
+        0%,
         95% {
           transform: translate(-50%, -50%);
         }
@@ -553,9 +545,9 @@ body{
         width: 800px;
         height: 360px;
         margin: 10px;
-        <<<<<<< HEAD background: #1D212B;
-        =======background: #1d212b;
-        >>>>>>>0c8a24a2ece35e4da7c3d1f4e82dc139dfff2e2e align-items: center;
+        background: #1D212B;
+        background: #1d212b;
+        align-items: center;
         display: flex;
         justify-content: center;
       }
@@ -621,9 +613,9 @@ body{
       }
 
       .img-slider .navigation .btn.active {
-        <<<<<<< HEAD background: #2696E9;
-        =======background: #2696e9;
-        >>>>>>>0c8a24a2ece35e4da7c3d1f4e82dc139dfff2e2e box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+        background: #2696E9;
+        background: #2696e9;
+        box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
       }
 
       @media (max-width: 820px) {
@@ -710,7 +702,7 @@ body{
         }
       }
 
-      <<<<<<< HEAD=======>>>>>>>0c8a24a2ece35e4da7c3d1f4e82dc139dfff2e2e .scroll-down {
+      .scroll-down {
         margin-top: 20px;
         z-index: 99;
         height: 50px;
@@ -723,7 +715,7 @@ body{
         cursor: pointer;
       }
 
-      <<<<<<< HEAD=======>>>>>>>0c8a24a2ece35e4da7c3d1f4e82dc139dfff2e2e .scroll-down::before,
+      .scroll-down::before,
       .scroll-down::after {
         content: "";
         position: absolute;
@@ -738,7 +730,7 @@ body{
         animation: scroll-down 1s ease-in-out infinite;
       }
 
-      <<<<<<< HEAD=======>>>>>>>0c8a24a2ece35e4da7c3d1f4e82dc139dfff2e2e .scroll-down::before {
+      .scroll-down::before {
         top: 30%;
         animation-delay: 0.7s;
         /* animation: scroll-down 1s ease-in-out infinite; */
@@ -748,7 +740,7 @@ body{
         0% {
           /* top:20%; */
           opacity: 0;
-          <<<<<<< HEAD
+
         }
 
         30% {
@@ -920,7 +912,6 @@ body{
         }
       }
 
-      =======
     }
 
     30% {
@@ -1339,5 +1330,4 @@ body{
       transform: rotate(360deg);
     }
   }
-
-  >>>>>>>0c8a24a2ece35e4da7c3d1f4e82dc139dfff2e2e
+}
