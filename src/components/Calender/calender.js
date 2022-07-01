@@ -225,7 +225,7 @@ class AppointmentFormContainerBasic extends React.PureComponent {
               </MuiPickersUtilsProvider>
             </div>
             <div className={classes.wrapper}>
-            <Create className={classes.icon} color="action" />
+              <Create className={classes.icon} color="action" />
               {/* <LocationOn className={classes.icon} color="action" /> */}
               <TextField
                 {...textEditorProps('Project_Name')}
@@ -287,7 +287,7 @@ class Demo extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      data:[],
+      data: [],
       currentDate: '2021-12-12',
       confirmationVisible: false,
       editingFormVisible: false,
@@ -295,15 +295,15 @@ class Demo extends React.PureComponent {
       editingAppointment: undefined,
       previousAppointment: undefined,
       addedAppointment: {},
-      startDayHour:8,
+      startDayHour: 8,
       endDayHour: 23,
       isNewAppointment: false,
       email: '',
-      update:0
+      update: 0
     };
     this.calendar_data = this.calendar_data.bind(this);
     this.adddatabase = this.adddatabase.bind(this);
-    
+
     this.toggleConfirmationVisible = this.toggleConfirmationVisible.bind(this);
     this.commitDeletedAppointment = this.commitDeletedAppointment.bind(this);
     this.toggleEditingFormVisibility = this.toggleEditingFormVisibility.bind(this);
@@ -343,8 +343,7 @@ class Demo extends React.PureComponent {
       };
     });
   }
-  calendar_data()
-  {
+  calendar_data() {
     if (this.state.email) {
 
       axios({
@@ -367,7 +366,7 @@ class Demo extends React.PureComponent {
           }
           // this.setState({
           //   data: result.data,
-            
+
           // })
 
 
@@ -381,8 +380,7 @@ class Demo extends React.PureComponent {
     }
 
   }
-  adddatabase()
-  {
+  adddatabase() {
     console.log(this.state.data);
     if (this.state.email) {
 
@@ -394,7 +392,7 @@ class Demo extends React.PureComponent {
 
       })
         .then(result => {
-           console.log(this.state);
+          console.log(this.state);
           // alert('prev'+this.state.date.length);
           // alert('new'+result.data.length);
           // date=result.data;
@@ -406,9 +404,8 @@ class Demo extends React.PureComponent {
           // }
           // this.setState({
           //   data: result.data,
-            
+
           // })
-          alert(result.data[0].Message)
 
 
           // console.log(this.state);
@@ -430,7 +427,7 @@ class Demo extends React.PureComponent {
       });
     }
     this.calendar_data();
-    
+
 
   }
   componentDidUpdate() {
@@ -516,7 +513,7 @@ class Demo extends React.PureComponent {
         <Scheduler
           data={data}
           height={660}
-          
+
         >
           <ViewState
             currentDate={currentDate}
@@ -526,13 +523,13 @@ class Demo extends React.PureComponent {
             onEditingAppointmentChange={this.onEditingAppointmentChange}
             onAddedAppointmentChange={this.onAddedAppointmentChange}
           />
-        
+
           <MonthView />
           <WeekView
             startDayHour={startDayHour}
             endDayHour={endDayHour}
           />
-          
+
           <AllDayPanel />
           <EditRecurrenceMenu />
           <Appointments />
@@ -588,9 +585,9 @@ class Demo extends React.PureComponent {
           <AddIcon />
         </Fab>
         <Button onClick={this.adddatabase} color="secondary" variant="outlined">
-              Submit
-              
-            </Button>
+          Submit
+
+        </Button>
       </Paper>
     );
   }

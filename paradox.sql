@@ -110,7 +110,6 @@ CREATE TABLE `project` (
 INSERT INTO `project` (`pid`, `name`, `dependencies`, `startTime`, `endTime`, `manager`) VALUES
 (1, 'proj1', 2, '2021-10-05', '2021-11-11', 1),
 (2, 'proj2', 0, '2021-10-18', '2021-11-02', 2);
-
 -- --------------------------------------------------------
 
 --

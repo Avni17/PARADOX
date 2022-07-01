@@ -40,7 +40,10 @@ if ($checkid != 0)
         
         
         $d=mysqli_fetch_array($result1);
-        $response[]=array("starttime"=>$f['startTime'],"days"=>$d['days'],"progress"=>$p,"pid"=>$ppid,"name"=>$d['name']);
+        if($d['days']>0)
+        $response[]=array("starttime"=>$f['startTime'],"days"=>$d['days'].' Days Left',"progress"=>$p,"pid"=>$ppid,"name"=>$d['name']);
+        else
+        $response[]=array("starttime"=>$f['startTime'],"days"=>'Completed',"progress"=>$p,"pid"=>$ppid,"name"=>$d['name']);
     }
     
 } 
@@ -50,7 +53,8 @@ else {
 }
 array_shift($response);
 // $response[] = array("Message" => $Message);
-
+$p  = array_column($response, 'pid');
+array_multisort($p, SORT_DESC,$response);
 echo json_encode($response);
 mysqli_close($con);
 ?>

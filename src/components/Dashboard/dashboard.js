@@ -3,17 +3,46 @@ import ReactDOM from 'react-dom';
 import './dashboard.scss';
 // import './dashboard-help.js';
 import axios from 'axios';
-import avni from './images/avni.jpg';
+import avni from './images/avni.png';
 import "./styles.css";
 const API_PATH = 'http://localhost/paradox/card_date_data.php';
 const API_PATH2 = 'http://localhost/paradox/addproject.php';
 const API_PATH3 = 'http://localhost/paradox/addparticipant.php';
 const API_PATH4 = 'http://localhost/paradox/typeview.php';
 const API_PATH5 = 'http://localhost/paradox/statusupdate.php';
+const API_PATH6 = 'http://localhost/paradox/username.php';
 const API_PATH8 = 'http://localhost/paradox/phpqueries.php';
 const API_PATH9 = 'http://localhost/paradox/notification.php';
 
 class Card extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+
+      i: props.k,
+      width: props.prog,
+    }
+    this.myfunction = this.myfunction.bind(this);
+  };
+  myfunction = () => {
+    var progress = document.getElementsByClassName('box-progress');
+    console.log(this.state);
+    progress[this.state.i].style.width = this.state.width + "%";
+
+
+  }
+
+  componentDidMount = () => {
+    this.myfunction();
+
+  }
+
+  componentDidUpdate = () => {
+    this.myfunction();
+    console.log(this.state);
+
+  }
   render() {
 
 
@@ -32,7 +61,7 @@ class Card extends React.Component {
                 <circle cx="12" cy="5" r="1" />
                 <circle cx="12" cy="19" r="1" /></svg>
             </button> */}
-              <Overlay3 p={this.props.pid} />
+              <Overlay3 p={this.props.pid} handle={this.props.handler} />
             </div>
           </div>
           <div class="project-box-content-header">
@@ -42,7 +71,7 @@ class Card extends React.Component {
           <div class="box-progress-wrapper">
             <p class="box-progress-header">Progress</p>
             <div class="box-progress-bar">
-              <span class="box-progress" style={{ width: "60%", backgroundColor: "#ff942e" }}></span>
+              <span class="box-progress" style={{ backgroundColor: "#ff942e" }}></span>
             </div>
             <p class="box-progress-percentage">{this.props.prog}%</p>
           </div>
@@ -58,7 +87,7 @@ class Card extends React.Component {
               <Overlay2 p={this.props.pid} />
             </div>
             <div class="days-left" style={{ color: "#ff942e" }}>
-              {this.props.days} Days Left
+              {this.props.days}
             </div>
           </div>
         </div>
@@ -75,6 +104,8 @@ export default class dashboard extends Component {
     this.state = {
       update: 0,
       update1: 0,
+      update2: 0,
+      username: '',
       currDate: Date().toLocaleString().split(' ').slice(0, 4).join(' '),
       email: '',
       date: [],
@@ -83,6 +114,7 @@ export default class dashboard extends Component {
       total: ''
     }
     this.logout = this.logout.bind(this);
+    this.username = this.username.bind(this);
     this.data_cards = this.data_cards.bind(this);
     this.handler = this.handler.bind(this);
     this.projinfo = this.projinfo.bind(this);
@@ -128,6 +160,39 @@ export default class dashboard extends Component {
 
 
           // console.log(this.state);
+          // alert(result.data[2].endtime)
+
+        })
+        .catch(error => this.setState());
+
+
+    }
+
+  }
+  username() {
+    if (this.state.email) {
+
+      axios({
+        method: 'post',
+        url: `${API_PATH6}`,
+        headers: { 'content-type': 'application/json' },
+        data: this.state
+
+      })
+        .then(result => {
+
+          // alert(result.data[2].totalprojects);
+
+          // date=result.data;
+          // console.log(this.state);
+          if (this.state.update2 == 0) {
+            this.setState({
+              update2: 1,
+              username: result.data[0].Message
+            })
+          }
+
+
           // alert(result.data[2].endtime)
 
         })
@@ -183,6 +248,7 @@ export default class dashboard extends Component {
     this.myfunction();
     this.data_cards();
     this.projinfo();
+    this.username();
 
   }
 
@@ -191,6 +257,7 @@ export default class dashboard extends Component {
     this.data_cards();
     console.log('hi');
     this.projinfo();
+    this.username();
 
   }
   // componentDidUpdate(prevProps, prevState) {
@@ -283,11 +350,11 @@ export default class dashboard extends Component {
             <div class="dropdown">
               <button class="dropbtn profile-btn">
                 <img src={avni} />
-                <span>{this.state.email}</span>
+                <span>{this.state.username}</span>
               </button>
               <div class="dropdown-content">
                 <button type='button' onClick={this.logout}>Logout</button>
-                <svg id="cloud-upload" fill="#000000" height="60" viewBox="0 0 24 24" width="30" xmlns="http://www.w3.org/2000/svg">
+                <svg id="cloud-upload" fill="#000000" height="60" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
                   <path d="M0 0h24v24H0z" fill="none" />
                   <path id="upcloud" d="M10.09 15.59l1.41 1.41 5-5-5-5-1.41 1.41 2.58 2.59h-9.67v2h9.67l-2.58 2.59zm8.91-12.59h-14c-1.11 0-2 .9-2 2v4h2v-4h14v14h-14v-4h-2v4c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-14c0-1.1-.9-2-2-2z" />
                 </svg>
@@ -370,13 +437,13 @@ export default class dashboard extends Component {
             </div>
             <div class="project-boxes jsGridView">
               {
-                this.state.date.map((item) => (<Card dt={item.starttime} days={item.days} prog={item.progress} pid={item.pid} name={item.name} />))
+                this.state.date.map((item, i) => (<Card k={i} handler={this.handler} dt={item.starttime} days={item.days} prog={item.progress} pid={item.pid} name={item.name} />))
 
               }
 
             </div>
           </div>
-          <div class="messages-section" style= {{display:'none'}}>
+          <div class="messages-section" style={{ display: 'none' }}>
             {/* <button class="messages-close">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x-circle">
                 <circle cx="12" cy="12" r="10" />
@@ -519,10 +586,8 @@ class OverlayContent extends React.Component {
   }
 
   handleSubmit(event) {
-    alert('hi');
     // alert("A name was submitted: " + this.state);
     console.log(this.state);
-    alert('hi');
     event.preventDefault();
   }
   onChange(e) {
@@ -532,7 +597,6 @@ class OverlayContent extends React.Component {
   }
   project() {
     if (this.state.projectName && this.state.startD && this.state.endD && this.state.values) {
-      alert('hi1');
       console.log(this.state);
       axios({
         method: 'post',
@@ -550,8 +614,8 @@ class OverlayContent extends React.Component {
           })
 
           if (result.data[0].Message == 'Data inserted') {
-            alert(result.data[0].Message);
             { this.props.handle() }
+            { this.props.closeOverlay() }
 
             // window.open("/dashboard", "_self")
             //   this.setState({
@@ -724,10 +788,8 @@ class OverlayContent2 extends React.Component {
   }
 
   handleSubmit(event) {
-    alert('hi');
     // alert("A name was submitted: " + this.state);
     console.log(this.state);
-    alert('hi');
     event.preventDefault();
   }
 
@@ -751,7 +813,7 @@ class OverlayContent2 extends React.Component {
           })
 
           if (result.data[0].Message == 'Data inserted') {
-            // alert(result.data[0].Message);
+            { this.props.closeOverlay() }
             // window.open("/dashboard", "_self")
             //   this.setState({
             //     redirectToReferrer: true
@@ -918,7 +980,6 @@ class OverlayContent3 extends React.Component {
   // }
   project() {
     if (this.state.status) {
-      alert('hi1');
       console.log(this.state);
       axios({
         method: 'post',
@@ -930,22 +991,21 @@ class OverlayContent3 extends React.Component {
         .then(result => {
 
 
-          alert(result.data[0].Message);
 
           this.setState({
             msg: result.data[0].Message,
             update: 0
           })
 
-          if (result.data[0].Message == 'Data inserted') {
+          if (result.data[0].Message == 'Data updated') {
             // alert(result.data[0].Message);
-
+            { this.props.hand() }
+            window.open("/dashboard", "_self")
 
           }
 
         })
         .catch(error => {
-          alert(error.data);
           this.setState({})
         });
 
@@ -1076,7 +1136,7 @@ class Overlay3 extends React.Component {
         </button>
         {this.state.overlay &&
           <Portal>
-            <OverlayContent3 closeOverlay={this.closeOverlay} pid={this.state.pid} />
+            <OverlayContent3 closeOverlay={this.closeOverlay} pid={this.state.pid} hand={this.props.handle} />
           </Portal>
         }
       </div>
@@ -1089,9 +1149,9 @@ class OverlayContent4 extends React.Component {
     this.state = {
       update: 0,
       email: '',
-      notification:[]
+      notification: []
     };
-    this.notification_data= this.notification_data.bind(this);
+    this.notification_data = this.notification_data.bind(this);
 
 
   }
@@ -1109,7 +1169,7 @@ class OverlayContent4 extends React.Component {
       })
         .then(result => {
 
-          
+
           if (this.state.update == 0) {
             this.setState({
               notification: result.data,
@@ -1154,25 +1214,26 @@ class OverlayContent4 extends React.Component {
 
     return (
       <div className="blur" class="notifications" id="box">
-        {this.state.notification.map((el, i) => (
-          
+        <h2>Notifications</h2>
 
-            <div  key={i}>
-              <h2>Notifications</h2>
-              <div class="notifications-item">
-                <div class="text">
-                  <h4>Project Name: {el.name}</h4>
-                  <h4>Task: {el.task}</h4>
-                  <p>Days left:{el.days}</p>
-                </div>
+        {this.state.notification.map((el, i) => (
+
+
+          <div key={i}>
+            <div class="notifications-item">
+              <div class="text1">
+                <h4>Project Name: {el.name}</h4>
+                <h4>Task: {el.task}</h4>
+                <p>Days left:{el.days}</p>
               </div>
-              
             </div>
 
-         
+          </div>
+
+
         ))}
 
-<button className="button" onClick={this.props.closeOverlay}>Close</button>
+        <button className="button" onClick={this.props.closeOverlay}>Close</button>
       </div>
     );
   }
