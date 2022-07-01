@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './style.scss';
 import $ from 'jquery';
+import s1 from './images/dashboard.jpeg'
 
 // import signup from './images/signup.jpeg';
 
@@ -8,24 +9,49 @@ export default class landing extends Component {
     constructor(props) {
         super(props);
         window.addEventListener('scroll', this.scroll, true);
-      }
-      scroll=()=>
-      {
+    }
+    scroll = () => {
         var $nav = $(".fixed-top");
-              //add background to nav when scrolled
-              $nav.toggleClass("scrolled", $(window).scrollTop() > $nav.height());
-              console.log($(window).scrollTop() > $nav.height());
-              // $(".heading").css("top", Math.max(180 - 0.2 * window.scrollY, 0) + "px");
-              // $(".parallax1").css("opacity", Math.max(1 - 0.004 * window.scrollY, 0));
-            
-      }
+        //add background to nav when scrolled
+        $nav.toggleClass("scrolled", $(window).scrollTop() > $nav.height());
+        // console.log($(window).scrollTop() > $nav.height());
+        // $(".heading").css("top", Math.max(180 - 0.2 * window.scrollY, 0) + "px");
+        // $(".parallax1").css("opacity", Math.max(1 - 0.004 * window.scrollY, 0));
+
+    }
     myfunction = () => {
-      
-          
-          // $(document).on('scroll', function () {
-          //     // $(".heading").css("top", Math.max(180 - 0.2 * window.scrollY, 0) + "px");
-          //     $(".parallax1").css("opacity", Math.max(1 - 0.004 * window.scrollY, 0));
-          // })
+
+
+        const sliderContainer = document.querySelector(".slider-container");
+        const slideRight = document.querySelector(".right-slide");
+        const slideLeft = document.querySelector(".left-slide");
+        const upButton = document.querySelector(".up-button");
+        const downButton = document.querySelector(".down-button");
+        const slidesLength = slideRight.querySelectorAll("div").length;
+
+        let activeSlideIndex = 0;
+
+        slideLeft.style.top = `-${(slidesLength - 1) * 70}vh`;
+
+        const changeSlide = (direction) => {
+            const sliderHeight = sliderContainer.clientHeight;
+            console.log(sliderHeight)
+            if (direction === "up") {
+                activeSlideIndex++;
+                if (activeSlideIndex > slidesLength - 1) activeSlideIndex = 0;
+            } else if (direction === "down") {
+                activeSlideIndex--;
+                if (activeSlideIndex < 0) activeSlideIndex = slidesLength - 1;
+            }
+            slideRight.style.transform = `translateY(-${activeSlideIndex * sliderHeight
+                }px)`;
+            slideLeft.style.transform = `translateY(${activeSlideIndex * sliderHeight
+                }px)`;
+        };
+
+        upButton.addEventListener("click", () => changeSlide("up"));
+        downButton.addEventListener("click", () => changeSlide("down"));
+
     }
     componentDidMount = () => {
         this.myfunction();
@@ -70,21 +96,21 @@ export default class landing extends Component {
 
                 <section class="section1" id="about">
                     <h1>About Us</h1>
-                    <br/>
-                        <div class="col-md-12 row">
-                            <div class="col-md-6">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, voluptatem illum molestiae quisquam nulla aspernatur delectus voluptatum quo, doloribus et porro consectetur possimus architecto nesciunt, magnam ipsam! Molestias ipsum explicabo quod,
-                                culpa doloremque eos delectus voluptate cum expedita. Nihil at qui animi illum impedit deleniti fuga, aspernatur error accusantium fugit ad, sed deserunt vitae? Amet nam quaerat, veritatis enim et itaque velit architecto earum, saepe voluptate debitis
-                                iure, ab aliquam doloribus. Cum exercitationem eveniet laborum voluptates ipsa eius, soluta commodi. Eos eveniet corporis repellendus, quis ad debitis perferendis veniam sunt molestiae omnis, officia suscipit nesciunt ducimus! Temporibus quis nobis
-                                asperiores.
-                            </div>
-                            <div class="col-md-6">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, voluptatem illum molestiae quisquam nulla aspernatur delectus voluptatum quo, doloribus et porro consectetur possimus architecto nesciunt, magnam ipsam! Molestias ipsum explicabo quod,
-                                culpa doloremque eos delectus voluptate cum expedita. Nihil at qui animi illum impedit deleniti fuga, aspernatur error accusantium fugit ad, sed deserunt vitae? Amet nam quaerat, veritatis enim et itaque velit architecto earum, saepe voluptate debitis
-                                iure, ab aliquam doloribus. Cum exercitationem eveniet laborum voluptates ipsa eius, soluta commodi. Eos eveniet corporis repellendus, quis ad debitis perferendis veniam sunt molestiae omnis, officia suscipit nesciunt ducimus! Temporibus quis nobis
-                                asperiores.
-                            </div>
+                    <br />
+                    <div class="col-md-12 row">
+                        <div class="col-md-6">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, voluptatem illum molestiae quisquam nulla aspernatur delectus voluptatum quo, doloribus et porro consectetur possimus architecto nesciunt, magnam ipsam! Molestias ipsum explicabo quod,
+                            culpa doloremque eos delectus voluptate cum expedita. Nihil at qui animi illum impedit deleniti fuga, aspernatur error accusantium fugit ad, sed deserunt vitae? Amet nam quaerat, veritatis enim et itaque velit architecto earum, saepe voluptate debitis
+                            iure, ab aliquam doloribus. Cum exercitationem eveniet laborum voluptates ipsa eius, soluta commodi. Eos eveniet corporis repellendus, quis ad debitis perferendis veniam sunt molestiae omnis, officia suscipit nesciunt ducimus! Temporibus quis nobis
+                            asperiores.
                         </div>
+                        <div class="col-md-6">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, voluptatem illum molestiae quisquam nulla aspernatur delectus voluptatum quo, doloribus et porro consectetur possimus architecto nesciunt, magnam ipsam! Molestias ipsum explicabo quod,
+                            culpa doloremque eos delectus voluptate cum expedita. Nihil at qui animi illum impedit deleniti fuga, aspernatur error accusantium fugit ad, sed deserunt vitae? Amet nam quaerat, veritatis enim et itaque velit architecto earum, saepe voluptate debitis
+                            iure, ab aliquam doloribus. Cum exercitationem eveniet laborum voluptates ipsa eius, soluta commodi. Eos eveniet corporis repellendus, quis ad debitis perferendis veniam sunt molestiae omnis, officia suscipit nesciunt ducimus! Temporibus quis nobis
+                            asperiores.
+                        </div>
+                    </div>
                 </section>
 
                 <div class="parallax2" id="services">
@@ -96,29 +122,85 @@ export default class landing extends Component {
                 </div>
 
                 <section class="dark">
-                    <h2>Description</h2>
+                    <div class="slider-container">
+                        <div class="left-slide">
+                            <div style={{ backgroundColor: "yellow" }}>
+                                <h1>Heading 1</h1>
+                                <p>content to be written here</p>
+                            </div>
+                            <div style={{ backgroundColor: "#354f32" }}>
+                                <h1>Heading 2</h1>
+                                <p>content to be written here</p>
+                            </div>
+                            <div style={{ backgroundColor: "#657e85" }}>
+                                <h1>Heading 3</h1>
+                                <p>content to be written here</p>
+                            </div>
+                            <div style={{ backgroundColor: "#2b2e32" }}>
+                                <h1>Heading 4</h1>
+                                <p>content to be written here</p>
+                            </div>
+                        </div>
+                        <div class="right-slide">
+                            <div id="slide-image-1" ></div>
+                            <div id="slide-image-2" ></div>
+                            <div id="slide-image-3"></div>
+                            <div id="slide-image-4"></div>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="down-button">
+                                <i class="fas fa-arrow-down"></i>
+                            </button>
+                            <button class="up-button">
+                                <i class="fas fa-arrow-up"></i>
+                            </button>
+                        </div>
+                    </div>
+                    {/* <h2>Description</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae repellat debitis cupiditate. Cupiditate aspernatur rerum voluptas doloribus ut? Odit minima fuga earum temporibus assumenda. Saepe libero, adipisci hic consequatur nisi illo eius neque rem
                         ratione! Saepe nisi eos, corporis provident, recusandae delectus, officia vero eius quaerat voluptas error molestiae rem rerum! Odit facilis quos est tempora, aspernatur
-                    </p>
+                    </p> */}
+                    <article class="article group">
+                        <img class="image rights" src={s1} alt="Image" />
+                        <section class="content">
+                            <h2 class="headline">Heading</h2>
+                            <p><em>Lorem ipsum dolor amet lorem ipsum dolor amet
+                                lorem ipsum dolor amet lorem ipsum dolor ipsum sit amet
+                                lorem ipsum dolor amet lorem ipsum dolor sit amet</em></p>
+                            <p>Fill in more text to see the text wrap below the image</p>
+                        </section>
+
+                    </article>
+                    <article class="article group">
+                        <img class="image lefts" src={s1} alt="Image" />
+                        <section class="content">
+                            <h2 class="headline">Heading</h2>
+                            <p><em>Lorem ipsum dolor amet lorem ipsum dolor amet
+                                lorem ipsum dolor amet lorem ipsum dolor ipsum sit amet
+                                lorem ipsum dolor amet lorem ipsum dolor sit amet</em></p>
+                            <p>Fill in more text to see the text wrap below the image</p>
+                        </section>
+
+                    </article>
                 </section>
 
                 <div class="parallax3" id="partners"></div>
 
                 <div class="dark">
                     <h3 class="text-center">Description here</h3>
-                    <br/>
-                        <div class="col-md-12 row">
-                            <div class="col-md-6">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur consequuntur omnis repudiandae magnam animi architecto excepturi exercitationem soluta. Cupiditate, omnis similique, magnam veritatis vitae molestias temporibus esse doloribus asperiores
-                                exercitationem, iste corrupti earum. Hic saepe non eius amet temporibus at autem officiis suscipit doloribus. Dignissimos odit possimus ex, voluptatum debitis nostrum iusto maxime obcaecati corporis, aut nihil odio mollitia facere dolore voluptas
-                                natus consectetur porro hic ut est tempora in doloribus, aspernatur accusantium. Perspiciatis ab nemo iusto eveniet distinctio odit voluptatum necessitatibus et neque quidem natus, enim officiis optio voluptate alias inventore dolores sint provident
-                                sunt nihil, doloribus voluptas dolorum.
-                            </div>
-                            <div class="col-md-6">
-                                quisquam molestias sequi ipsa magnam quasi ad reiciendis libero expedita nemo asperiores nobis ducimus ab aliquid accusantium fugit unde quis cum consequatur? Libero, inventore, perspiciatis explicabo ipsam repellat at quod, iure ullam temporibus autem
-                                tempore ad odio eveniet debitis amet necessitatibus accusantium earum.
-                            </div>
+                    <br />
+                    <div class="col-md-12 row">
+                        <div class="col-md-6">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur consequuntur omnis repudiandae magnam animi architecto excepturi exercitationem soluta. Cupiditate, omnis similique, magnam veritatis vitae molestias temporibus esse doloribus asperiores
+                            exercitationem, iste corrupti earum. Hic saepe non eius amet temporibus at autem officiis suscipit doloribus. Dignissimos odit possimus ex, voluptatum debitis nostrum iusto maxime obcaecati corporis, aut nihil odio mollitia facere dolore voluptas
+                            natus consectetur porro hic ut est tempora in doloribus, aspernatur accusantium. Perspiciatis ab nemo iusto eveniet distinctio odit voluptatum necessitatibus et neque quidem natus, enim officiis optio voluptate alias inventore dolores sint provident
+                            sunt nihil, doloribus voluptas dolorum.
                         </div>
+                        <div class="col-md-6">
+                            quisquam molestias sequi ipsa magnam quasi ad reiciendis libero expedita nemo asperiores nobis ducimus ab aliquid accusantium fugit unde quis cum consequatur? Libero, inventore, perspiciatis explicabo ipsam repellat at quod, iure ullam temporibus autem
+                            tempore ad odio eveniet debitis amet necessitatibus accusantium earum.
+                        </div>
+                    </div>
 
                 </div>
 
@@ -133,48 +215,48 @@ export default class landing extends Component {
                             <div id="form-content" class="col-lg-8 mx-auto bg-light form">
                                 <h3>Got Questions?</h3>
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At voluptatibus esse voluptate ullam ab consequatur, ex illo sed harum ut labore doloremque ipsum voluptatum tempore? Incidunt magni reiciendis totam? Ducimus?</p>
-                                <hr/>
-                                    <form style={{padding: "30px"}}>
-                                        <div class="control-group">
-                                            <div class="group">
-                                                <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                                                    <input class="col-md-12" type="text" required/>
-                                                        <span class="highlight"></span>
-                                                        <span class="bar"></span>
-                                                        <label>Name</label>
-                                                        <p class="help-block text-danger"></p>
-                                                </div>
+                                <hr />
+                                <form style={{ padding: "30px" }}>
+                                    <div class="control-group">
+                                        <div class="group">
+                                            <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                                                <input class="col-md-12" type="text" required />
+                                                <span class="highlight"></span>
+                                                <span class="bar"></span>
+                                                <label>Name</label>
+                                                <p class="help-block text-danger"></p>
                                             </div>
                                         </div>
-                                        <div class="control-group">
-                                            <div class="group">
-                                                <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                                                    <input class="col-md-12" type="text" required/>
-                                                        <span class="highlight"></span>
-                                                        <span class="bar"></span>
-                                                        <label>Email</label>
-                                                        <p class="help-block text-danger"></p>
-                                                </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <div class="group">
+                                            <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                                                <input class="col-md-12" type="text" required />
+                                                <span class="highlight"></span>
+                                                <span class="bar"></span>
+                                                <label>Email</label>
+                                                <p class="help-block text-danger"></p>
                                             </div>
                                         </div>
-                                        <div class="control-group">
-                                            <div class="group">
-                                                <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                                                    <textarea class="col-md-12" type="textarea" rows="5" required="required"></textarea>
-                                                    <span class="highlight"></span>
-                                                    <span class="bar"></span>
-                                                    <label>Message</label>
-                                                    <p class="help-block text-danger"></p>
-                                                </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <div class="group">
+                                            <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                                                <textarea class="col-md-12" type="textarea" rows="5" required="required"></textarea>
+                                                <span class="highlight"></span>
+                                                <span class="bar"></span>
+                                                <label>Message</label>
+                                                <p class="help-block text-danger"></p>
                                             </div>
                                         </div>
-                                        <br/>
-                                            <div id="success"></div>
-                                            <div class="form-group">
-                                                <button type="submit" class="btn btn-primary col-md-12 btn-xl" id="sendMessageButton">Send
-                                                    Message</button>
-                                            </div>
-                                    </form>
+                                    </div>
+                                    <br />
+                                    <div id="success"></div>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-primary col-md-12 btn-xl" id="sendMessageButton">Send
+                                            Message</button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </section>
