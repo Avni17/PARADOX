@@ -10,65 +10,65 @@ import Footer from "./footer";
 // import signup from './images/signup.jpeg';
 
 export default class landing extends Component {
-    myfunction = () => {
-        var slides = document.querySelectorAll('.slide');
-        var btns = document.querySelectorAll('.btn');
-        let currentSlide = 1;
+    // myfunction = () => {
+    //     var slides = document.querySelectorAll('.slide');
+    //     var btns = document.querySelectorAll('.btn');
+    //     let currentSlide = 1;
 
-        // Javascript for image slider manual navigation
-        var manualNav = function (manual) {
-            slides.forEach((slide) => {
-                slide.classList.remove('active');
+    //     // Javascript for image slider manual navigation
+    //     var manualNav = function (manual) {
+    //         slides.forEach((slide) => {
+    //             slide.classList.remove('active');
 
-                btns.forEach((btn) => {
-                    btn.classList.remove('active');
-                });
-            });
+    //             btns.forEach((btn) => {
+    //                 btn.classList.remove('active');
+    //             });
+    //         });
 
-            slides[manual].classList.add('active');
-            btns[manual].classList.add('active');
-        }
+    //         slides[manual].classList.add('active');
+    //         btns[manual].classList.add('active');
+    //     }
 
-        btns.forEach((btn, i) => {
-            btn.addEventListener("click", () => {
-                manualNav(i);
-                currentSlide = i;
-            });
-        });
-        var repeat = function (activeClass) {
-            let active = document.getElementsByClassName('active');
-            let i = 1;
+    //     btns.forEach((btn, i) => {
+    //         btn.addEventListener("click", () => {
+    //             manualNav(i);
+    //             currentSlide = i;
+    //         });
+    //     });
+    //     var repeat = function (activeClass) {
+    //         let active = document.getElementsByClassName('active');
+    //         let i = 1;
 
-            var repeater = () => {
-                setTimeout(function () {
-                    [...active].forEach((activeSlide) => {
-                        activeSlide.classList.remove('active');
-                    });
+    //         var repeater = () => {
+    //             setTimeout(function () {
+    //                 [...active].forEach((activeSlide) => {
+    //                     activeSlide.classList.remove('active');
+    //                 });
 
-                    slides[i].classList.add('active');
-                    btns[i].classList.add('active');
-                    i++;
+    //                 slides[i].classList.add('active');
+    //                 btns[i].classList.add('active');
+    //                 i++;
 
-                    if (slides.length == i) {
-                        i = 0;
-                    }
-                    if (i >= slides.length) {
-                        return;
-                    }
-                    repeater();
-                }, 3000);
-            }
-            repeater();
-        }
-        repeat();
-    }
-    componentDidMount = () => {
-        this.myfunction();
-    }
+    //                 if (slides.length == i) {
+    //                     i = 0;
+    //                 }
+    //                 if (i >= slides.length) {
+    //                     return;
+    //                 }
+    //                 repeater();
+    //             }, 3000);
+    //         }
+    //         repeater();
+    //     }
+    //     repeat();
+    // }
+    // componentDidMount = () => {
+    //     this.myfunction();
+    // }
 
-    componentDidUpdate = () => {
-        // this.myfunction();
-    }
+    // componentDidUpdate = () => {
+    //     // this.myfunction();
+    // }
     render() {
         return (
             <div className='landing app'>
@@ -76,9 +76,9 @@ export default class landing extends Component {
 
 
 
-                <div className='box' id="boxes" >
-                    <div class="img-slider">
-                        <div class="slide active">
+                {/* <div className='box' id="boxes" >
+                    <div class="img-slider"> */}
+                {/* <div class="slide active">
                             <img height="380 px" src={dashboard} alt="" />
                             <div class="info">
                             </div>
@@ -97,20 +97,20 @@ export default class landing extends Component {
                             <img height="380 px" src={graph} alt="" />
                             <div class="info">
                             </div>
-                        </div>
+                        </div> */}
 
-                        <div class="navigation">
-                            <div class="btn active"></div>
-                            <div class="btn"></div>
-                            <div class="btn"></div>
-                            <div class="btn"></div>
-                            <div class="btn"></div>
+                <div class="navigation">
+                    <div class="btn active"></div>
+                    <div class="btn"></div>
+                    <div class="btn"></div>
+                    <div class="btn"></div>
+                    <div class="btn"></div>
 
 
 
-                        </div>
-                    </div>
                 </div>
+                {/* </div>
+                </div> */}
 
                 {/* <div id="sec-1">
                     <div class="contain">

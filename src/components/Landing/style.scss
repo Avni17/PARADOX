@@ -5,6 +5,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital@1&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@600&display=swap');
 
 :root {
   --fontt-size: 2rem;
@@ -13,10 +14,9 @@
 }
 
 .landing {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Merriweather Sans', sans-serif;
   font-size: 15px;
   line-height: 1.5;
-  font: 15px/1.5 Arial, Helvetica, sans-serif;
   padding: 0;
   margin: 0;
   align-items: center;
@@ -57,8 +57,8 @@ div#root {
 }
 
 .contain {
-  margin: auto 20px;
-  overflow: hidden;
+
+  /* overflow: hidden;*/
 }
 
 .dark {
@@ -76,16 +76,18 @@ div#root {
   margin-bottom: 5px;
   color: darkblue;
   font-size: 20px;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-family: 'Merriweather Sans', sans-serif;
 }
 
 .header {
-  background: black;
-  color: #ffffff;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  min-height: 70px;
-  border-bottom: darkblue 3px solid;
+  background: #f1f0ed;
+  /*color: #ffffff;*/
+  box-shadow: 0px 5px 10px 0px #aaa;
+  position: fixed;
+  height: 60px;
+  z-index: 10;
+  width: 100%;
+  /* border-bottom: darkblue 3px solid;*/
 }
 
 .header a {
@@ -98,7 +100,6 @@ div#root {
 .header li {
   float: left;
   display: inline;
-  padding: 0 20px 0 20px;
 }
 
 .header #branding {
@@ -111,7 +112,7 @@ div#root {
 }
 
 .webtitle {
-  font-family: "Permanent Marker", cursive;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .header nav {
@@ -126,9 +127,8 @@ div#root {
 }
 
 .highlight {
-  font-family: "Smooch", cursive;
-  font-size: 60px;
-  margin: 15px;
+
+  font-size: 40px;
 }
 
 body {
@@ -143,7 +143,6 @@ body {
 
 .navul {
   margin: 0;
-  margin-top: 8px;
   display: flex;
 }
 
@@ -157,9 +156,8 @@ body {
   display: block;
   position: relative;
   text-decoration: none;
-  padding: 5px;
-  font-size: 30px;
-  font-family: "Courgette", cursive;
+  font-size: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #fff;
   text-transform: uppercase;
   transition: 0.5s;
@@ -279,7 +277,7 @@ body {
 }
 
 #boxes {
-  margin-top: 20px;
+  margin-top: 110px;
   align-items: center;
   display: flex;
   justify-content: center;
