@@ -238,9 +238,9 @@ export default class landing extends Component {
 
                 <div class="parallax4"></div>
 
-                <section class="section1" id="contact-header">
+                {/* <section class="section1" id="contact-header">
                     <h1>Contact Us</h1>
-                </section>
+                </section> */}
                 {/* <div class="parallax5">
                     <section id="contact">
                         <div class="container">
