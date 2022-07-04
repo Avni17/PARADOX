@@ -4,7 +4,7 @@ html {
   height: 100%;
 }
 div#root {
-  width: 100vw;
+  // width: 100vw;
   overflow: hidden;
 }
 body,
@@ -14,7 +14,8 @@ html {
   font-family: sans-serif;
   color: #666;
   text-align: center;
-  width:97vw !important;
+  // width:97vw !important;
+  max-width :100% !important;
 }
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 .container
