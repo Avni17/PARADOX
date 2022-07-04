@@ -35,10 +35,10 @@ html {
   left:5vw;
 
 }
-.ml-auto, .mx-auto {
+.navbar-nav {
   margin-left: 0!important;
-  position:absolute;
-  right:-15vw;
+  position:relative;
+  left:80vw;
 }
 .animate-charcter
 {
@@ -70,7 +70,7 @@ html {
 /* PARALLAX START */
 .parallax1 {
   background: url("https://images.pexels.com/photos/1092063/pexels-photo-1092063.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
-  min-height: 100vh;
+  min-height: 110vh;
 }
 
 .parallax2 {
