@@ -15,42 +15,32 @@ html {
   color: #666;
   text-align: center;
   // width:97vw !important;
-  max-width :100% !important;
+  max-width: 100% !important;
 }
-@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
-.container
-{
-  height:5vh;
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+.container {
+  height: 5vh;
   display: block;
   flex-direction: row;
   font-size: 35px;
-  font-family: 'Lobster', cursive;
-  margin:0 !important
+  font-family: "Lobster", cursive;
+  margin: 0 !important;
 }
-@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
-.nav-head
-{
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+.nav-head {
   font-size: 65px !important;
-  font-family: 'Permanent Marker', cursive !important;
+  font-family: "Permanent Marker", cursive !important;
   position: fixed;
-  left:5vw;
-
+  left: 5vw;
 }
 .navbar-nav {
-  margin-left: 0!important;
-  position:relative;
-  left:80vw;
+  margin-left: 0 !important;
+  position: relative;
+  left: 80vw;
 }
-.animate-charcter
-{
-   text-transform: uppercase;
-  background-image: linear-gradient(
-    -225deg,
-    #231557 0%,
-    #44107a 29%,
-    #ff1361 67%,
-    #fff800 100%
-  );
+.animate-charcter {
+  text-transform: uppercase;
+  background-image: linear-gradient(-225deg, #231557 0%, #44107a 29%, #ff1361 67%, #fff800 100%);
   background-size: auto auto;
   background-clip: border-box;
   background-size: 200% auto;
@@ -60,7 +50,7 @@ html {
   -webkit-text-fill-color: transparent;
   animation: textclip 2s linear infinite;
   display: inline-block;
-      font-size: 15vw;
+  font-size: 15vw;
 }
 
 @keyframes textclip {
@@ -306,66 +296,62 @@ textarea:focus ~ .highlight {
   background-color: #fff;
   color: black;
 }
-*{
+* {
   box-sizing: border-box;
 }
-.article{
-  margin:30px;
-  padding:12px;
-  background:none;
-  border-radius:5px;
+.article {
+  margin: 30px;
+  padding: 12px;
+  background: none;
+  border-radius: 5px;
 }
-.image{
-  background:silver;
-  width:40vw;
-  height:60vh;
-  border-radius:5px;
-  padding:20px;
-  color:#efefef;
-  font-size:8rem;
-  &.rights{
-    float:right;
-    margin-left:20px;
+.image {
+  background: silver;
+  width: 40vw;
+  height: 60vh;
+  border-radius: 5px;
+  padding: 20px;
+  color: #efefef;
+  font-size: 8rem;
+  &.rights {
+    float: right;
+    margin-left: 20px;
   }
-  &.lefts{
-    float:left;
-    margin-right:30px;
+  &.lefts {
+    float: left;
+    margin-right: 30px;
   }
 }
-.content{
+.content {
   padding: 0 20px;
-  color:white;
-  .headline{
+  color: white;
+  .headline {
   }
 }
 
 //ClearFix
-.group{
+.group {
   &:before,
   &:after {
     content: "";
     display: table;
-  } 
+  }
   &:after {
     clear: both;
   }
 }
 @import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
-#slide-image-1
-{
-background-image: url(./images/dashboard.jpeg);
+#slide-image-1 {
+  background-image: url(./images/dashboard.jpeg);
 }
-#slide-image-2
-{
-background-image: url(./images/calendar.jpeg);
+#slide-image-2 {
+  background-image: url(./images/calendar.jpeg);
 }
-#slide-image-3
-{
-background-image: url(./images/addproject.jpeg);
+#slide-image-3 {
+  background-image: url(./images/addproject.jpeg);
 }
-#slide-image-4
-{
-background-image: url(./images/graph.jpeg);
+#slide-image-4 {
+  background-image: url(./images/graph.jpeg);
 }
 
 .slider-container {
@@ -453,16 +439,129 @@ button:focus {
   border-bottom-right-radius: 5px;
 }
 
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+#features-column {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#features-column {
+  display: flex;
+  flex-direction: row;
+}
+
+#heading {
+  width: auto;
+}
+#feature {
+  max-width: 100%;
+}
+#feature-block {
+  display: flex;
+  flex-direction: row;
+}
+.section1 {
+  padding: 0 !important;
+}
+
+#feature-column {
+  margin-right: 24px;
+  flex-grow: 1;
+    flex-basis: 0;
+}
+
+#content {
+  width: 50vw;
+  margin-top: -100px;
+}
+
+.h-2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 140%;
+  color: #121127;
+}
+
+.h-5 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 170%;
+  color: #444bd3;
+}
+
+.h-6 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 140%;
+  color: #121127;
+  margin-bottom: 10px;
+}
+
+.body-mid {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 180%;
+  color: #7a7a86;
+}
+
+.body-small {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 180%;
+  color: #7a7a86;
+}
+
+.primary-button {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  color: white;
+  background-color: #444bd3;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 24px;
+  margin-top: 15px;
+  margin-bottom: 64px;
+  cursor: pointer;
+}
+
+.primary-button:hover {
+  background-color: #20268f;
+}
+
+// #feature-icon {
+//   margin-bottom: -10px;
+// }
+
+#image {
+  justify-content: center;
+  align-items: center;
+  width: 40vw;
+}
+.about-img {
+  max-width: 90%;
+}
 
 @media (max-width: 768px) {
+  .container {
+    height: 10vh;
+  }
   .heading {
     font-size: 250%;
   }
-.nav-head
-{
- left:10vw;
- top:0vw;
-}
+  .nav-head {
+    left: 10vw;
+    top: 5px;
+    font-size: 60px !important;
+  }
   .heading-sm {
     font-size: 180%;
   }
@@ -476,11 +575,20 @@ button:focus {
     background-attachment: scroll;
     min-height: 21%;
   }
-  .animate-charcter
-  {
-   // font-size: 190px;
+  .animate-charcter {
+    // font-size: 190px;
   }
-  
 }
-
-
+@media (max-width: 500px) {
+  #features-column {
+    flex-direction: column;
+    padding-top: 100px;
+  }
+  #content {
+    margin-top: 0;
+    width: 100vw;
+  }
+  #image {
+    width: 100vw;
+  }
+}

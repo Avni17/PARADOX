@@ -3,6 +3,7 @@ import './style.scss';
 import './animCharacter.css';
 import $ from 'jquery';
 import s1 from './images/dashboard.jpeg'
+import mt from "./images/mt.gif"
 
 // import signup from './images/signup.jpeg';
 
@@ -127,7 +128,36 @@ export default class landing extends Component {
                 </div>
 
                 <section class="section1" id="about">
-                    <h1>About Us</h1>
+                    <div class="features">
+                        <container id="features-column">
+                            <div id="content">
+                                <div id="heading">
+                                    <h5 class="h-5">DESIGNED FOR DEVELOPERS</h5>
+                                    <h2 class="h-2">The world's most powerful and<br/>easy-to-use Project Tracker</h2>
+                                    <p class="body-mid">Pardox project tracking is the <b>No.1 </b> tool to track,organise projects and schedule your daily events. Its an all in one solution to each problem a developer faces during project execution</p>
+                                    <button  class="primary-button">Know More</button>
+                                </div>
+                                <div id="feature-block">
+                                    <div id="feature-column">
+                                        <img id="feature-icon" src="https://assets.codepen.io/7339435/Edit.svg" />
+                                        <h6 class="h-6">Track Each project</h6>
+                                        <p class="body-small">With this tool you can keep track on each project a developer working on and can add or remove project according to one's need and never miss your deadlines ever.</p>
+
+                                    </div>
+                                    <div id="feature-column">
+                                        <img id="feature-icon" src="https://assets.codepen.io/7339435/Grid+Four+01.svg" />
+                                        <h6 class="h-6">Schedule your Project</h6>
+                                        <p class="body-small">Using Paradox give user independence to schedule your projects according to their own convinience .With time tracking it assist developer to organise project accordingly. </p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="image">
+                                <img class="about-img" src={mt} />
+                            </div>
+                        </container>
+                    </div>
+                    {/* <h1>About Us</h1>
                     <br />
                     <div class="col-md-12 row">
                         <div class="col-md-6">
@@ -142,7 +172,7 @@ export default class landing extends Component {
                             iure, ab aliquam doloribus. Cum exercitationem eveniet laborum voluptates ipsa eius, soluta commodi. Eos eveniet corporis repellendus, quis ad debitis perferendis veniam sunt molestiae omnis, officia suscipit nesciunt ducimus! Temporibus quis nobis
                             asperiores.
                         </div>
-                    </div>
+                    </div> */}
                 </section>
 
                 <div class="parallax2" id="services">
