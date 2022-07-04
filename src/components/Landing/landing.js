@@ -15,9 +15,6 @@ export default class landing extends Component {
         var $nav = $(".fixed-top");
         //add background to nav when scrolled
         $nav.toggleClass("scrolled", $(window).scrollTop() > $nav.height());
-        // console.log($(window).scrollTop() > $nav.height());
-        // $(".heading").css("top", Math.max(180 - 0.2 * window.scrollY, 0) + "px");
-        // $(".parallax1").css("opacity", Math.max(1 - 0.004 * window.scrollY, 0));
 
     }
     myfunction = () => {
@@ -66,23 +63,14 @@ export default class landing extends Component {
             <div className='landing app'>
                 <nav class="navbar navbar-expand-lg navbar-light fixed-top">
                     <div class="container">
-                        <a class="navbar-brand" href="#page-top">Paradox</a>
+                        <a class="navbar-brand nav-head" href="#page-top">Paradox</a>
                         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarResponsive">
                             <ul class="navbar-nav ml-auto my-2 my-lg-0">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#about">About</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#services">Services</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#partners">Partners</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#contact">Contact</a>
+                                    <a class="nav-link" href="./login">Let's Track</a>
                                 </li>
                             </ul>
                         </div>
@@ -253,7 +241,7 @@ export default class landing extends Component {
                 <section class="section1" id="contact-header">
                     <h1>Contact Us</h1>
                 </section>
-                <div class="parallax5">
+                {/* <div class="parallax5">
                     <section id="contact">
                         <div class="container">
                             <div id="form-content" class="col-lg-8 mx-auto bg-light form">
@@ -304,7 +292,7 @@ export default class landing extends Component {
                             </div>
                         </div>
                     </section>
-                </div>
+                </div> */}
             </div>
         );
 

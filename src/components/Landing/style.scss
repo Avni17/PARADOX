@@ -14,13 +14,31 @@ html {
   font-family: sans-serif;
   color: #666;
   text-align: center;
-  width:97vw;
+  width:97vw !important;
 }
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 .container
 {
   height:5vh;
   display: block;
   flex-direction: row;
+  font-size: 35px;
+  font-family: 'Lobster', cursive;
+  margin:0 !important
+}
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+.nav-head
+{
+  font-size: 65px !important;
+  font-family: 'Permanent Marker', cursive !important;
+  position: fixed;
+  left:5vw;
+
+}
+.ml-auto, .mx-auto {
+  margin-left: 0!important;
+  position:absolute;
+  right:-15vw;
 }
 .animate-charcter
 {
