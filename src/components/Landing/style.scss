@@ -168,7 +168,7 @@ section {
 
 .dark {
   overflow: auto;
-  padding: 50px 80px;
+  padding: 50px 0px;
   background-color: #323232;
   color: #f2f2f2;
 }
@@ -575,7 +575,7 @@ button:focus {
 }
 @media (max-width: 768px) {
   .logo {
-    left: 85vw;
+    left: 75vw;
   }
   .containerss {
     height: 10vh;
@@ -615,7 +615,7 @@ button:focus {
   }
   #content {
     margin-top: 0;
-    width: 100vw;
+    width: 90%;
   }
   #image {
     width: 100vw;

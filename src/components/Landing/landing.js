@@ -135,9 +135,9 @@ export default class landing extends Component {
                             <div id="content">
                                 <div id="heading">
                                     <h5 class="h-5">DESIGNED FOR DEVELOPERS</h5>
-                                    <h2 class="h-2">The world's most powerful and<br/>easy-to-use Project Tracker</h2>
+                                    <h2 class="h-2">The world's most powerful and<br />easy-to-use Project Tracker</h2>
                                     <p class="body-mid">Pardox project tracking is the <b>No.1 </b> tool to track,organise projects and schedule your daily events. Its an all in one solution to each problem a developer faces during project execution</p>
-                                    <button  class="primary-button">Know More</button>
+                                    <button class="primary-button">Know More</button>
                                 </div>
                                 <div id="feature-block">
                                     <div id="feature-column">
