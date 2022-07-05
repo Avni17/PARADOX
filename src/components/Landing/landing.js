@@ -218,44 +218,41 @@ export default class landing extends Component {
                     <article class="article group">
                         <img class="image rights" src={s1} alt="Image" />
                         <section class="content">
-                            <h2 class="headline">Heading</h2>
-                            <p><em>Lorem ipsum dolor amet lorem ipsum dolor amet
-                                lorem ipsum dolor amet lorem ipsum dolor ipsum sit amet
-                                lorem ipsum dolor amet lorem ipsum dolor sit amet</em></p>
-                            <p>Fill in more text to see the text wrap below the image</p>
+                            <h2 class="headline">Organise Your Work</h2>
+                            <p><em>Set up and easily manage even the most hectic project in a blink.</em></p>
                         </section>
 
                     </article>
                     <article class="article group">
                         <img class="image lefts" src={s2} alt="Image" />
                         <section class="content">
-                            <h2 class="headline">Heading</h2>
+                            <h2 class="headline">Schedule Your Time</h2>
                             <p><em>Lorem ipsum dolor amet lorem ipsum dolor amet
                                 lorem ipsum dolor amet lorem ipsum dolor ipsum sit amet
                                 lorem ipsum dolor amet lorem ipsum dolor sit amet</em></p>
-                            <p>Fill in more text to see the text wrap below the image</p>
+                            
                         </section>
 
                     </article>
                     <article class="article group">
                         <img class="image rights" src={s3} alt="Image" />
                         <section class="content">
-                            <h2 class="headline">Heading</h2>
+                            <h2 class="headline">Add Projects With Timeline</h2>
                             <p><em>Lorem ipsum dolor amet lorem ipsum dolor amet
                                 lorem ipsum dolor amet lorem ipsum dolor ipsum sit amet
                                 lorem ipsum dolor amet lorem ipsum dolor sit amet</em></p>
-                            <p>Fill in more text to see the text wrap below the image</p>
+                            
                         </section>
 
                     </article>
                     <article class="article group">
                         <img class="image lefts" src={s4} alt="Image" />
                         <section class="content">
-                            <h2 class="headline">Heading</h2>
+                            <h2 class="headline">Detail Analysis Of Your Work and Time</h2>
                             <p><em>Lorem ipsum dolor amet lorem ipsum dolor amet
                                 lorem ipsum dolor amet lorem ipsum dolor ipsum sit amet
                                 lorem ipsum dolor amet lorem ipsum dolor sit amet</em></p>
-                            <p>Fill in more text to see the text wrap below the image</p>
+                            
                         </section>
 
                     </article>
