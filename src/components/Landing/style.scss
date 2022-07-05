@@ -561,6 +561,10 @@ button:focus {
 }
 
 @media (max-width: 768px) {
+  .logo
+  {
+    left:85vw;
+  }
   .container {
     height: 10vh;
   }
