@@ -166,9 +166,12 @@ export default class landing extends Component {
                 </section>
 
                 <div class="parallax2" id="services">
-                    <div class="heading-sm">
-                        <span class="border">
-                            Description
+                    <div class="heading-sm about-description">
+                        <span>
+                            Project Tracling software used by millions.
+                            <p>PARADOX is a project tracker that let's you work hours across project. Unlimited Users,Free Forever.</p>
+                            <p>You can keep track of daily work at your company by the exclusive features offered by paradox </p>
+                            <p>From Days to months, to adding information about your employees and pending task. All you can search across in blink of an eye</p>
                         </span>
                     </div>
                 </div>

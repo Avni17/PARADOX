@@ -87,7 +87,7 @@ html {
 }
 
 .parallax4 {
-  background: url("https://images.pexels.com/photos/116720/pexels-photo-116720.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  background: url("https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
   background-position: 0 -231px !important;
   min-height: 80vh;
 }
@@ -336,9 +336,11 @@ section {
   }
 }
 .content {
-  padding: 0 20px;
+  padding: 20vh 20px;
   color: white;
+  text-align: center;
   .headline {
+    text-align: center;
   }
 }
 
@@ -558,7 +560,6 @@ button:focus {
   justify-content: center;
   align-items: center;
   width: 40vw;
-
 }
 .about-img {
   max-width: 90%;
@@ -569,13 +570,26 @@ button:focus {
   width: 120px;
   left: -1.5vw;
 }
+.about-description {
+  font-size: 150%;
+  color: black;
+  top: 25%;
+  width: 80%;
+  font-weight: bold;
+  left: 10%;
+}
 @media (max-width: 1100px) {
-  .nav-head
-  {
-    left:8vw
+  .nav-head {
+    left: 8vw;
+  }
+  .about-description {
+    font-size: 100%;
   }
 }
 @media (max-width: 768px) {
+  .content {
+    padding: 15vh 20px;
+  }
   .logo {
     left: 75vw;
   }
@@ -603,6 +617,9 @@ button:focus {
     background-attachment: scroll;
     min-height: 21%;
   }
+  .about-description {
+    font-size: 90%;
+  }
   .animate-charcter {
     // font-size: 190px;
   }
@@ -615,9 +632,8 @@ button:focus {
     flex-direction: column;
     padding-top: 100px;
   }
-  #image
-  {
-    order:-1;
+  #image {
+    order: -1;
   }
   #content {
     margin-top: 0;
@@ -630,5 +646,25 @@ button:focus {
     left: 20vw;
     top: 5px;
     font-size: 50px !important;
+  }
+  .about-description {
+    top: 10%;
+  }
+  .parallax2 {
+    height: 100vh;
+  }
+  .image {
+    width: 100%;
+    &.rights {
+      float: none;
+      margin-left: 0px;
+    }
+    &.lefts {
+      float: none;
+      margin-right: 0px;
+    }
+  }
+  .content {
+    padding: 5vh 20px;
   }
 }

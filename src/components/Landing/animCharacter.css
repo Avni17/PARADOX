@@ -1089,7 +1089,7 @@ body, html{
   {
     .head
     {
-        left:80%;
+        left:90%;
     }
     .wrapp
     {
@@ -1104,8 +1104,8 @@ body, html{
   {
     .head
     {
-        left:90%;
-        /* margin-left: -80px; */
+        left:100%;
+        margin-left: -80px;
     }
     .wrapp
     {
