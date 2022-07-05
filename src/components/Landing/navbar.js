@@ -11,18 +11,20 @@ function Navbar() {
 
     return (
 
-                <div id="menuToggle">
+        <div id="menuToggle">
 
-                    <input id="menuclose" type="checkbox" />
-                    <span></span>
-                    <span></span>
-                    <span></span>
+            <input id="menuclose" type="checkbox" />
+            <span></span>
+            <span></span>
+            <span></span>
 
-                    <ul id="menu">
-                        <li><a onClick={close} href="/login">Let's Track</a></li>
-                        {/* <li><a onClick={close} href="/#about">About</a></li> */}
-                    </ul>
-                </div>
+            <ul id="menu">
+                <li><a onClick={close} href="/#page-top">Home</a></li>
+                <li><a onClick={close} href="/#about">About</a></li>
+                <li><a onClick={close} href="/#features">Features</a></li>
+                <li><a onClick={close} href="/login">Let's Track</a></li>
+            </ul>
+        </div>
 
 
     );

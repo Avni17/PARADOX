@@ -80,10 +80,10 @@ export default class landing extends Component {
                         <div class="collapse navbar-collapse" id="navbarResponsive">
                             <ul class="navbar-nav my-2 my-lg-0">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="./login">Let's Track</a>
-                                    {/* <a class="nav-link" href="./login">Let's Track</a>
-                                    <a class="nav-link" href="./login">Let's Track</a>
-                                    <a class="nav-link" href="./login">Let's Track</a> */}
+                                    <a class="nav-lin" href="/#page-top">Home</a>
+                                    <a class="nav-lin" href="./#about">About</a>
+                                    <a class="nav-lin" href="./#features">Features</a>
+                                    <a class="nav-lin" href="./login">Let's Track</a>
                                 </li>
                             </ul>
                         </div>

@@ -48,7 +48,19 @@ html {
 .navbar-nav {
   margin-left: 0 !important;
   position: relative;
-  left: 80vw;
+  left: 55vw;
+}
+.nav-lin
+{
+  color:black;
+  opacity:0.6;
+  margin: 0px 15px;
+}
+.nav-lin:hover
+{
+  color:black;
+  text-decoration: none;
+  opacity:1;
 }
 .animate-charcter {
   text-transform: uppercase;
@@ -726,12 +738,22 @@ button:focus {
   {
     display:none;
   }
+  @media (max-width: 1200px) {
+    .navbar-nav {
+    
+      left: 50vw;
+    }
+  }
 @media (max-width: 1100px) {
   .nav-head {
     left: 8vw;
   }
   .about-description {
     font-size: 100%;
+  }
+  .navbar-nav {
+    
+    left: 45vw;
   }
 }
 @media (max-width: 990px)
