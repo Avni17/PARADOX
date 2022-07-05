@@ -77,7 +77,7 @@ html {
 }
 
 .parallax2 {
-  background: url("https://images.pexels.com/photos/1516704/pexels-photo-1516704.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+  background: url("https://images.pexels.com/photos/116720/pexels-photo-116720.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
   min-height: 80vh;
 }
 
@@ -92,10 +92,10 @@ html {
   min-height: 80vh;
 }
 
-.parallax5 {
-  background: url("https://images.pexels.com/photos/1661004/pexels-photo-1661004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
-  min-height: 80vh;
-}
+// .parallax5 {
+//   background: url("https://images.pexels.com/photos/1661004/pexels-photo-1661004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+//   min-height: 80vh;
+// }
 
 .parallax1,
 .parallax2,
@@ -318,13 +318,14 @@ section {
   border-radius: 5px;
 }
 .image {
-  background: silver;
+  // background: silver;
   width: 40vw;
   height: 60vh;
   border-radius: 5px;
-  padding: 20px;
+  //padding: 20px;
   color: #efefef;
   font-size: 8rem;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
   &.rights {
     float: right;
     margin-left: 20px;
@@ -557,6 +558,7 @@ button:focus {
   justify-content: center;
   align-items: center;
   width: 40vw;
+
 }
 .about-img {
   max-width: 90%;
@@ -612,6 +614,10 @@ button:focus {
   #features-column {
     flex-direction: column;
     padding-top: 100px;
+  }
+  #image
+  {
+    order:-1;
   }
   #content {
     margin-top: 0;

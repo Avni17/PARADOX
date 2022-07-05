@@ -4,6 +4,9 @@ import './animCharacter.css';
 import $ from 'jquery';
 import logo from './images/logo.png'
 import s1 from './images/dashboard.jpeg'
+import s2 from './images/calendar.jpeg'
+import s3 from './images/addproject.jpeg'
+import s4 from './images/graph.jpeg'
 import mt from "./images/mt.gif"
 
 // import signup from './images/signup.jpeg';
@@ -19,38 +22,39 @@ export default class landing extends Component {
         $nav.toggleClass("scrolled", $(window).scrollTop() > $nav.height());
 
     }
+    // function for new slideshow
     myfunction = () => {
 
 
-        const sliderContainer = document.querySelector(".slider-container");
-        const slideRight = document.querySelector(".right-slide");
-        const slideLeft = document.querySelector(".left-slide");
-        const upButton = document.querySelector(".up-button");
-        const downButton = document.querySelector(".down-button");
-        const slidesLength = slideRight.querySelectorAll("div").length;
+        // const sliderContainer = document.querySelector(".slider-container");
+        // const slideRight = document.querySelector(".right-slide");
+        // const slideLeft = document.querySelector(".left-slide");
+        // const upButton = document.querySelector(".up-button");
+        // const downButton = document.querySelector(".down-button");
+        // const slidesLength = slideRight.querySelectorAll("div").length;
 
-        let activeSlideIndex = 0;
+        // let activeSlideIndex = 0;
 
-        slideLeft.style.top = `-${(slidesLength - 1) * 70}vh`;
+        // slideLeft.style.top = `-${(slidesLength - 1) * 70}vh`;
 
-        const changeSlide = (direction) => {
-            const sliderHeight = sliderContainer.clientHeight;
-            console.log(sliderHeight)
-            if (direction === "up") {
-                activeSlideIndex++;
-                if (activeSlideIndex > slidesLength - 1) activeSlideIndex = 0;
-            } else if (direction === "down") {
-                activeSlideIndex--;
-                if (activeSlideIndex < 0) activeSlideIndex = slidesLength - 1;
-            }
-            slideRight.style.transform = `translateY(-${activeSlideIndex * sliderHeight
-                }px)`;
-            slideLeft.style.transform = `translateY(${activeSlideIndex * sliderHeight
-                }px)`;
-        };
+        // const changeSlide = (direction) => {
+        //     const sliderHeight = sliderContainer.clientHeight;
+        //     console.log(sliderHeight)
+        //     if (direction === "up") {
+        //         activeSlideIndex++;
+        //         if (activeSlideIndex > slidesLength - 1) activeSlideIndex = 0;
+        //     } else if (direction === "down") {
+        //         activeSlideIndex--;
+        //         if (activeSlideIndex < 0) activeSlideIndex = slidesLength - 1;
+        //     }
+        //     slideRight.style.transform = `translateY(-${activeSlideIndex * sliderHeight
+        //         }px)`;
+        //     slideLeft.style.transform = `translateY(${activeSlideIndex * sliderHeight
+        //         }px)`;
+        // };
 
-        upButton.addEventListener("click", () => changeSlide("up"));
-        downButton.addEventListener("click", () => changeSlide("down"));
+        // upButton.addEventListener("click", () => changeSlide("up"));
+        // downButton.addEventListener("click", () => changeSlide("down"));
 
     }
     componentDidMount = () => {
@@ -170,7 +174,7 @@ export default class landing extends Component {
                 </div>
 
                 <section class="dark">
-                    <div class="slider-container">
+                    {/* <div class="slider-container">
                         <div class="left-slide">
                             <div style={{ backgroundColor: "yellow" }}>
                                 <h1>Heading 1</h1>
@@ -203,7 +207,7 @@ export default class landing extends Component {
                                 <i class="fas fa-arrow-up"></i>
                             </button>
                         </div>
-                    </div>
+                    </div> */}
                     {/* <h2>Description</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae repellat debitis cupiditate. Cupiditate aspernatur rerum voluptas doloribus ut? Odit minima fuga earum temporibus assumenda. Saepe libero, adipisci hic consequatur nisi illo eius neque rem
                         ratione! Saepe nisi eos, corporis provident, recusandae delectus, officia vero eius quaerat voluptas error molestiae rem rerum! Odit facilis quos est tempora, aspernatur
@@ -220,7 +224,29 @@ export default class landing extends Component {
 
                     </article>
                     <article class="article group">
-                        <img class="image lefts" src={s1} alt="Image" />
+                        <img class="image lefts" src={s2} alt="Image" />
+                        <section class="content">
+                            <h2 class="headline">Heading</h2>
+                            <p><em>Lorem ipsum dolor amet lorem ipsum dolor amet
+                                lorem ipsum dolor amet lorem ipsum dolor ipsum sit amet
+                                lorem ipsum dolor amet lorem ipsum dolor sit amet</em></p>
+                            <p>Fill in more text to see the text wrap below the image</p>
+                        </section>
+
+                    </article>
+                    <article class="article group">
+                        <img class="image rights" src={s3} alt="Image" />
+                        <section class="content">
+                            <h2 class="headline">Heading</h2>
+                            <p><em>Lorem ipsum dolor amet lorem ipsum dolor amet
+                                lorem ipsum dolor amet lorem ipsum dolor ipsum sit amet
+                                lorem ipsum dolor amet lorem ipsum dolor sit amet</em></p>
+                            <p>Fill in more text to see the text wrap below the image</p>
+                        </section>
+
+                    </article>
+                    <article class="article group">
+                        <img class="image lefts" src={s4} alt="Image" />
                         <section class="content">
                             <h2 class="headline">Heading</h2>
                             <p><em>Lorem ipsum dolor amet lorem ipsum dolor amet
