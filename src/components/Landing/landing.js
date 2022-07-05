@@ -152,7 +152,7 @@ export default class landing extends Component {
                                     </div>
                                     <div id="feature-column">
                                         <img id="feature-icon" src="https://assets.codepen.io/7339435/Grid+Four+01.svg" />
-                                        <h6 class="h-6">Schedule your Project</h6>
+                                        <h6 class="h-6">Schedule Project</h6>
                                         <p class="body-small">Using Paradox give user independence to schedule your projects according to their own convinience .With time tracking it assist developer to organise project accordingly. </p>
 
                                     </div>
