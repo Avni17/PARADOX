@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import './style.scss';
 import './animCharacter.css';
 import $ from 'jquery';
+import Navbar from "./navbar";
 import logo from './images/logo.png'
 import s1 from './images/dashboard.jpeg'
 import s2 from './images/calendar.jpeg'
 import s3 from './images/addproject.jpeg'
 import s4 from './images/graph.jpeg'
 import mt from "./images/mt.gif"
+import { Nav } from 'react-bootstrap';
 
 // import signup from './images/signup.jpeg';
 
@@ -71,13 +73,17 @@ export default class landing extends Component {
                     <div class="containerss">
                         <img class="logo" src={logo} alt="logo"></img>
                         <a class="navbar-brand nav-head" href="#page-top">Paradox</a>
-                        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                        {/* <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
-                        </button>
+                        </button> */}
+                        <Navbar/>
                         <div class="collapse navbar-collapse" id="navbarResponsive">
                             <ul class="navbar-nav my-2 my-lg-0">
                                 <li class="nav-item">
                                     <a class="nav-link" href="./login">Let's Track</a>
+                                    {/* <a class="nav-link" href="./login">Let's Track</a>
+                                    <a class="nav-link" href="./login">Let's Track</a>
+                                    <a class="nav-link" href="./login">Let's Track</a> */}
                                 </li>
                             </ul>
                         </div>
@@ -176,7 +182,7 @@ export default class landing extends Component {
                     </div>
                 </div>
 
-                <section class="dark">
+                <section class="dark" id="features">
                     {/* <div class="slider-container">
                         <div class="left-slide">
                             <div style={{ backgroundColor: "yellow" }}>
@@ -245,7 +251,7 @@ export default class landing extends Component {
                         <img class="image lefts" src={s4} alt="Image" />
                         <section class="content">
                             <h2 class="headline">Detail Analysis Of Your Work and Time</h2>
-                            <p><em>with this tool you get detail analysis of time spent in various projec by the user and assist the user to plan thier workflow accordingly.</em></p>
+                            <p><em>With this tool you get detail analysis of time spent in various project by the user and assist the user to plan thier workflow accordingly.</em></p>
                             
                         </section>
 

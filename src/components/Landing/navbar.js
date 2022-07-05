@@ -2,21 +2,29 @@ import React from "react";
 import icon from './images/logo.gif';
 import './style.scss';
 function Navbar() {
+    function close() {
+        var check = document.getElementById("menuclose");
+        if (check.checked == true) {
+            check.checked = false;
+        }
+    };
+
     return (
-        <nav className="header">
-            <div class="contain">
-                <div id="branding">
-                    <h3 class="webtitle"><img class="rotate" src={icon} width="70px" height="70px" margin="10px" /><span class="highlight"> Paradox Project Tracking</span> </h3>
-                </div>
-                <nav>
-                    <ul class="navul">
-                        <li class="current">
-                            <a href="/login" >Let's track</a>
-                        </li>
+
+                <div id="menuToggle">
+
+                    <input id="menuclose" type="checkbox" />
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                    <ul id="menu">
+                        <li><a onClick={close} href="/login">Let's Track</a></li>
+                        {/* <li><a onClick={close} href="/#about">About</a></li> */}
                     </ul>
-                </nav>
-            </div>
-        </nav>
+                </div>
+
+
     );
 }
 export default Navbar;
