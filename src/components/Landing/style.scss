@@ -738,6 +738,237 @@ button:focus {
   {
     display:none;
   }
+  :root {
+    --red: hsl(0, 78%, 62%);
+    --cyan: hsl(180, 62%, 55%);
+    --orange: hsl(34, 97%, 64%);
+    --blue: hsl(212, 86%, 64%);
+    --varyDarkBlue: hsl(234, 12%, 34%);
+    --grayishBlue: hsl(229, 6%, 66%);
+    --veryLightGray: hsl(0, 0%, 98%);
+    --weight1: 200;
+    --weight2: 400;
+    --weight3: 600;
+}
+
+body {
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--veryLightGray);
+}
+
+.attribution { 
+    font-size: 11px; text-align: center; 
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+.h--1 {
+    font-weight: var(--weight1);
+    color: var(--varyDarkBlue);
+    padding:5px;
+
+}
+
+.h--12 {
+    color: var(--varyDarkBlue);
+    padding:5px;
+}
+
+@media (max-width: 400px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+}
+
+.header {
+    text-align: center;
+    line-height: 0.8;
+    margin-bottom: 50px;
+    margin-top: 100px;
+}
+
+.header p {
+    margin: 0 auto;
+    line-height: 2;
+    color: var(--grayishBlue);
+}
+
+
+.box p {
+    color: var(--grayishBlue);
+}
+
+.box {
+    border-radius: 5px;
+    box-shadow: 0px 30px 40px -20px var(--grayishBlue);
+    padding: 30px;
+    margin: 20px;  
+}
+.more 
+{
+  padding-bottom: 80px;
+}
+
+img {
+    float: right;
+}
+
+@media (max-width: 450px) {
+    .box {
+        height: 200px;
+    }
+}
+
+@media (max-width: 950px) and (min-width: 450px) {
+    .box {
+        text-align: center;
+        height: 180px;
+    }
+}
+
+.cyan {
+    border-top: 3px solid var(--cyan);
+}
+.red {
+    border-top: 3px solid var(--red);
+}
+.blue {
+    border-top: 3px solid var(--blue);
+}
+.orange {
+    border-top: 3px solid var(--orange);
+}
+
+.h--2 {
+    color: var(--varyDarkBlue);
+    font-weight: var(--weight3);
+}
+
+
+@media (min-width: 950px) {
+    .row1-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .row2-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .box-down {
+        position: relative;
+        top: 150px;
+    }
+    .box {
+        width: 20%;
+     
+    }
+    .header p {
+        width: 30%;
+    }
+    
+}
+.main-container {
+  padding: 30px;
+}
+
+/* CARDS */
+
+.cards {
+   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.cardi {
+  opacity: 1;
+  margin: 20px;
+  padding: 20px;
+  max-width: 100%;
+  width:90%;
+  min-height: 300px;
+  display: grid;
+  grid-template-rows: 20px 50px 1fr 50px;
+  border-radius:10px;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
+  transition: all 0.2s;
+}
+
+.cardi:hover {
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
+  transform: scale(1.01);
+}
+@import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
+.card_content
+{
+  font-size:30px;
+  font-weight:200;
+  color:black;
+  font-family: 'Yellowtail', cursive;
+}
+.card__link,
+.card__exit,
+.card__icon {
+  position: relative;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.9);
+}
+.card__logo
+{
+  position:relative;
+  height:300px;
+  left:60%;
+  width:35vw;
+}
+.card__link::after {
+  position: absolute;
+  top: 25px;
+  left: 0;
+  content: "";
+  width: 0%;
+  height: 3px;
+  background-color: rgba(255, 255, 255, 0.6);
+  transition: all 0.5s;
+}
+
+.card__link:hover::after {
+  width: 100%;
+}
+
+
+
+.card__icon {
+  grid-row: 2/3;
+  font-size: 30px;
+}
+
+.card__title {
+  grid-row: 3/4;
+  font-weight: 400;
+  width:50%;
+  color: #ffffff;
+}
+
+.card__apply {
+  grid-row: 4/5;
+  // align-self: center;
+}
+
+
+.card-1 {
+  background: radial-gradient(#1fe4f5, #3fbafe);
+}
+@media (max-width: 1600px) {
+  .cards {
+    justify-content: center;
+  }
+}
   @media (max-width: 1200px) {
     .navbar-nav {
     
@@ -765,11 +996,28 @@ button:focus {
   .logo {
     left: 75vw;
   }
+  .card__logo
+  {
+    top:40px;
+  }
 }
 @media (max-width: 768px) {
   .navbar-nav {
     left:0;
     background-color:white;
+  }
+  .card__logo
+  {
+    top:0;
+    height:200px;
+  }
+  .card__title
+  {
+    width:90%;
+  }
+  .card__tit
+  {
+    width:70%;
   }
   .navbar
   {

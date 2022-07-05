@@ -76,7 +76,7 @@ export default class landing extends Component {
                         {/* <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button> */}
-                        <Navbar/>
+                        <Navbar />
                         <div class="collapse navbar-collapse" id="navbarResponsive">
                             <ul class="navbar-nav my-2 my-lg-0">
                                 <li class="nav-item">
@@ -234,7 +234,7 @@ export default class landing extends Component {
                         <section class="content">
                             <h2 class="headline">Schedule Your Time</h2>
                             <p><em>With paradox Project Tracker,You get flexibility to schedule your time and devote required time in each project and be ahead of all.</em></p>
-                            
+
                         </section>
 
                     </article>
@@ -243,7 +243,7 @@ export default class landing extends Component {
                         <section class="content">
                             <h2 class="headline">Add Projects With Timeline</h2>
                             <p><em>Add current/Upcoming project with project time-period to never miss deadlines, You can also add team members to notify and sync all your teamates with upcoming projects in the pipeline.</em></p>
-                            
+
                         </section>
 
                     </article>
@@ -252,27 +252,62 @@ export default class landing extends Component {
                         <section class="content">
                             <h2 class="headline">Detail Analysis Of Your Work and Time</h2>
                             <p><em>With this tool you get detail analysis of time spent in various project by the user and assist the user to plan thier workflow accordingly.</em></p>
-                            
+
                         </section>
 
                     </article>
                 </section>
 
-                <div class="parallax3" id="partners"></div>
+                <div class="parallax3" id="partners">
 
-                <div class="dark">
-                    <h3 class="text-center">Description here</h3>
-                    <br />
-                    <div class="col-md-12 row">
-                        <div class="col-md-6">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur consequuntur omnis repudiandae magnam animi architecto excepturi exercitationem soluta. Cupiditate, omnis similique, magnam veritatis vitae molestias temporibus esse doloribus asperiores
-                            exercitationem, iste corrupti earum. Hic saepe non eius amet temporibus at autem officiis suscipit doloribus. Dignissimos odit possimus ex, voluptatum debitis nostrum iusto maxime obcaecati corporis, aut nihil odio mollitia facere dolore voluptas
-                            natus consectetur porro hic ut est tempora in doloribus, aspernatur accusantium. Perspiciatis ab nemo iusto eveniet distinctio odit voluptatum necessitatibus et neque quidem natus, enim officiis optio voluptate alias inventore dolores sint provident
-                            sunt nihil, doloribus voluptas dolorum.
+                    <div class="main-container">
+                        <div class="cards">
+                            <div class="cardi card-1">
+                                <div class="card__icon"><i class="fas fa-bolt"></i></div>
+                                
+                                <h2 class="card__title"><div class="card__tit">PARADOX PROJECT TRACKER</div> <br/>
+                                <p class="card_content">The <b>NO.1 </b> Project Tracking Tool Made For Developers, By The Developers. <br/>Never Miss a Deadline and Keep Track Of Your Time To Accomplish Your Aims.</p></h2>
+                                <img class="card__logo" src={logo} alt="logo"></img>
+                                <p class="card__apply">
+                                    <a class="card__link" href="./login">Try it Now !!! <i class="fas fa-arrow-right"></i></a>
+                                </p>
+                            </div>
+                            
+
+
                         </div>
-                        <div class="col-md-6">
-                            quisquam molestias sequi ipsa magnam quasi ad reiciendis libero expedita nemo asperiores nobis ducimus ab aliquid accusantium fugit unde quis cum consequatur? Libero, inventore, perspiciatis explicabo ipsam repellat at quod, iure ullam temporibus autem
-                            tempore ad odio eveniet debitis amet necessitatibus accusantium earum.
+                    </div>
+                </div>
+
+                <div class="more">
+                    <div class="header">
+                        <h1 class="h--1">Reliable,Time Efficient and Developer Friendly with useful features</h1>
+                        <h1 class="h--12">Organize,Track and Analyse your projects</h1>
+                    </div>
+                    <div class="row1-container">
+                        <div class="box box-down cyan">
+                            <h2 class="h--2">Tracker</h2>
+                            <p>Monitors and analyse activity to identify project and never miss your deadlines.</p>
+                            <img src="https://assets.codepen.io/2301174/icon-supervisor.svg" alt="" />
+                        </div>
+
+                        <div class="box red">
+                            <h2 class="h--2">Manage Team</h2>
+                            <p>manage Team members and follow well structured system.</p>
+                            <img src="https://assets.codepen.io/2301174/icon-team-builder.svg" alt="" />
+                        </div>
+
+                        <div class="box box-down blue">
+                            <h2 class="h--2">Analyse</h2>
+                            <p>Analyse and Track Time spent on various Project.</p>
+                            <img src="https://assets.codepen.io/2301174/icon-calculator.svg" alt="" />
+                        </div>
+                    </div>
+                    <div class="row2-container">
+                        <div class="box orange">
+                            <h2 class="h--2">Add Projects</h2>
+                            <p>Add Upcoming Project With Timeline and get ready to conquer. </p>
+                            <img src="https://assets.codepen.io/2301174/icon-karma.svg" alt="" />
                         </div>
                     </div>
 
