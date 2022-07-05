@@ -227,9 +227,7 @@ export default class landing extends Component {
                         <img class="image lefts" src={s2} alt="Image" />
                         <section class="content">
                             <h2 class="headline">Schedule Your Time</h2>
-                            <p><em>Lorem ipsum dolor amet lorem ipsum dolor amet
-                                lorem ipsum dolor amet lorem ipsum dolor ipsum sit amet
-                                lorem ipsum dolor amet lorem ipsum dolor sit amet</em></p>
+                            <p><em>With paradox Project Tracker,You get flexibility to schedule your time and devote required time in each project and be ahead of all.</em></p>
                             
                         </section>
 
@@ -238,9 +236,7 @@ export default class landing extends Component {
                         <img class="image rights" src={s3} alt="Image" />
                         <section class="content">
                             <h2 class="headline">Add Projects With Timeline</h2>
-                            <p><em>Lorem ipsum dolor amet lorem ipsum dolor amet
-                                lorem ipsum dolor amet lorem ipsum dolor ipsum sit amet
-                                lorem ipsum dolor amet lorem ipsum dolor sit amet</em></p>
+                            <p><em>Add current/Upcoming project with project time-period to never miss deadlines, You can also add team members to notify and sync all your teamates with upcoming projects in the pipeline.</em></p>
                             
                         </section>
 
@@ -249,9 +245,7 @@ export default class landing extends Component {
                         <img class="image lefts" src={s4} alt="Image" />
                         <section class="content">
                             <h2 class="headline">Detail Analysis Of Your Work and Time</h2>
-                            <p><em>Lorem ipsum dolor amet lorem ipsum dolor amet
-                                lorem ipsum dolor amet lorem ipsum dolor ipsum sit amet
-                                lorem ipsum dolor amet lorem ipsum dolor sit amet</em></p>
+                            <p><em>with this tool you get detail analysis of time spent in various projec by the user and assist the user to plan thier workflow accordingly.</em></p>
                             
                         </section>
 
