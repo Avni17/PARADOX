@@ -64,7 +64,7 @@ export default class landing extends Component {
         return (
             <div className='landing app'>
                 <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-                    <div class="container">
+                    <div class="containerss">
                         <img class="logo" src={logo} alt="logo"></img>
                         <a class="navbar-brand nav-head" href="#page-top">Paradox</a>
                         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">

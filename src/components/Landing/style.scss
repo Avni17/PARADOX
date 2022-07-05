@@ -17,17 +17,26 @@ html {
   // width:97vw !important;
   max-width: 100% !important;
 }
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: border-box !important;
 }
 @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
-.container {
-  height: 5vh;
+.containerss {
+  height: 8vh;
   display: block;
   flex-direction: row;
   font-size: 35px;
   font-family: "Lobster", cursive;
   margin: 0 !important;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 @import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
 .nav-head {
@@ -164,132 +173,132 @@ section {
   color: #f2f2f2;
 }
 
-.form {
-  border-radius: 7px;
-  padding: 30px;
-}
+// .form {
+//   border-radius: 7px;
+//   padding: 30px;
+// }
 
-#form-content {
-  transition: 0.5s;
-}
+// #form-content {
+//   transition: 0.5s;
+// }
 
-#form-content:hover {
-  -webkit-box-shadow: 0px 5px 13px 2px rgba(71, 70, 71, 0.76);
-  -moz-box-shadow: 0px 5px 13px 2px rgba(71, 70, 71, 0.76);
-  box-shadow: 0px 5px 13px 2px rgba(71, 70, 71, 0.76);
-}
+// #form-content:hover {
+//   -webkit-box-shadow: 0px 5px 13px 2px rgba(71, 70, 71, 0.76);
+//   -moz-box-shadow: 0px 5px 13px 2px rgba(71, 70, 71, 0.76);
+//   box-shadow: 0px 5px 13px 2px rgba(71, 70, 71, 0.76);
+// }
 
-.group {
-  position: relative;
-  margin-bottom: 45px;
-}
+// .group {
+//   position: relative;
+//   margin-bottom: 45px;
+// }
 
-textarea {
-  resize: none !important;
-}
+// textarea {
+//   resize: none !important;
+// }
 
-input,
-textarea {
-  background: none;
-  font-size: 18px;
-  padding: 10px 10px 10px 5px;
-  display: block;
-  width: 300px;
-  border: none;
-  border-bottom: 1px solid #757575;
-}
-input:focus,
-textarea:focus {
-  outline: none;
-}
+// input,
+// textarea {
+//   background: none;
+//   font-size: 18px;
+//   padding: 10px 10px 10px 5px;
+//   display: block;
+//   width: 300px;
+//   border: none;
+//   border-bottom: 1px solid #757575;
+// }
+// input:focus,
+// textarea:focus {
+//   outline: none;
+// }
 
-label {
-  color: #999;
-  font-size: 18px;
-  font-weight: normal;
-  position: absolute;
-  pointer-events: none;
-  left: 5px;
-  top: 10px;
-  transition: 0.2s ease all;
-  -moz-transition: 0.2s ease all;
-  -webkit-transition: 0.2s ease all;
-}
+// label {
+//   color: #999;
+//   font-size: 18px;
+//   font-weight: normal;
+//   position: absolute;
+//   pointer-events: none;
+//   left: 5px;
+//   top: 10px;
+//   transition: 0.2s ease all;
+//   -moz-transition: 0.2s ease all;
+//   -webkit-transition: 0.2s ease all;
+// }
 
-/* active state */
-input:focus ~ label,
-input:valid ~ label {
-  top: -20px;
-  font-size: 14px;
-  color: #5264ae;
-}
+// /* active state */
+// input:focus ~ label,
+// input:valid ~ label {
+//   top: -20px;
+//   font-size: 14px;
+//   color: #5264ae;
+// }
 
-textarea:focus ~ label,
-textarea:valid ~ label {
-  top: -20px;
-  font-size: 14px;
-  color: #5264ae;
-}
+// textarea:focus ~ label,
+// textarea:valid ~ label {
+//   top: -20px;
+//   font-size: 14px;
+//   color: #5264ae;
+// }
 
-/* BOTTOM INPUT BARS ================================= */
-.bar {
-  position: relative;
-  display: block;
-  width: 100%;
-}
-.bar:before,
-.bar:after {
-  content: "";
-  height: 2px;
-  width: 0;
-  bottom: 1px;
-  position: absolute;
-  background: #03588c;
-  transition: 0.2s ease all;
-  -moz-transition: 0.2s ease all;
-  -webkit-transition: 0.2s ease all;
-}
-.bar:before {
-  left: 50%;
-}
-.bar:after {
-  right: 50%;
-}
+// /* BOTTOM INPUT BARS ================================= */
+// .bar {
+//   position: relative;
+//   display: block;
+//   width: 100%;
+// }
+// .bar:before,
+// .bar:after {
+//   content: "";
+//   height: 2px;
+//   width: 0;
+//   bottom: 1px;
+//   position: absolute;
+//   background: #03588c;
+//   transition: 0.2s ease all;
+//   -moz-transition: 0.2s ease all;
+//   -webkit-transition: 0.2s ease all;
+// }
+// .bar:before {
+//   left: 50%;
+// }
+// .bar:after {
+//   right: 50%;
+// }
 
-/* active state */
-input:focus ~ .bar:before,
-input:focus ~ .bar:after {
-  width: 50%;
-}
+// /* active state */
+// input:focus ~ .bar:before,
+// input:focus ~ .bar:after {
+//   width: 50%;
+// }
 
-textarea:focus ~ .bar:before,
-textarea:focus ~ .bar:after {
-  width: 50%;
-}
+// textarea:focus ~ .bar:before,
+// textarea:focus ~ .bar:after {
+//   width: 50%;
+// }
 
-/* HIGHLIGHTER ================================== */
-.highlight {
-  position: absolute;
-  height: 60%;
-  width: 100px;
-  top: 25%;
-  left: 0;
-  pointer-events: none;
-  opacity: 0.5;
-}
+// /* HIGHLIGHTER ================================== */
+// .highlight {
+//   position: absolute;
+//   height: 60%;
+//   width: 100px;
+//   top: 25%;
+//   left: 0;
+//   pointer-events: none;
+//   opacity: 0.5;
+// }
 
-/* active state */
-input:focus ~ .highlight {
-  -webkit-animation: inputHighlighter 0.3s ease;
-  -moz-animation: inputHighlighter 0.3s ease;
-  animation: inputHighlighter 0.3s ease;
-}
+// /* active state */
+// input:focus ~ .highlight {
+//   -webkit-animation: inputHighlighter 0.3s ease;
+//   -moz-animation: inputHighlighter 0.3s ease;
+//   animation: inputHighlighter 0.3s ease;
+// }
 
-textarea:focus ~ .highlight {
-  -webkit-animation: inputHighlighter 0.3s ease;
-  -moz-animation: inputHighlighter 0.3s ease;
-  animation: inputHighlighter 0.3s ease;
-}
+// textarea:focus ~ .highlight {
+//   -webkit-animation: inputHighlighter 0.3s ease;
+//   -moz-animation: inputHighlighter 0.3s ease;
+//   animation: inputHighlighter 0.3s ease;
+// }
 
 .fixed-top {
   transition: background-color 500ms;
@@ -474,7 +483,7 @@ button:focus {
 #feature-column {
   margin-right: 24px;
   flex-grow: 1;
-    flex-basis: 0;
+  flex-basis: 0;
 }
 
 #content {
@@ -552,20 +561,23 @@ button:focus {
 .about-img {
   max-width: 90%;
 }
-.logo
-{
+.logo {
   position: fixed;
-  height:70px;
-  width:120px;
-  left:-1.5vw;
+  height: 70px;
+  width: 120px;
+  left: -1.5vw;
 }
-
-@media (max-width: 768px) {
-  .logo
+@media (max-width: 1100px) {
+  .nav-head
   {
-    left:85vw;
+    left:8vw
   }
-  .container {
+}
+@media (max-width: 768px) {
+  .logo {
+    left: 85vw;
+  }
+  .containerss {
     height: 10vh;
   }
   .heading {
@@ -573,7 +585,7 @@ button:focus {
   }
   .nav-head {
     left: 10vw;
-    top: 5px;
+    //top: 5px;
     font-size: 60px !important;
   }
   .heading-sm {
@@ -594,8 +606,7 @@ button:focus {
   }
 }
 @media (max-width: 500px) {
-  .features
-  {
+  .features {
     max-width: 100%;
   }
   #features-column {
