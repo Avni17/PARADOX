@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './style.scss';
 import './animCharacter.css';
 import $ from 'jquery';
+import logo from './images/logo.png'
 import s1 from './images/dashboard.jpeg'
 import mt from "./images/mt.gif"
 
@@ -64,6 +65,7 @@ export default class landing extends Component {
             <div className='landing app'>
                 <nav class="navbar navbar-expand-lg navbar-light fixed-top">
                     <div class="container">
+                        <img class="logo" src={logo} alt="logo"></img>
                         <a class="navbar-brand nav-head" href="#page-top">Paradox</a>
                         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
@@ -157,22 +159,6 @@ export default class landing extends Component {
                             </div>
                         </container>
                     </div>
-                    {/* <h1>About Us</h1>
-                    <br />
-                    <div class="col-md-12 row">
-                        <div class="col-md-6">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, voluptatem illum molestiae quisquam nulla aspernatur delectus voluptatum quo, doloribus et porro consectetur possimus architecto nesciunt, magnam ipsam! Molestias ipsum explicabo quod,
-                            culpa doloremque eos delectus voluptate cum expedita. Nihil at qui animi illum impedit deleniti fuga, aspernatur error accusantium fugit ad, sed deserunt vitae? Amet nam quaerat, veritatis enim et itaque velit architecto earum, saepe voluptate debitis
-                            iure, ab aliquam doloribus. Cum exercitationem eveniet laborum voluptates ipsa eius, soluta commodi. Eos eveniet corporis repellendus, quis ad debitis perferendis veniam sunt molestiae omnis, officia suscipit nesciunt ducimus! Temporibus quis nobis
-                            asperiores.
-                        </div>
-                        <div class="col-md-6">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, voluptatem illum molestiae quisquam nulla aspernatur delectus voluptatum quo, doloribus et porro consectetur possimus architecto nesciunt, magnam ipsam! Molestias ipsum explicabo quod,
-                            culpa doloremque eos delectus voluptate cum expedita. Nihil at qui animi illum impedit deleniti fuga, aspernatur error accusantium fugit ad, sed deserunt vitae? Amet nam quaerat, veritatis enim et itaque velit architecto earum, saepe voluptate debitis
-                            iure, ab aliquam doloribus. Cum exercitationem eveniet laborum voluptates ipsa eius, soluta commodi. Eos eveniet corporis repellendus, quis ad debitis perferendis veniam sunt molestiae omnis, officia suscipit nesciunt ducimus! Temporibus quis nobis
-                            asperiores.
-                        </div>
-                    </div> */}
                 </section>
 
                 <div class="parallax2" id="services">

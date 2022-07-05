@@ -17,6 +17,9 @@ html {
   // width:97vw !important;
   max-width: 100% !important;
 }
+*, *:before, *:after {
+  box-sizing: border-box !important;
+}
 @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 .container {
   height: 5vh;
@@ -457,7 +460,7 @@ button:focus {
 #heading {
   width: auto;
 }
-#feature {
+.feature {
   max-width: 100%;
 }
 #feature-block {
@@ -549,6 +552,13 @@ button:focus {
 .about-img {
   max-width: 90%;
 }
+.logo
+{
+  position: fixed;
+  height:70px;
+  width:120px;
+  left:-1.5vw;
+}
 
 @media (max-width: 768px) {
   .container {
@@ -580,6 +590,10 @@ button:focus {
   }
 }
 @media (max-width: 500px) {
+  .features
+  {
+    max-width: 100%;
+  }
   #features-column {
     flex-direction: column;
     padding-top: 100px;
@@ -590,5 +604,10 @@ button:focus {
   }
   #image {
     width: 100vw;
+  }
+  .nav-head {
+    left: 20vw;
+    top: 5px;
+    font-size: 50px !important;
   }
 }
