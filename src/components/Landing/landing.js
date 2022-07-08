@@ -10,6 +10,7 @@ import Footer from "./footer";
 // import signup from './images/signup.jpeg';
 
 export default class landing extends Component {
+
     // myfunction = () => {
     //     var slides = document.querySelectorAll('.slide');
     //     var btns = document.querySelectorAll('.btn');
@@ -72,6 +73,7 @@ export default class landing extends Component {
     render() {
         return (
             <div className='landing app'>
+
                 <Navbar />
 
 
