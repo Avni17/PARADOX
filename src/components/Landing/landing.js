@@ -91,9 +91,9 @@ export default class landing extends Component {
                 </nav>
 
                 <div class="parallax1" id="page-top">
-                    <div class="heading">
+                    {/* <div class="heading">
                         <h3 class="animate-charcter"> Paradox</h3>
-                    </div>
+                    </div> */}
                     <div class="wrapp">
                         <div class="border-circle" id="one"></div>
                         <div class="border-circle" id="two"></div>
@@ -172,14 +172,17 @@ export default class landing extends Component {
                 </section>
 
                 <div class="parallax2" id="services">
-                    <div class="heading-sm about-description">
-                        <span>
-                            Project Tracling software used by millions.
-                            <p>PARADOX is a project tracker that let's you work hours across project. Unlimited Users,Free Forever.</p>
-                            <p>You can keep track of daily work at your company by the exclusive features offered by paradox </p>
-                            <p>From Days to months, to adding information about your employees and pending task. All you can search across in blink of an eye</p>
-                        </span>
-                    </div>
+                    <div class="cards">
+                        <div class="cardi card-1 heading-sm about-description">
+
+                            <h5 class="h-5">
+                                Project Tracling software used by millions.
+                                <p>PARADOX is a project tracker that let's you work hours across project. Unlimited Users,Free Forever.</p>
+                                <p>You can keep track of daily work at your company by the exclusive features offered by paradox </p>
+                                <p>From Days to months, to adding information about your employees and pending task. All you can search across in blink of an eye</p>
+                            </h5>
+
+                        </div> </div>
                 </div>
 
                 <section class="dark" id="features">
@@ -281,8 +284,8 @@ export default class landing extends Component {
 
                 <div class="more">
                     <div class="header">
-                        <h1 class="h--1">Reliable,Time Efficient and Developer Friendly with useful features</h1>
-                        <h1 class="h--12">Organize,Track and Analyse your projects</h1>
+                        <h2 class="h--1">Reliable,Time Efficient and Developer Friendly with useful features</h2>
+                        <h2 class="h--12">Organize,Track and Analyse your projects</h2>
                     </div>
                     <div class="row1-container">
                         <div class="box box-down cyan">

@@ -94,22 +94,22 @@ html {
 
 /* PARALLAX START */
 .parallax1 {
-  background: url("https://images.pexels.com/photos/1092063/pexels-photo-1092063.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+  background: url('./images/pexels-scott-webb-3255761.jpg');
   min-height: 110vh;
 }
 
 .parallax2 {
-  background: url("https://images.pexels.com/photos/116720/pexels-photo-116720.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
-  min-height: 80vh;
+  background: url('./images/—Pngtree—geometric\ design\ with\ minimal\ geometric_3671043.png');
+  min-height: 60vh;
 }
 
 .parallax3 {
-  background: url("https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+  background: url('./images/—Pngtree—geometric\ design\ with\ minimal\ geometric_3671043.png');
   min-height: 60vh;
 }
 
 .parallax4 {
-  background: url("https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+  background: url('./images/—Pngtree—geometric\ design\ with\ minimal\ geometric_3671043.png');
   background-position: 0 -231px !important;
   min-height: 40vh;
 }
@@ -140,20 +140,20 @@ html {
   font-size: 400%;
   top: 15%;
   width: 100%;
-  text-transform: uppercase;
-  letter-spacing: 8px;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 5px;
   text-shadow: 0 0 10px black;
 }
 
 .heading-sm {
+  font-family: "Poppins", sans-serif;
   position: absolute;
   top: 45%;
   width: 100%;
   color: white;
   font-size: 250%;
-  text-transform: uppercase;
-  letter-spacing: 5px;
-  text-shadow: 0 0 16px black;
+  letter-spacing: 1px;
+
   text-align: center;
 }
 
@@ -191,137 +191,12 @@ section {
 
 .dark {
   overflow: auto;
-  padding: 50px 0px;
-  background-color: #323232;
-  color: #f2f2f2;
+  padding: 40px 0px;
+  background-color: #ffffff;
+  color: #000000;
 }
 
-// .form {
-//   border-radius: 7px;
-//   padding: 30px;
-// }
 
-// #form-content {
-//   transition: 0.5s;
-// }
-
-// #form-content:hover {
-//   -webkit-box-shadow: 0px 5px 13px 2px rgba(71, 70, 71, 0.76);
-//   -moz-box-shadow: 0px 5px 13px 2px rgba(71, 70, 71, 0.76);
-//   box-shadow: 0px 5px 13px 2px rgba(71, 70, 71, 0.76);
-// }
-
-// .group {
-//   position: relative;
-//   margin-bottom: 45px;
-// }
-
-// textarea {
-//   resize: none !important;
-// }
-
-// input,
-// textarea {
-//   background: none;
-//   font-size: 18px;
-//   padding: 10px 10px 10px 5px;
-//   display: block;
-//   width: 300px;
-//   border: none;
-//   border-bottom: 1px solid #757575;
-// }
-// input:focus,
-// textarea:focus {
-//   outline: none;
-// }
-
-// label {
-//   color: #999;
-//   font-size: 18px;
-//   font-weight: normal;
-//   position: absolute;
-//   pointer-events: none;
-//   left: 5px;
-//   top: 10px;
-//   transition: 0.2s ease all;
-//   -moz-transition: 0.2s ease all;
-//   -webkit-transition: 0.2s ease all;
-// }
-
-// /* active state */
-// input:focus ~ label,
-// input:valid ~ label {
-//   top: -20px;
-//   font-size: 14px;
-//   color: #5264ae;
-// }
-
-// textarea:focus ~ label,
-// textarea:valid ~ label {
-//   top: -20px;
-//   font-size: 14px;
-//   color: #5264ae;
-// }
-
-// /* BOTTOM INPUT BARS ================================= */
-// .bar {
-//   position: relative;
-//   display: block;
-//   width: 100%;
-// }
-// .bar:before,
-// .bar:after {
-//   content: "";
-//   height: 2px;
-//   width: 0;
-//   bottom: 1px;
-//   position: absolute;
-//   background: #03588c;
-//   transition: 0.2s ease all;
-//   -moz-transition: 0.2s ease all;
-//   -webkit-transition: 0.2s ease all;
-// }
-// .bar:before {
-//   left: 50%;
-// }
-// .bar:after {
-//   right: 50%;
-// }
-
-// /* active state */
-// input:focus ~ .bar:before,
-// input:focus ~ .bar:after {
-//   width: 50%;
-// }
-
-// textarea:focus ~ .bar:before,
-// textarea:focus ~ .bar:after {
-//   width: 50%;
-// }
-
-// /* HIGHLIGHTER ================================== */
-// .highlight {
-//   position: absolute;
-//   height: 60%;
-//   width: 100px;
-//   top: 25%;
-//   left: 0;
-//   pointer-events: none;
-//   opacity: 0.5;
-// }
-
-// /* active state */
-// input:focus ~ .highlight {
-//   -webkit-animation: inputHighlighter 0.3s ease;
-//   -moz-animation: inputHighlighter 0.3s ease;
-//   animation: inputHighlighter 0.3s ease;
-// }
-
-// textarea:focus ~ .highlight {
-//   -webkit-animation: inputHighlighter 0.3s ease;
-//   -moz-animation: inputHighlighter 0.3s ease;
-//   animation: inputHighlighter 0.3s ease;
-// }
 
 .fixed-top {
   transition: background-color 500ms;
@@ -337,7 +212,7 @@ section {
 }
 
 .article {
-  margin: 30px;
+  margin: 50px;
   padding: 12px;
   background: none;
   border-radius: 5px;
@@ -365,14 +240,15 @@ section {
 }
 
 .content {
-  padding: 20vh 20px;
-  color: white;
+  padding: 1rem 20px;
+  color: rgb(0, 0, 0);
   text-align: center;
-  font-size: 25px;
+  font-size: 1.1rem;
+  text-align: justify;
 
   .headline {
     text-align: center;
-    font-size: 40px;
+    font-size: 1.5rem;
   }
 }
 
@@ -543,6 +419,7 @@ button:focus {
   font-size: 32px;
   line-height: 140%;
   color: #121127;
+
 }
 
 .h-5 {
@@ -560,6 +437,7 @@ button:focus {
   line-height: 140%;
   color: #121127;
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .body-mid {
@@ -576,6 +454,7 @@ button:focus {
   font-size: 14px;
   line-height: 180%;
   color: #7a7a86;
+  text-align: justify;
 }
 
 .primary-button {
@@ -619,10 +498,9 @@ button:focus {
 .about-description {
   font-size: 150%;
   color: black;
-  top: 25%;
+  top: 15%;
   width: 80%;
   font-weight: bold;
-  left: 10%;
 }
 
 #menuToggle {
@@ -923,20 +801,17 @@ img {
 .cards {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
     Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  display: flex;
+
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
 .cardi {
   opacity: 1;
-  margin: 20px;
+  margin: 5%;
   padding: 20px;
   max-width: 100%;
   width: 90%;
-  min-height: 300px;
-  display: grid;
-  grid-template-rows: 20px 50px 1fr 50px;
   border-radius: 10px;
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
   transition: all 0.2s;
@@ -951,10 +826,10 @@ img {
 @import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
 
 .card_content {
-  font-size: 30px;
+  font-size: 1.2rem;
   font-weight: 200;
   color: black;
-  font-family: 'Yellowtail', cursive;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .card__link,
@@ -1008,7 +883,7 @@ img {
 
 
 .card-1 {
-  background: radial-gradient(#1fe4f5, #3fbafe);
+  background: radial-gradient(#ffffffc4, #b6b6f6);
 }
 
 @media (max-width: 1600px) {
@@ -1142,7 +1017,7 @@ img {
 
   #features-column {
     flex-direction: column;
-    padding-top: 100px;
+    padding-top: 10px;
   }
 
   #image {
@@ -1174,6 +1049,8 @@ img {
 
   .image {
     width: 100%;
+    height: 45vw;
+
 
     &.rights {
       float: none;
