@@ -47,6 +47,11 @@ html {
 
 @import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
 
+
+.fixed-top.scrolled {
+  box-shadow: 0px 1px 10px #999;
+}
+
 .nav-head {
   font-size: 65px !important;
   font-family: "Permanent Marker", cursive !important;
@@ -58,6 +63,7 @@ html {
   margin-left: 0 !important;
   position: relative;
   left: 55vw;
+
 }
 
 .nav-lin {
