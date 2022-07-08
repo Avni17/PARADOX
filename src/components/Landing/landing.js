@@ -173,7 +173,7 @@ export default class landing extends Component {
 
                 <div class="parallax2" id="services">
                     <div class="cards">
-                        <div class="cardi card-1 heading-sm about-description">
+                        <div class="cardi card-1 heading-sm about-description card-edit">
 
                             <h5 class="h-5">
                                 Project Tracling software used by millions.

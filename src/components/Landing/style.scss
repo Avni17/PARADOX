@@ -841,7 +841,10 @@ display: flex;
   color: black;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
-
+.card-edit
+{
+  min-height:auto;
+}
 .card__link,
 .card__exit,
 .card__icon {
