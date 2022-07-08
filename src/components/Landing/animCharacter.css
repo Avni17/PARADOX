@@ -3,7 +3,7 @@ body, html{
     height:100%;
     margin:0;
     display: table;
-    text-align: center;
+    text-align: center !important;
   }
   
   .wrapp{
