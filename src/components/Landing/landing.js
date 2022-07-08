@@ -175,7 +175,7 @@ export default class landing extends Component {
                     <div class="cards">
                         <div class="cardi card-1 heading-sm about-description card-edit">
 
-                            <h5 class="h-5">
+                            <h5 class="project-description">
                                 Project Tracling software used by millions.
                                 <p>PARADOX is a project tracker that let's you work hours across project. Unlimited Users,Free Forever.</p>
                                 <p>You can keep track of daily work at your company by the exclusive features offered by paradox </p>

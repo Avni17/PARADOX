@@ -917,7 +917,10 @@ display: flex;
   .nav-head {
     left: 8vw;
   }
-
+ #features-column
+ {
+  margin-top: 100px;
+ }
   .about-description {
     font-size: 100%;
   }
@@ -1084,4 +1087,8 @@ display: flex;
   .article {
     padding: 0;
   }
+}
+.project-description
+{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
