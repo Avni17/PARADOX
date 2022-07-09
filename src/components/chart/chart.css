@@ -1,11 +1,11 @@
 div#root {
-    width: 100%;
+    width: 100vw;
     overflow: scroll;
 }
-body
+/* body
 {
     display: table !important;
-}
+} */
 .chart {
 	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
 	background-size: 400% 400%;
