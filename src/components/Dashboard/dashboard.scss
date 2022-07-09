@@ -54,7 +54,7 @@ html, body {
 
 body {
   font-family: 'DM Sans', sans-serif;
-  display: flex;
+  display: flex !important;
   justify-content: center;
   background-color: var(--app-container);
 }
@@ -65,7 +65,7 @@ button, a {
 
 .app {
   &-container {
-    width: 100%;
+    width: 100vw;
     display: flex;
     flex-direction: column;
     height: 100%;
