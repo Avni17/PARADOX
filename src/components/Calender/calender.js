@@ -286,9 +286,11 @@ const styles = theme => ({
 class Demo extends React.PureComponent {
   constructor(props) {
     super(props);
+    var today = new Date(),
+    date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
     this.state = {
       data: [],
-      currentDate: '2021-12-12',
+      currentDate: date,
       confirmationVisible: false,
       editingFormVisible: false,
       deletedAppointmentId: undefined,
