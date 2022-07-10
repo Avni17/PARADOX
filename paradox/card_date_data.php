@@ -7,8 +7,6 @@ header('Access-Control-Allow-Origin: *');
 $encodedData = file_get_contents('php://input'); 
 $decodedData = json_decode($encodedData, true);
 $UserEmail = $decodedData['email'];
-
-
 $SQL = "SELECT id FROM employee WHERE email = '$UserEmail'";
 $exeSQL = mysqli_query($con, $SQL);
 $checkid =  mysqli_num_rows($exeSQL);
