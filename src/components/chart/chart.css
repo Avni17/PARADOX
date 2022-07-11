@@ -1,23 +1,20 @@
 div#root {
-    width:100%;
+    width: 100%;
     overflow: scroll;
 }
-/* body
-{
-    display: table !important;
-} */
 .chart {
-	background-image: linear-gradient(to right,white);
-	background-size: 400% 400%;
-	animation: gradient 15s ease infinite;
-	height: 200vh;
-    width:100vw;
+    background-image: linear-gradient(to right, white);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    height: 190vh;
+    width: 98vw;
 }
+
 .text {
     position: absolute;
-    top: 10%; 
+    top: 5%;
     right: 50%;
-    transform: translate(50%,-50%);
+    transform: translate(50%, -50%);
     text-transform: uppercase;
     font-family: verdana;
     font-size: 50px;
@@ -33,95 +30,81 @@ div#root {
         1px 8px 1px #919191,
         1px 9px 1px #919191,
         1px 10px 1px #919191,
-    1px 18px 6px rgba(16,16,16,0.4),
-    1px 22px 10px rgba(16,16,16,0.2),
-    1px 25px 35px rgba(16,16,16,0.2),
-    1px 30px 60px rgba(16,16,16,0.4);
+        1px 18px 6px rgba(16, 16, 16, 0.4),
+        1px 22px 10px rgba(16, 16, 16, 0.2),
+        1px 25px 35px rgba(16, 16, 16, 0.2),
+        1px 30px 60px rgba(16, 16, 16, 0.4);
 }
 
 @keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
-.pie
-{
-    width:50%;
+.pie {
+    width: 45%;
     float: left;
-    
-}
-.bar
-{
-    width:50%;
-    float: left;
-    
-}
-.areagraph
-{
-    width:50%;
-    float: left;
-    margin-top: 200px;
-    margin-left: 30px;;
-    
-}
-.radargraph
-{
-    width:40%;
-    float: right;
-    margin-top: 200px;
+    margin-right:50px;
 
+}
+
+.bar {
+    width: 45%;
+    float: left;
+
+}
+
+.areagraph {
+    width: 45%;
+    float: left;
+    margin-top: 50px !important;
+    margin-right:50px;
+
+}
+
+.radargraph {
+    width: 45%;
+    float: left;
+    margin-top: 50px !important;
+
+
+}
+
+.Component-root-3 {
+    fill: white !important;
+    ;
+}
+
+.graph-card {
+    margin-left: 30px;
+    border: 20px solid #c7eafd;
+    border-image: -webkit-linear-gradient(to left, #7ee8fa 0%, #eec0c6 100%);
+    border-image: -moz-linear-gradient(to left #7ee8fa 0%, #eec0c6 100%);
+    border-image: -o-linear-gradient(to left, #7ee8fa 0%, #eec0c6 100%);
+    border-image: linear-gradient(to bottom right, #ff3cac, #562b7c, #2b86c5);
+    border-image-slice: 1;
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    background-size: cover;
+    box-sizing: border-box;
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.5);
+    margin-top: 100px;
+}
+
+.graph-content {
+    color: #444;
+    font-size: 25px;
+    line-height: 45px;
+    font-family: futura-pt, Arial Black, Arial Bold, Gadget, sans-serif;
+    text-transform: uppercase;
     
-}
-.line-1{
-    position: absolute;
-    top:90%;
-    left:10px;
-    width: 24em;
-    margin: 0 auto;
-    border-right: 2px solid rgba(255,255,255,.75);
-    font-size: 180%;
-    text-align: center;
-    white-space: nowrap;
-    overflow: hidden;
-    margin-top: 40px;
-    transform: translateY(-50%);    
-    color: black
-}
-.line-2{
-    position: absolute;
-    top:95%;
-    margin-top: 40px;
-    width: 24em;
-    margin: 0 auto;
-    border-right: 2px solid rgba(255,255,255,.75);
-    font-size: 180%;
-    text-align: center;
-    white-space: nowrap;
-    overflow: hidden;
-    transform: translateY(-50%);    
-    color: black;
-}
-/* Animation */
-.anim-typewriter{
-  animation: typewriter 4s steps(50) 1s 1 normal both,
-             blinkTextCursor 500ms steps(50) infinite normal;
-}
-@keyframes typewriter{
-  from{width: 0;}
-  to{width: 26em;}
-}
-@keyframes blinkTextCursor{
-  from{border-right-color: rgba(255,255,255,.75);}
-  to{border-right-color: transparent;}
-}
-.Component-root-3
-{
-    fill: white !important;;
 }

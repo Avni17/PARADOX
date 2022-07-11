@@ -1,48 +1,80 @@
 import * as React from 'react';
 import axios from 'axios';
-// import Paper from '@material-ui/core/Paper';
-// import { Pie, Bar } from "react-chartjs-2";
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
 import { Bar } from 'react-chartjs-2';
 import { Line } from 'react-chartjs-2';
 import { Radar } from 'react-chartjs-2';
-import faker from 'faker';
 import './chart.css'
-// ChartJS.register(ArcElement, Tooltip, Legend);
-// import {
-//     Chart,
-//     PieSeries,
-//     Title,
-//     BarSeries,
-//     ArgumentAxis,
-//     Legend,
-//     ValueAxis,
-//     HoverState
-// } from '@devexpress/dx-react-chart-material-ui';
-// import { Animation } from '@devexpress/dx-react-chart';
-
 const API_PATH = 'http://localhost/paradox/timedata.php';
 const API_PATH2 = 'http://localhost/paradox/typedata.php';
 const API_PATH3 = 'http://localhost/paradox/bargraph.php';
+const API_PATH4 = 'http://localhost/paradox/historydata.php';
 
-export default class Demo extends React.Component {
+export default class Chart extends React.Component {
     constructor(props) {
         super(props);
-
         this.state = {
             time: [],
             type: [],
             timeper: [],
             taskper: [],
+            histime:[],
+            histask:[],
             email: '',
+            history:'',
             update: 0,
             update1: 0,
-            update2: 0
+            update2: 0,
+            update3:0
         };
         this.addtime = this.addtime.bind(this);
         this.addtask = this.addtask.bind(this);
         this.addbar = this.addbar.bind(this);
+        this.history = this.history.bind(this);
+        this.onChange = this.onChange.bind(this);
+        this.handler = this.handler.bind(this);
+    }
+    onChange(e) {
+        this.setState({ [e.target.name]: e.target.value });
+      }
+      handler() {
+        this.setState({
+          update3: 0
+        })
+      }
+      history() {
+        console.log(this.state);
+        if (this.state.email) {
+
+            axios({
+                method: 'post',
+                url: `${API_PATH4}`,
+                headers: { 'content-type': 'application/json' },
+                data: this.state
+
+            })
+                .then(result => {
+                    console.log(this.state);
+                    var time = [];
+                    var task = [];
+                    console.log(result.data)
+                    for (let i = 0; i < result.data.length; i++) {
+                        time.push(result.data[i].time);
+                        task.push(result.data[i].task);
+                    }
+                    
+                    if (this.state.update3 == 0) {
+                        this.setState({
+                            histime: time,
+                            histask: task,
+                            update3: 1
+                        })
+                    }
+                    console.log(this.state);
+                })
+                .catch(error => this.setState());
+        }
+
     }
     addtime() {
         console.log(this.state);
@@ -67,41 +99,21 @@ export default class Demo extends React.Component {
                             update: 1
                         })
                     }
-                    // this.setState({
-                    //   data: result.data,
-
-                    // })
-
-
-
-                    // console.log(this.state);
-                    // alert(result.data[2].endtime)
-
                 })
                 .catch(error => this.setState());
-
-
         }
 
     }
     addtask() {
         console.log(this.state);
-
         if (this.state.email) {
-
             axios({
                 method: 'post',
                 url: `${API_PATH2}`,
                 headers: { 'content-type': 'application/json' },
                 data: this.state
-
             })
                 .then(result => {
-                    console.log(this.state);
-                    // alert(result.data);
-                    // alert('new'+result.data.length);
-                    // date=result.data;
-
                     if (this.state.update1 == 0) {
                         this.setState({
                             type: result.data,
@@ -109,16 +121,6 @@ export default class Demo extends React.Component {
                             update1: 1
                         })
                     }
-                    // this.setState({
-                    //   data: result.data,
-
-                    // })
-
-
-
-                    // console.log(this.state);
-                    // alert(result.data[2].endtime)
-
                 })
                 .catch(error => this.setState());
 
@@ -140,9 +142,6 @@ export default class Demo extends React.Component {
             })
                 .then(result => {
                     console.log(this.state);
-                    // alert(result.data);
-                    // alert('new'+result.data.length);
-                    // date=result.data;
                     var time = [];
                     var task = [];
                     for (let i = 0; i < result.data.length; i++) {
@@ -154,21 +153,12 @@ export default class Demo extends React.Component {
                         this.setState({
                             timeper: time,
                             taskper: task,
+                            histime:time,
+                            histask:task,
 
                             update2: 1
                         })
                     }
-
-                    // this.setState({
-                    //   data: result.data,
-
-                    // })
-
-
-
-                    // console.log(this.state);
-                    // alert(result.data[2].endtime)
-
                 })
                 .catch(error => this.setState());
 
@@ -191,14 +181,11 @@ export default class Demo extends React.Component {
 
     }
     componentDidUpdate() {
-        // console.log(this.state);
         this.addtime();
         this.addtask();
         this.addbar();
-        //   console.log(this.state);
     }
     render() {
-        // const { data1: chartData2 } = this.state;
         const options = {
             responsive: true,
             plugins: {
@@ -274,14 +261,13 @@ export default class Demo extends React.Component {
             },
         };
 
-
         const data3 = {
-            labels,
+            labels:this.state.histask,
             datasets: [
                 {
                     fill: true,
                     label: 'Time Graph',
-                    data: this.state.timeper,
+                    data: this.state.histime,
                     borderColor: 'rgba(255, 191, 0)',
                     backgroundColor: 'RGB(188, 36, 60)',
                 },
@@ -293,100 +279,67 @@ export default class Demo extends React.Component {
                 {
                     label: 'Time spent past 7 days',
                     data: this.state.timeper,
+                    color: 'green',
                     backgroundColor: 'rgba(255, 99, 132, 0.2)',
                     borderColor: 'rgba(255, 99, 132, 1)',
-                    borderWidth: 1,
+                    borderWidth: 3,
                 },
             ],
         };
+        // const options4={scales: {
+        //     r: {
+        //       max: 100,
+        //       min: 30,
+        //       ticks: {
+        //         stepSize: 15,
+        //         backdropColor: "orange",
+        //         color: "white"
+        //       },
+        //       grid: {
+        //         color: "black"
+        //       },
+        //       angleLines: {
+        //         color: "gray"
+        //       },
+        //       pointLabels: {
+        //         font: {
+        //           size: 20
+        //         }
+        //       }
+        //     }}
+        //   }
         return (
             <div className='chart'>
 
-                <div className='pie'>
+                <div className='pie graph-card'>
                     <span class="text">Analysis</span>
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    {/* <Paper style={{ height: "100vh" }}> */}
-
-                    {/* <Chart
-                            data={this.state.data}
-                        >
-                            <PieSeries
-                                valueField="time"
-                                argumentField="task"
-                                innerRadius={0.6}
-                            />
-                            <Title
-                                text="Time devoted in various activities in last week"
-                            />
-                            <Animation />
-                            
-                            <Legend/>
-                        </Chart> */}
-                    {/* <Pie
-                            options={{
-                                width: "400",
-                                height: "400"
-                            }}
-                            data={{
-                                labels: labels,
-                                datasets: datasets
-                            }}
-                        /> */}
-
-                    <Bar options={options} data={data2} />
-
-                    <p class="line-1 anim-typewriter">Time% spent in activities in various project </p>
-
-                    {/* </Paper> */}
-
+                    <Bar options={options} data={data2} width={300} height={200} />
+                    <span class="graph-content">Time% spent in activities in various project </span>
                 </div>
-                <div className='bar'>
-                    {/* <Paper style={{ height: "100vh" }}> */}
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    {/* <Chart
-                            data={this.state.data}
-                        >
-                            <ArgumentAxis />
-                            <ValueAxis max={70} />
-
-                            <BarSeries
-                                valueField="time"
-                                argumentField="task"
-                            />
-                            
-                            <Animation />
-                            
-                        </Chart> */}
-                    <Doughnut data={data} />
-                    <p class="line-2 anim-typewriter">Time % spent on various activities in past 7 days </p>
-
-                    {/* <Bar
-                            data={{
-                                labels: labels,
-                                datasets: datasets,
-                                label: "something"
-                            }}
-                        /> */}
-                    {/* </Paper> */}
-
+                <div className='bar graph-card'>
+                    <Doughnut data={data} height={200} width={300} />
+                    <span class="graph-content">Time % spent on various activities in past 7 days </span>
                 </div>
 
-                <div className="areagraph">
-                    <Line options={options2} data={data3} />
+                <div className="areagraph graph-card">
+                    <Line options={options2} data={data3} width={300} height={200} />
+                    <span class="graph-content">Custom Graph (default lifetime)</span>
+                    <form >
+                        <input
+                            type="text"
+                            name="history"
+                            id="history"
+
+                            placeholder="Enter days:"
+                            onChange={this.onChange}
+                        />
+                        <button type="button" onClick={(event) => {this.handler(); this.history();}}>Submit</button>
+                    </form>
 
                 </div>
-                <div className="radargraph">
-                    <Radar data={data4} />
+                <div className="radargraph graph-card">
+                    <Radar data={data4} width={300} height={200} />
+                    <span class="graph-content">Time % spent on various activities in past 7 days </span>
 
                 </div>
 
