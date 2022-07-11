@@ -7,10 +7,10 @@ div#root {
     display: table !important;
 } */
 .chart {
-	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-image: linear-gradient(to right,white);
 	background-size: 400% 400%;
 	animation: gradient 15s ease infinite;
-	height: 100vh;
+	height: 200vh;
     width:100vw;
 }
 .text {
@@ -20,9 +20,9 @@ div#root {
     transform: translate(50%,-50%);
     text-transform: uppercase;
     font-family: verdana;
-    font-size: 100px;
+    font-size: 50px;
     font-weight: 700;
-    color: #f5f5f5;
+    color: black;
     text-shadow: 1px 1px 1px #919191,
         1px 2px 1px #919191,
         1px 3px 1px #919191,
@@ -63,6 +63,22 @@ div#root {
     float: left;
     
 }
+.areagraph
+{
+    width:50%;
+    float: left;
+    margin-top: 200px;
+    margin-left: 30px;;
+    
+}
+.radargraph
+{
+    width:40%;
+    float: right;
+    margin-top: 200px;
+
+    
+}
 .line-1{
     position: absolute;
     top:90%;
@@ -76,7 +92,7 @@ div#root {
     overflow: hidden;
     margin-top: 40px;
     transform: translateY(-50%);    
-    color: white;
+    color: black
 }
 .line-2{
     position: absolute;
@@ -90,7 +106,7 @@ div#root {
     white-space: nowrap;
     overflow: hidden;
     transform: translateY(-50%);    
-    color: white;
+    color: black;
 }
 /* Animation */
 .anim-typewriter{
