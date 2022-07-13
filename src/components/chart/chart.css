@@ -55,6 +55,7 @@ div#root {
     width: 45%;
     float: left;
     margin-right: 50px;
+    margin-left: 20px !important;
 
 }
 
@@ -69,6 +70,7 @@ div#root {
     float: left;
     margin-top: 50px !important;
     margin-right: 50px;
+    margin-left:55px !important;
 
 }
 
@@ -86,7 +88,7 @@ div#root {
 }
 
 .graph-card {
-    margin-left: 30px;
+    margin-left: 20px;
     border: 20px solid #c7eafd;
     border-image: -webkit-linear-gradient(to left, #7ee8fa 0%, #eec0c6 100%);
     border-image: -moz-linear-gradient(to left #7ee8fa 0%, #eec0c6 100%);
@@ -148,4 +150,9 @@ div#root {
 }
 .inputtext:focus {
     border: 4px solid cornflowerblue;
+}
+.side
+{
+    float:left;
+    padding: 200px 0 !important;
 }

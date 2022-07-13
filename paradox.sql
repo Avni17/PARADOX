@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 11, 2022 at 07:45 PM
+-- Generation Time: Jul 13, 2022 at 09:17 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.0.13
 
@@ -119,7 +119,7 @@ INSERT INTO `project` (`pid`, `name`, `dependencies`, `startTime`, `endTime`, `m
 (2, 'proj2', 0, '2021-10-18', '2021-11-02', 2),
 (33, 'frontend task', 0, '2021-12-19', '2021-12-17', 1),
 (29, 'backend task', 0, '2021-12-17', '2022-01-17', 1),
-(34, 'proj3xjk', 0, '2022-07-09', '2022-07-14', 1),
+(34, 'proj', 0, '2022-07-09', '2022-07-14', 1),
 (35, 'test', 0, '2022-07-20', '2022-07-24', 1),
 (36, 'avni', 0, '2022-07-13', '2022-07-21', 40),
 (37, 'avni2', 0, '2022-07-09', '2022-07-13', 40);
@@ -143,8 +143,8 @@ CREATE TABLE `task` (
 --
 
 INSERT INTO `task` (`eid`, `pid`, `tid`, `status`, `type`) VALUES
-(1, 1, 1, 'no', 'frontend'),
-(1, 2, 2, 'no', 'backend'),
+(1, 1, 1, 'yes', 'frontend'),
+(1, 34, 41, 'yes', 'backend'),
 (1, 1, 3, 'no', 'frontend1'),
 (1, 29, 19, 'yes', 'php'),
 (1, 29, 18, 'yes', 'web'),
@@ -152,9 +152,19 @@ INSERT INTO `task` (`eid`, `pid`, `tid`, `status`, `type`) VALUES
 (1, 34, 25, 'no', 'web'),
 (2, 33, 26, 'no', 'ww'),
 (1, 35, 27, 'no', 'webdev'),
-(40, 36, 28, 'no', 'web'),
-(40, 37, 29, 'no', 'ww'),
-(1, 36, 30, 'no', 'doit');
+(1, 2, 31, 'yes', 'frontend'),
+(1, 36, 30, 'no', 'doit'),
+(1, 2, 32, 'no', 'bugs'),
+(1, 35, 33, 'yes', 'web'),
+(1, 35, 34, 'yes', 'frontend'),
+(1, 35, 35, 'yes', 'backend'),
+(1, 36, 36, 'no', 'back'),
+(1, 36, 37, 'no', 'front'),
+(1, 36, 38, 'yes', 'bugs'),
+(1, 37, 39, 'no', 'bugs'),
+(1, 37, 40, 'yes', 'debug'),
+(1, 33, 42, 'no', 'buggy'),
+(1, 33, 43, 'yes', 'backend');
 
 -- --------------------------------------------------------
 
@@ -254,7 +264,7 @@ ALTER TABLE `project`
 -- AUTO_INCREMENT for table `task`
 --
 ALTER TABLE `task`
-  MODIFY `tid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `tid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
