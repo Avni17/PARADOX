@@ -9,6 +9,7 @@ const API_PATH = 'http://localhost/paradox/timedata.php';
 const API_PATH2 = 'http://localhost/paradox/typedata.php';
 const API_PATH3 = 'http://localhost/paradox/bargraph.php';
 const API_PATH4 = 'http://localhost/paradox/historydata.php';
+const API_PATH5 = 'http://localhost/paradox/completedata.php';
 
 export default class Chart extends React.Component {
     constructor(props) {
@@ -20,17 +21,21 @@ export default class Chart extends React.Component {
             taskper: [],
             histime:[],
             histask:[],
+            completed:[],
+            project:[],
             email: '',
             history:'',
             update: 0,
             update1: 0,
             update2: 0,
-            update3:0
+            update3:0,
+            update4:0
         };
         this.addtime = this.addtime.bind(this);
         this.addtask = this.addtask.bind(this);
         this.addbar = this.addbar.bind(this);
         this.history = this.history.bind(this);
+        this.complete = this.complete.bind(this);
         this.onChange = this.onChange.bind(this);
         this.handler = this.handler.bind(this);
     }
@@ -68,6 +73,40 @@ export default class Chart extends React.Component {
                             histime: time,
                             histask: task,
                             update3: 1
+                        })
+                    }
+                    console.log(this.state);
+                })
+                .catch(error => this.setState());
+        }
+
+    }
+    complete() {
+        console.log(this.state);
+        if (this.state.email) {
+
+            axios({
+                method: 'post',
+                url: `${API_PATH5}`,
+                headers: { 'content-type': 'application/json' },
+                data: this.state
+
+            })
+                .then(result => {
+                    console.log(this.state);
+                    var complete = [];
+                    var task = [];
+                    console.log(result.data)
+                    for (let i = 0; i < result.data.length; i++) {
+                        complete.push(result.data[i].complete);
+                        task.push(result.data[i].task);
+                    }
+                    
+                    if (this.state.update4 == 0) {
+                        this.setState({
+                            completed: complete,
+                            project: task,
+                            update4: 1
                         })
                     }
                     console.log(this.state);
@@ -177,6 +216,7 @@ export default class Chart extends React.Component {
         this.addtime();
         this.addtask();
         this.addbar();
+        this.complete();
 
 
     }
@@ -184,6 +224,7 @@ export default class Chart extends React.Component {
         this.addtime();
         this.addtask();
         this.addbar();
+        this.complete();
     }
     render() {
         const options = {
@@ -274,12 +315,11 @@ export default class Chart extends React.Component {
             ],
         };
         const data4 = {
-            labels: this.state.taskper,
+            labels: this.state.project,
             datasets: [
                 {
-                    label: 'Time spent past 7 days',
-                    data: this.state.timeper,
-                    color: 'green',
+                    label: '%projects completed',
+                    data: this.state.completed,
                     backgroundColor: 'rgba(255, 99, 132, 0.2)',
                     borderColor: 'rgba(255, 99, 132, 1)',
                     borderWidth: 3,
@@ -323,23 +363,23 @@ export default class Chart extends React.Component {
 
                 <div className="areagraph graph-card">
                     <Line options={options2} data={data3} width={300} height={200} />
-                    <span class="graph-content">Custom Graph (default lifetime)</span>
+                    <span class="graph-content">Custom Data Graph (default lifetime)</span>
                     <form >
                         <input
                             type="text"
                             name="history"
                             id="history"
-
+                            class="inputtext"
                             placeholder="Enter days:"
                             onChange={this.onChange}
                         />
-                        <button type="button" onClick={(event) => {this.handler(); this.history();}}>Submit</button>
+                        <button type="button" class='inpbtn' onClick={(event) => {this.handler(); this.history();}}>Submit</button>
                     </form>
 
                 </div>
                 <div className="radargraph graph-card">
-                    <Radar data={data4} width={300} height={200} />
-                    <span class="graph-content">Time % spent on various activities in past 7 days </span>
+                    <Radar data={data4} width={300} height={240} />
+                    <span class="graph-content">% Work completed in each project</span>
 
                 </div>
 
