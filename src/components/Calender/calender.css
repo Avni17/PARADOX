@@ -1,0 +1,11 @@
+.side2
+{
+    position:absolute;
+    flex-direction: row;
+    padding: 10px 35vw;
+    z-index: 999;
+}
+.side2-icons
+{
+    margin: 0 40px;
+}
