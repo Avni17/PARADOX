@@ -7,6 +7,8 @@ header('Access-Control-Allow-Origin: *');
 $encodedData = file_get_contents('php://input'); 
 $decodedData = json_decode($encodedData, true);
 $UserEmail = $decodedData['email'];
+
+
 $SQL = "SELECT id FROM employee WHERE email = '$UserEmail'";
 $exeSQL = mysqli_query($con, $SQL);
 $checkid =  mysqli_num_rows($exeSQL);
@@ -15,7 +17,7 @@ if ($checkid != 0)
 {
     $arrayu = mysqli_fetch_array($exeSQL);
     $id=$arrayu['id'];
-    $SQL = "SELECT DISTINCT t.pid as pid  FROM task t,project p WHERE t.pid=p.pid and eid = '$id'";
+    $SQL = "SELECT DISTINCT t.pid as pid  FROM task t,project p WHERE t.pid=p.pid and eid = '$id' group by t.pid order by p.starttime DESC,DATEDIFF(endTime,CURRENT_DATE()) DESC";
     $exeSQL = mysqli_query($con, $SQL);
     while($row = mysqli_fetch_array($exeSQL))
     {
@@ -39,9 +41,9 @@ if ($checkid != 0)
         
         $d=mysqli_fetch_array($result1);
         if($d['days']>0)
-        $response[]=array("starttime"=>$f['startTime'],"days"=>$d['days'].' Days Left',"progress"=>$p,"pid"=>$ppid,"name"=>$d['name']);
+        $response[]=array("starttime"=>$f['startTime'],"days"=>$d['days'].' Days Left',"progress"=>$p,"pid"=>$ppid,"name"=>$d['name'],"nod"=>$d['days']);
         else
-        $response[]=array("starttime"=>$f['startTime'],"days"=>'Completed',"progress"=>$p,"pid"=>$ppid,"name"=>$d['name']);
+        $response[]=array("starttime"=>$f['startTime'],"days"=>'Deadline Reached',"progress"=>$p,"pid"=>$ppid,"name"=>$d['name'],"nod"=>$d['days']);
     }
     
 } 
@@ -51,8 +53,10 @@ else {
 }
 array_shift($response);
 // $response[] = array("Message" => $Message);
-$p  = array_column($response, 'pid');
-array_multisort($p, SORT_DESC,$response);
+// $p  = array_column($response, 'pid');
+// $ds  = array_column($response, 'nod');
+// array_multisort($p, SORT_DESC,$response);
+
 echo json_encode($response);
 mysqli_close($con);
 ?>

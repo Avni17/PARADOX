@@ -143,7 +143,7 @@ export default class dashboard extends Component {
 
       })
         .then(result => {
-
+console.log(result.data);
           // alert('prev'+this.state.date.length);
           // alert('new'+result.data.length);
           // date=result.data;
